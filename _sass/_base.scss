@@ -404,11 +404,14 @@ a.tosu {
 }
 
 .image--cover-container {
-    width: 90px;
     float: left;
     text-align: center;
     margin: 0px;
     margin-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .image--cover {

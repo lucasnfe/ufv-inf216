@@ -22,22 +22,36 @@ layout: default
     {% endif %}
 
     <div>
-        <div style="width:35%; float: left">
+        <div style="width:50%; float: left">
             <!-- <h2>Instructors</h2> -->
             <!-- <div class="image--cover-container">
                 <img src="{{site.data.people.instructor.profile_pic | prepend: site.baseurl }}" class="image--cover">
                 <p>{{site.data.people.instructor.name}}</p>
             </div> -->
 
-            <div class="profile-pic-gallary ">
+            <div class="profile-pic-gallary">
                 <h2>Professor</h2>
                 {% for ins in site.data.people.instructors %}
                 <div class="image--cover-container">
-                    <img src="{{ins.profile_pic | prepend: site.baseurl }}" class="image--cover">
+                    <div>
+                        <img src="{{ins.profile_pic | prepend: site.baseurl }}" class="image--cover">
+                    </div>
                     {% if ins.webpage %}
-                    <p><a href="{{ ins.webpage }}">{{ins.name}}</a></p>
+                    <div>
+                        <ul style="list-style-type: none; list-style-position: inside; padding-left: 0; text-align: left;">
+                            <li><a href="{{ ins.webpage }}">{{ins.name}}</a></li>
+                            <li>{{ins.email}}</li>
+                            <li>Sala {{ins.office}}</li>
+                        </ul>
+                    </div>
                     {% else %}
-                    <p>{{ins.name}}</p>
+                    <div>
+                        <ul style="list-style-type: none; list-style-position: inside; padding-left: 0; text-align: left;">
+                            <li>{{ins.name}}</li>
+                            <li>{{ins.email}}</li>
+                            <li>Sala {{ins.office}}</li>
+                        </ul>
+                    </div>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -45,7 +59,7 @@ layout: default
         </div>
 
         <!-- {% if site.data.people.teaching_assistants %} -->
-        <div style="width:65%; float: left">
+        <div style="width:20%; float: left">
             <div class="profile-pic-gallary ">
                 <h2>Teaching Assistants</h2>
                 {% for ta in site.data.people.teaching_assistants %}
