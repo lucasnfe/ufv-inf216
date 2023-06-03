@@ -1,15 +1,33 @@
 <header class="site-header">
 
   <div class="wrapper" style="z-index: 100;">
-      <table><tr>
+      <!-- <table><tr>
           <td><img class="uni-logo" src="{{ "/_images/logo.png" | prepend: site.baseurl }}" valign="middle"></td>
-          <td style="padding-left:10px;"><a class="schoolname" style="font-size: 15px;" class="site-title" href="{{ site.schoolurl }}">{{ site.schoolname }}</a>
+          <td style="padding-left:10px;"><a class="schoolname site-title" href="{{ site.schoolurl }}">{{ site.schoolname }}</a>
           <br/>
           <span class="site-title"><a href="{{ site.baseurl }}/" title="{{ site.course_name }} / {{ site.course_semester }} - {{ site.schoolname }}"><b>{{ site.course_name }}</a></b></span>
           <br/>
           <span class="coursesemeter">{{ site.course_semester }}</span>
           </td>
-        </tr></table>
+        </tr>
+      </table> -->
+
+    <div class="header-content">
+      <div>
+        <img class="uni-logo" src="{{ '/_images/logo.png' | prepend: site.baseurl }}" valign="middle">
+      </div>
+      <div style="padding-left: 10px;">
+        <div>
+          <a class="schoolname" href="{{ site.schoolurl }}">{{ site.schoolname }}</a>
+        </div>
+        <div>
+          <span class="site-title"><a href="{{ site.baseurl }}/" title="{{ site.course_name }}"><b>{{ site.course_name }}</a></b></span>
+        </div>
+        <div>
+          <span class="coursesemeter">{{ site.course_semester }}</span>
+        </div>
+      </div>
+    </div>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon menu.open">

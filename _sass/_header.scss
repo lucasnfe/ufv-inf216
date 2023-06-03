@@ -4,7 +4,7 @@
 .site-header {
     border-top: 0px solid $grey-color-dark;
 	border-bottom: 6px solid $clemson-orange;
-    min-height: 56px;
+    min-height: 100px;
     background-color: $clemson-purple;
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -15,9 +15,16 @@
     filter: invert($header-background-invert);
 }
 
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+}
+
 .uni-logo {
     min-width: 75px;
     width: 75px;
+    padding-top: 16px;
 }
 
 .site-title, .site-title a {
@@ -110,7 +117,6 @@ color: $title-color;
 
 }
 
-
 .sub-menu {
 	border: 3px solid transparent;
 	border-top: 0;
@@ -126,8 +132,7 @@ color: $title-color;
 	text-transform: none;
 	top: 28px;
 	min-width: 265px;
-
-z-index:999;
+    z-index:999;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 
 }
@@ -145,18 +150,33 @@ z-index:999;
 	display: block;
 }
 
-
-
 .site-nav h1 {
 	position: absolute;
 	left: -999em;
 }
 
+.schoolname {
+    color: $header-text-color;
+    line-height: 1.2em;
+    font-size: 15px;
+}
+
+.coursesemeter {
+    color: $header-text-color;
+    opacity: 0.9;
+    font-size: 12px; 
+    font-weight: bold;
+}
+
+@include media-query($on-palm) {
+    .coursesemeter {
+        padding: 35px 0px 25px 0px;
+    }
+}
 
 .site-nav {
     float: right;
     line-height: 40px;
-
 
     .menu-icon {
         display: none;
@@ -164,7 +184,7 @@ z-index:999;
 
     .page-link {
         color: $header-text-color;
-    background: $clemson-purple;
+        background: $clemson-purple;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
@@ -173,12 +193,10 @@ z-index:999;
         }
     }
 
-
-
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
-        right: 30px;
+        bottom: 5px;
+        right: 10px;
         background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
@@ -220,19 +238,5 @@ z-index:999;
     }
 }
 
-.schoolname {
-    color: $header-text-color;
-    line-height: 1.2em;
-}
-
-.coursesemeter {
-    color: $header-text-color;
-    opacity: 0.9;
-    line-height: 1.2em;
-    font-size: 12px; 
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
-}
 
 
