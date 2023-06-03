@@ -415,12 +415,12 @@ a.tosu {
 }
 
 .image--cover {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
 
-    object-fit: cover;
+    // object-fit: cover;
     object-position: center right;
 }
 
