@@ -1,6 +1,6 @@
 # Site settings
 course_name: INF 216 - Projeto e Implementação de Jogos Digitais
-course_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare aliquam mattis. Donec hendrerit sollicitudin urna. Aliquam venenatis rutrum velit, at lobortis dui cursus a. Nam varius metus in turpis maximus, ut rhoncus tellus dictum. In aliquam tortor nec mi dapibus, sit amet vehicula dolor auctor."
+course_description: "Este curso é uma introdução aprofundada às tecnologias e técnicas usadas na indústria de jogos hoje. Os alunos aprenderão a programar e criar vários jogos diferentes em C++, começando com jogos 2D e passando para 3D.  Este curso se concentra em informações práticas que são essenciais para aprender como ser um programador de videogame de sucesso. Serão discutidas técnicas para implementação de gráficos, física, inteligência artificial, efeitos de som, trilhas sonoras e interface com o usuário. Os alunos também serão expostos a técnicas e conceitos de design de jogos, como mecânicas, dinâmicas, prototipação e teste."
 course_semester: "2023/2"
 
 baseurl: "/ufv-inf216-jogos" # the subpath of your site, e.g. /blog/

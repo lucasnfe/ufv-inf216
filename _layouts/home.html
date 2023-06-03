@@ -4,18 +4,16 @@ layout: default
 
 <div class="home">
 
-    <h1>{{ site.course_name }} <span style="font-size: 20px;color: #0006;">/ {{ site.course_semester }} </span></h1>
+    <h1>{{ site.course_name }} <span style="font-size: 20px;color: #0006;">{{ site.course_semester }} </span></h1>
+    <p>{{ site.course_description }}</p>
 
     {% include announcements.html %}
     <br />
-
-    <h2>Course Description</h2>
-    <p>{{ site.course_description }}</p>
     
     {{ content }}
 
     {% if site.data.previous_offering and site.data.previous_offering.offerings and site.data.previous_offering.offerings.size > 0 %}
-    <h2>Previous Offerings</h2>
+    <h2>Semestres Anteriores</h2>
     <ul class="previous-offerings">
     {% for offer in site.data.previous_offering.offerings %}
     <li><a href="{{ offer.url }}">{{offer.title}}</a></li>
@@ -23,7 +21,6 @@ layout: default
     </ul>
     {% endif %}
 
-    <br>
     <div>
         <div style="width:35%; float: left">
             <!-- <h2>Instructors</h2> -->
@@ -33,7 +30,7 @@ layout: default
             </div> -->
 
             <div class="profile-pic-gallary ">
-                <h2>Instructors</h2>
+                <h2>Professor</h2>
                 {% for ins in site.data.people.instructors %}
                 <div class="image--cover-container">
                     <img src="{{ins.profile_pic | prepend: site.baseurl }}" class="image--cover">
@@ -47,6 +44,7 @@ layout: default
             </div>
         </div>
 
+        <!-- {% if site.data.people.teaching_assistants %} -->
         <div style="width:65%; float: left">
             <div class="profile-pic-gallary ">
                 <h2>Teaching Assistants</h2>
@@ -62,5 +60,6 @@ layout: default
                 {% endfor %}
             </div>
         </div>
+        <!-- {% endif %} -->
     </div>
 </div>
