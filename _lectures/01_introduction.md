@@ -1,17 +1,17 @@
 ---
 type: lecture
 date: 2018-09-16T8:00:00+4:30
-title: Sample Lecture
-tldr: "Short text to discribe what this lecture is about."
+title: Exemplo de Aula
+tldr: "Texto curto descrevendo o conteúdo dessa aula."
 thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip
-      name: notes
+      name: notas
     - url: /static_files/presentations/code.zip
-      name: codes
+      name: código
     - url: https://google.com
       name: slides
 ---
-**Suggested Readings:**
-- [Readings 1](http://example.com)
-- [Readings 2](http://example.com)
+**Leituras Sugeridas:**
+- [Leitura 1](http://example.com)
+- [Leitura 2](http://example.com)

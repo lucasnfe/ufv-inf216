@@ -3,4 +3,4 @@ layout: lectures
 title: Aulas
 permalink: /aulas/
 ---
-You can download the lectures here. We will try to upload lectures prior to their corresponding classes.
+Você pode fazer o download dos materiais das aulas aqui. Tentaremos publicar esses materiais antes das suas respectivas aulas. 
