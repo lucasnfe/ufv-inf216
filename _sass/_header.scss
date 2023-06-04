@@ -175,7 +175,7 @@ color: $title-color;
 }
 
 .site-nav {
-    float: right;
+    float: left;
     line-height: 40px;
 
     .menu-icon {
@@ -205,7 +205,7 @@ color: $title-color;
         .menu-icon {
             display: block;
             float: right;
-            width: 36px;
+            width: 26px;
             height: 26px;
             line-height: 0;
             padding-top: 10px;
@@ -228,7 +228,6 @@ color: $title-color;
 
         &:hover .trigger {
             display: block;
-            padding-bottom: 5px;
         }
 
         .page-link {
