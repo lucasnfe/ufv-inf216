@@ -4,11 +4,11 @@ title: Materiais
 permalink: /materiais/
 ---
 
-{% include image.html url="/_images/cover2.jpg" width=175 align="right" %}
+{% include image.html url="/_images/book.jpg" width=175 align="right" %}
 
 ## Bibliografia
 
- * Game Programming in C++, Sanjay Madhav
+ * Game Programming Algorithms and Techniques, Sanjay Madhav
 
 <!-- ## Materiais Adicionais
 

@@ -6,8 +6,7 @@ permalink: /programa/
 
 ## Objetivo
 
-O objetivo deste curso é introduzir os alunos às tecnologias e técnicas essenciais para a programação de jogos 2D e 3D.
-O curso segue uma metodologia de aprendizagem baseada em problemas, onde mecânicas e gráficos de jogos clássicos são apresentados como situações problemas, que são resolvidas por meio das técnicas abordadas, includindo gráficos 2D e 3D; física de colisão e movimento; inteligência artificial; áudio e interface com o usuário. Durante a resolução dos problemas, os alunos também são expostos a conceitos e práticas de game design, como documento de design, prototipação e teste.
+O objetivo deste curso é introduzir os alunos às tecnologias e técnicas essenciais para a programação de jogos 2D e 3D. O curso segue uma metodologia de aprendizagem baseada em problemas, onde mecânicas e gráficos de jogos clássicos são apresentados como situações problemas, que são resolvidas por meio das técnicas abordadas, includindo síntese de imagens; física de colisão e movimento; inteligência artificial; áudio e interface com o usuário. Durante a resolução dos problemas, os alunos também são expostos a conceitos e práticas de game design, como documento de design, prototipação e teste.
 
 ## Carga Horária
 
@@ -20,35 +19,39 @@ O curso segue uma metodologia de aprendizagem baseada em problemas, onde mecâni
 
 1. **Introdução**
 
-    História dos jogos digitais; visão geral de design e desenvolvimento; estrutura de equipes de desenvolvimento, o mercado e a indústria de jogos; tecnologias (C++, SDL, etc), plataformas (PC, console, mobile, web, etc) e motores de desenvolvimento (Unity, Unreal, etc).
+    História do desenvolvimento de jogos digitais; estrutura de equipes de desenvolvimento, categorias de jogos; o mercado e a indústria de jogos; tecnologias, plataformas e motores.
 
-2. **Arquitetura de Jogos**
+2. **Algebra Linear**
 
-     Game loop; eventos de entrada; modelagem de objetos do jogo (hierarquia de classes vs. componentes); organização e transição de cenas; gerenciamento de memória; salvando e carregando estados do jogo.
+    Vetores, matrízes e suas operações; interpolação linear; sistemas de coordernadas; transformação de vetores com matrízes (translação, rotaçao, escala, etc), quaternions. 
 
-3. **Gráficos 2D**
+3. **Arquitetura de Jogos**
 
-    Carregamento, desenho e animação de sprites; matrízes de transformação 2D; camadas; algoritmo do pintor, rolagem de câmera.  
+    Game loop; representação de tempo em jogos; gráficos raster; eventos de entrada; modelagem de objetos do jogo; organização e transição de cenas; gerenciamento de memória; persistência de estados do jogo.
 
-4. **Vetores e Física**
+4. **Gráficos 2D**
 
-    Operações com vetores e escalares; movimentação de objetos; detecção de colisão, estruturas de dados para simulação física.
+    Desenho e animação com sprites; spritesheets; camadas; tile maps; rolagem de câmera; visibilidade em 2D.  
 
-5. **Inteligência Artificial**
+5. **Física**
 
-    Pathfinding (grid e navmesh); comportamentos de navegação (steering behaviors); máquinas de estados; árvores de comportamento; funções de utilidade; scripts; geração procedural de conteúdo.
+    Mecânica linear e angular; geometrias de colisão, detecção de colisão; resolução de colisão; otimizando detecção de colisão.
 
-6. **Gráficos 3D**
+6. **Inteligência Artificial**
 
-    OpenGL; shaders; matrízes de transformação 3D; modelos 3D, iluminação, mapeamento de texturas, z-buffering; câmeras (primeira e terceira pessoa, orbital e spline).
+    Pathfinding; comportamentos de navegação; máquinas de estados; árvores de comportamento; planejamento e estratégia; funções de utilidade; scripts.
 
-7. **Áudio**
+7. **Gráficos 3D**
 
-    Representação digital de áudio, processamento e síntese; sequenciamento; música adaptativa; middlewares; áudio 3D.
+    OpenGL; shaders; polígonos; modelos; sistemas de coordenadas; iluminação e sombreamento; mapeamento de texturas; câmeras; visibilidade em 3D.
 
-8. **Interfaces**
+8. **Áudio**
 
-    Renderização de fontes, botões e janelas; menus; caixas de diálogo.
+    Representação digital de áudio, processamento e síntese; sequenciamento; efeitos; filtros; oclusão e obstrução sonora; música adaptativa; middlewares; áudio 3D.
+
+9. **Interfaces**
+
+    Heads-up display (HUD), renderização de fontes, botões e janelas; menus; caixas de diálogo; multiplas resoluções; localização.
 
 ## Avaliação
 
