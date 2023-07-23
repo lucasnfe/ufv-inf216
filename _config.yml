@@ -3,6 +3,9 @@ course_name: INF 216 - Projeto e Implementação de Jogos Digitais
 course_description: "Este curso é uma introdução às tecnologias e técnicas essenciais para a programação de jogos 2D e 3D. O curso segue uma metodologia de aprendizagem baseada em problemas, onde mecânicas e gráficos de jogos clássicos são apresentados como situações problemas, que são resolvidas por meio das técnicas abordadas, includindo síntese de imagens; física de colisão e movimento; inteligência artificial; áudio e interface com o usuário. Durante a resolução dos problemas, os alunos também são expostos a conceitos e práticas de game design, como documento de design, prototipação e teste."
 course_semester: "2023/2"
 
+semester_start: 2023-08-14T08:00
+semester_end: 2023-12-18T08:00
+
 baseurl: "/ufv-inf216" # the subpath of your site, e.g. /blog/
 url: "https://lucasnfe.github.io/" # the base hostname & protocol for your site
 
@@ -30,7 +33,7 @@ excerpt_separator: "<!--more-->"
 include: ['_images', '_css']
 exclude: ['develop']
 
-dateformat: "%m/%d/%Y"
+dateformat: "%d/%m/%Y"
 
 future: true
 collections:
@@ -38,11 +41,12 @@ collections:
         output: true
     lectures:
         output: true
+    labs:
+        output: true
     assignments:
         output: true
     announcements:
         output: false
-
 
 defaults:
   - scope:

@@ -4,6 +4,8 @@ layout: page
 
 {{ content }}
 
+<h1>Teóricas</h1>
+
 <ul id="archive">
 {% for lecture in site.lectures %}
 <li class="archiveposturl" style="background: transparent">
@@ -16,9 +18,9 @@ layout: page
     </div>
     {% endif %}
     <div class="content">
-        <span style="font-weight: bold;">{{ lecture.title }}</span><br>
+        <span style="font-weight: bold;">{{forloop.index}}. {{ lecture.title }}</span><br>
 
-        <strong>tl;dr:</strong> {{ lecture.tldr }}
+        {{ lecture.tldr }}
         <br/>
         <strong>
         {% include lecture_links.html lecture=lecture %}
@@ -35,3 +37,37 @@ layout: page
 </li>
 {% endfor %}
 </ul>
+
+<h1>Práticas</h1>
+
+<ul id="archive">
+  {% for lecture in site.labs %}
+  <li class="archiveposturl" style="background: transparent">
+  <div class="lecture-container">
+      {% if lecture.thumbnail %}
+      <div class="thumbnail">
+        <div class="center-cropped" style="margin-top:5px;margin-bottom:5px;background-image: url('{{ lecture.thumbnail | prepend: site.baseurl }}');">
+          <img src="{{ lecture.thumbnail | prepend: site.baseurl }}"/>
+        </div>
+      </div>
+      {% endif %}
+      <div class="content">
+          <span style="font-weight: bold;">{{forloop.index}}. {{ lecture.title }}</span><br>
+  
+          {{ lecture.tldr }}
+          <br/>
+          <strong>
+          {% include lecture_links.html lecture=lecture %}
+          </strong>
+  
+          {% if lecture.content != '' %}
+          <br/>
+          <div class="markdown-content" style="margin-top: 3px;">
+          {{ lecture.content }}
+          </div>
+          {% endif %}
+      </div>
+  </div>
+  </li>
+  {% endfor %}
+  </ul>

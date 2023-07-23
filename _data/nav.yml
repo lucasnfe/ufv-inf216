@@ -3,10 +3,6 @@ items:
   name: Home
   icon_class: fa fa-home fa-lg
 
-- url: /programa/
-  name: Programa
-  icon_class: fas fa-book-reader
-
 - url: /calendario/
   name: Calendário
   icon_class: fas fa-calendar-alt
@@ -15,13 +11,13 @@ items:
   name: Aulas
   icon_class: fas fa-book-reader
 
-- url: /praticas/
-  name: Práticas
+- url: /projetos/
+  name: Projetos
   icon_class: fas fa-user-graduate
 
-- url: /projeto/
-  name: Projeto
-  icon_class: fas fa-user-graduate
+- url: /avaliacao/
+  name: Avaliação
+  icon_class: fas fa-book-reader
 
 - url: /materiais/
   name: Materiais
