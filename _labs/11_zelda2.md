@@ -1,6 +1,7 @@
 ---
 type: lab
 date: 2023-11-03T08:00:00+2:00
+index: 11
 title: The Legend of Zelda - Parte 2
 tldr: "Implementar A* para seguir a posição do jogador."
 # thumbnail: /static_files/presentations/lec.jpg

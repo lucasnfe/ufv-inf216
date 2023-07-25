@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-09-26T10:00:00+2:00
+index: 7
 title: Inteligência Artificial I
 tldr: "Máquina de estados e árvores de comportamento."
 # thumbnail: /static_files/presentations/lec.jpg

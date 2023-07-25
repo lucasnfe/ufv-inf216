@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-11-14T10:00:00+2:00
+index: 13
 title: Áudio
 tldr: "Processamento digital de audio."
 # thumbnail: /static_files/presentations/lec.jpg

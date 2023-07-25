@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-11-21T10:00:00+2:00
+index: 14
 title: Gráficos 3D I
 tldr: "Renderizando modelos 3D com o pipeline gráfico da OpenGL."
 # thumbnail: /static_files/presentations/lec.jpg

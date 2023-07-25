@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-10-03T10:00:00+2:00
+index: 8
 title: Câmeras 2D
 tldr: "Técnicas para rolagem de câmeras em jogos 2D."
 # thumbnail: /static_files/presentations/lec.jpg

@@ -1,6 +1,7 @@
 ---
 type: lab
 date: 2023-11-10T08:00:00+2:00
+index: 12
 title: The Legend of Zelda - Parte 3
 tldr: "Implementar janela de diálogos com NPC."
 # thumbnail: /static_files/presentations/lec.jpg

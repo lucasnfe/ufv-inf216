@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-10-17T10:00:00+2:00
+index: 9
 title: Gerenciamento de Cenas e Dados de Jogo
 tldr: "Técnicas para representação, edição e gerenciamento de dados de jogo (e.g., configurações, levels, personagens, etc)."
 # thumbnail: /static_files/presentations/lec.jpg

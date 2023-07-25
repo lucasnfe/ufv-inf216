@@ -1,6 +1,7 @@
 ---
 type: lab
 date: 2023-08-18T08:00:00+2:00
+index: 1
 title: Configuração Inicial
 tldr: "Criar um repositório no GitHub para hospedar as práticas, o projeto final e a página com o portfólio da disciplina."
 # thumbnail: /static_files/presentations/lec.jpg

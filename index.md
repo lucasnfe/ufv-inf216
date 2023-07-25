@@ -4,5 +4,5 @@ layout: home
 
 ## Ensalamento
 
-- **Teóricas**: Terça-feira, 10-12h, PVA102
-- **Práticas**: Sexta-feira, 08-10h, CCE416
+- **Teóricas**: PVA102, terça-feira, 10-12h
+- **Práticas**: CCE416, sexta-feira, 08-10h

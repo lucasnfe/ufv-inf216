@@ -1,6 +1,7 @@
 ---
 type: lab
 date: 2023-09-01T08:00:00+2:00
+index: 3
 title: Pong
 tldr: "Implementar uma classe Game para executar o game loop (input, update, draw)."
 # thumbnail: /static_files/presentations/lec.jpg

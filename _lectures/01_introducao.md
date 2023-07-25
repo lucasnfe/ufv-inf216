@@ -1,5 +1,6 @@
 ---
 type: lecture
+index: 1
 date: 2023-08-15T10:00:00+2:00
 title: Introdução
 tldr: "Logística da disciplina e visão geral do desenvolvimento de jogos digitais: história, mercado e tecnologias."

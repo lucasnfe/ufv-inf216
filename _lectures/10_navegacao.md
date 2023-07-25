@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-10-24T10:00:00+2:00
+index: 10
 title: Inteligência Artificial II
 tldr: "Comportamentos de Navegação."
 # thumbnail: /static_files/presentations/lec.jpg

@@ -2,11 +2,11 @@
 
 <div style="display: flex; justify-content: space-between; width: 100%; padding-top: 5px">
     <div style="width: 30%;" data-label="Date">
-        {{ include.event.date | date: "%A" }} ({{ include.event.date | date: "%d/%m" }})
+        {{ include.event.date | localize: "%A" }} ({{ include.event.date | date: "%d/%m" }})
     </div>
 
     <div style="width: 30%;" data-label="Event">
-        <b>L{{ include.week }}</b>: {{ include.event.title }}
+        <b>L{{ include.event.index }}</b>: {{ include.event.title }}
         <div class="schedule-lecture-links">
         {% include lecture_links.html lecture=include.event %}
         </div>

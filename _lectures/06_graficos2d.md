@@ -1,6 +1,7 @@
 ---
 type: lecture
 date: 2023-09-19T10:00:00+2:00
+index: 6
 title: Gráficos 2D
 tldr: "Utilizando texturas para representar objetos 2D estáticos/animados e compor cenas com múltiplas camadas."
 # thumbnail: /static_files/presentations/lec.jpg

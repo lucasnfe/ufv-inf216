@@ -1,5 +1,6 @@
 ---
 type: lecture
+index: 3
 date: 2023-08-29T10:00:00+2:00
 title: Game Loop
 tldr: "Técnicas de controle de tempo de CPU para atualização de objetos do jogo."
