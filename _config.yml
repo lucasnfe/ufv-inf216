@@ -46,6 +46,8 @@ collections:
         output: true
     assignments:
         output: true
+    quizzes:
+        output: true
     announcements:
         output: false
 
