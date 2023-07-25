@@ -1,7 +1,10 @@
 
 <div style="display: flex; justify-content: space-between; width: 100%;">
     <div style="width: 30%;" data-label="Date">
-        {{ include.event.date | localize: "%A" }} ({{ include.event.date | date: "%d/%m" }})
+        {% assign weekday = include.event.date | date: "%A" %}
+        {% assign day = site.data.days.pt_br[weekday] %}
+
+        {{ day }} ({{ include.event.date | date: "%d/%m" }})
     </div>
 
     <div style="width: 30%;" data-label="Event">
