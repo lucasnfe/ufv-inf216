@@ -1,6 +1,6 @@
 ---
 type: assignment
-date: 2023-09-01T08:01:00+2:00
+date: 2023-09-01T08:00
 title: 'P3: Pong'
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
