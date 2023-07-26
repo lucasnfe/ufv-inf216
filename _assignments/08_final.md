@@ -11,4 +11,4 @@ due_event:
     date: 2023-12-15T07:30:00+2:00
     description: 'Entrega Projeto Final'
 ---
-Este é um exemplo de trabalho prático.
+

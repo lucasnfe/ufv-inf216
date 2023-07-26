@@ -11,4 +11,4 @@ due_event:
     date: 2023-10-06T07:30:00+2:00
     description: 'Entrega P5: Pacman'
 ---
-Este é um exemplo de trabalho prático.
+

@@ -11,4 +11,4 @@ due_event:
     date: 2023-10-27T07:30:00+2:00
     description: 'Entrega P6: Super Mario Bros'
 ---
-Este é um exemplo de trabalho prático.
+

@@ -5,7 +5,7 @@ layout: page
 {{content}}
 
 <ul id="archive">
-    {% for lecture in site.lectures %}
+    {% for lecture in site.labs %}
     <li class="archiveposturl" style="background: transparent">
     <div class="lecture-container">
         {% if lecture.thumbnail %}
@@ -16,7 +16,7 @@ layout: page
         </div>
         {% endif %}
         <div class="content">
-            <span style="font-weight: bold;">A{{lecture.index}}: {{ lecture.title }}</span><br>
+            <span style="font-weight: bold;">L{{lecture.index}}: {{ lecture.title }}</span><br>
     
             {{ lecture.tldr }}
             <br/>

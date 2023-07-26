@@ -11,4 +11,4 @@ due_event:
     date: 2023-09-22T07:30:00+2:00
     description: 'Entrega P4: Asteroids'
 ---
-Este é um exemplo de trabalho prático.
+

@@ -11,4 +11,4 @@ due_event:
     date: 2023-11-17T07:30:00+2:00
     description: 'Entrega P7: Legend of Zelda'
 ---
-Este é um exemplo de trabalho prático.
+

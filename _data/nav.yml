@@ -11,8 +11,12 @@ items:
   name: Aulas
   icon_class: fas fa-book-reader
 
-- url: /praticas/
-  name: Práticas
+- url: /labs/
+  name: Labs
+  icon_class: fas fa-book-reader
+
+- url: /projetos/
+  name: Projetos
   icon_class: fas fa-user-graduate
 
 - url: /avaliacao/

@@ -11,4 +11,4 @@ due_event:
     date: 2023-09-01T07:30:00+2:00
     description: 'Entrega P2: Vetores e matrízes'
 ---
-Este é um exemplo de trabalho prático.
+
