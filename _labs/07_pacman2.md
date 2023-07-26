@@ -2,7 +2,7 @@
 type: lab
 date: 2023-09-29T08:00:00+2:00
 index: 7
-title: Pacman II
+title: Pacman - Parte 2
 tldr: "Implementar um componente para máquina de estados."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 

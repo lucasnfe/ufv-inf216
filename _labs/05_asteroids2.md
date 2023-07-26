@@ -2,7 +2,7 @@
 type: lab
 date: 2023-09-15T08:00:00+2:00
 index: 5
-title: Asteroids II
+title: Asteroids - Parte 2
 tldr: "Implementar um componente BoxCollider para a colisão de corpos rígidos usando AABBs."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 

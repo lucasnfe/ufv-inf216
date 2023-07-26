@@ -2,7 +2,7 @@
 type: lab
 date: 2023-11-17T08:00:00+2:00
 index: 13
-title: Projeto Final I
+title: Projeto Final - Parte 1
 tldr: "Aula para resolver problemas do projeto final."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 

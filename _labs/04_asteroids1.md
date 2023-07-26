@@ -2,7 +2,7 @@
 type: lab
 date: 2023-09-08T08:00:00+2:00
 index: 4
-title: Asteroids I
+title: Asteroids - Parte 1
 tldr: "Implementar um componente RigidBody para a movimentação de objetos rígidos."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 

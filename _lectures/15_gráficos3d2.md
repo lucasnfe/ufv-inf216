@@ -2,7 +2,7 @@
 type: lecture
 date: 2023-11-28T10:00:00+2:00
 index: 15
-title: Gráficos 3D II
+title: Gráficos 3D - Shaders
 tldr: "Introdução aos shaders de vértice e fragmento."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 

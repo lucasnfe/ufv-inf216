@@ -2,8 +2,8 @@
 type: lecture
 date: 2023-10-31T10:00:00+2:00
 index: 11
-title: Inteligência Artificial III
-tldr: "Pathfinding: encontrando caminhos mínimos para navegação inteligente."
+title: IA - Pathfinding
+tldr: "Encontrando caminhos mínimos para navegação inteligente."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip

@@ -2,7 +2,7 @@
 type: lecture
 date: 2023-09-12T10:00:00+2:00
 index: 5
-title: Física II
+title: Física - Detecção de Colisão
 tldr: "Geometrias de colisão e estruturas de dados para simulação física."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 

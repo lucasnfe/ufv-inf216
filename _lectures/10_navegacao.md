@@ -2,8 +2,8 @@
 type: lecture
 date: 2023-10-24T10:00:00+2:00
 index: 10
-title: Inteligência Artificial II
-tldr: "Comportamentos de Navegação."
+title: IA - Comportamentos de Navegação
+tldr: "Movimentando NPCs de maneira orgânica."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip

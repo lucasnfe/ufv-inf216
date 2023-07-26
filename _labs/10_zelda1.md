@@ -2,7 +2,7 @@
 type: lab
 date: 2023-10-27T08:00:00+2:00
 index: 10
-title: The Legend of Zelda I
+title: The Legend of Zelda - Parte 1
 tldr: "Implementar o comportamento de navegação para seguir um caminho."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
