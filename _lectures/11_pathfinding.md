@@ -15,4 +15,5 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- [Game Programming Algorithms and Techniques, Capítulo 2, Págs. 19-29](https://gameprogrammingpatterns.com/game-loop.html)
+- Game Programming Algorithms and Techniques, Cap. 9, Págs. 180-192
+- Artificial Intelligence for Games, Cap. 4, Pags. 197-251

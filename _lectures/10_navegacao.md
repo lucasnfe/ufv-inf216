@@ -15,4 +15,5 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- [Game Programming Algorithms and Techniques, Capítulo 2, Págs. 19-29](https://gameprogrammingpatterns.com/game-loop.html)
+- Artificial Intelligence for Games, Cap. 3, Pags. 39-95
+- [The Nature of Code, Cap. 6](https://natureofcode.com/book/chapter-6-autonomous-agents/)

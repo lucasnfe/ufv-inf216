@@ -15,5 +15,5 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- [Game Programming Algorithms and Techniques, Cap. 1, Págs. 5-12](https://gameprogrammingpatterns.com/game-loop.html)
+- Game Programming Algorithms and Techniques, Cap. 1, Pags. 5-15
 - [Game Programming Patterns, Cap. 9](https://gameprogrammingpatterns.com/game-loop.html)

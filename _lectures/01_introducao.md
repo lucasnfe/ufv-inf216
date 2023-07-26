@@ -15,5 +15,4 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- [Leitura 1](http://example.com)
-- [Leitura 2](http://example.com)
+- Game Programming Algorithms and Techniques, Cap. 1, Pags. 2-5

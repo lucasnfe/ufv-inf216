@@ -15,5 +15,5 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- [Game Programming Algorithms and Techniques, Cap. 3](https://gameprogrammingpatterns.com/)
+- Game Programming Algorithms and Techniques, Cap. 3
 - [The Nature of Code, Cap. 1](https://natureofcode.com/book/chapter-1-vectors/)
