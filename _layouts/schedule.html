@@ -11,12 +11,12 @@ layout: default
 <div class="home" style="font-size: 0.8em;">
     <ul class="responsive-table" style="margin-left: 0;">
         <li class="table-header">
-            <div style="display: flex; align-items: center; width: 100%;">
-                <div style="width: 10%; text-align: center; ">Semana</div>
-                <div style="display: flex; width: 90%;">
-                    <div style="width: 10%; text-align: center; margin-left: 10px;">Data</div>
-                    <div style="width: 45%; margin-left: 30px;">Evento</div>
-                    <div style="width: 45%; margin-left: 30px;">Avaliações</div>
+            <div style="display: flex; align-items: center; justify-content: space-evenly; text-align: center; width: 100%;">
+                <div style="width: 15%;">Semana</div>
+                <div style="display: flex;  width: 85%;">
+                    <div style="width: 20%; text-align: center;">Data</div>
+                    <div style="width: 40%; text-align: left; margin: 0px 20px 0px 20px">Evento</div>
+                    <div style="width: 40%; text-align: left; margin: 0px 20px 0px 20px">Avaliações</div>
                 </div>
             </div>
         </li>        
@@ -46,9 +46,9 @@ layout: default
             {% assign week_start = start_time | date: "%s" %}
             {% assign week_end = end_time | date: "%s" %}
 
-            <div style="display: flex; align-items: center; width: 100%;">
-                <div style="width: 10%; text-align: center;"><b>{{week}}</b></div>
-                <div style="width: 90%;">
+            <div style="display: flex; align-items: center; text-align: center; width: 100%;">
+                <div style="width: 15%;"><b>{{week}}</b></div>
+                <div style="width: 85%;">
                     <!-- Create one row for event in this week -->
                     {% for event in all_events_sorted %}
 
@@ -64,8 +64,9 @@ layout: default
                                     {% assign due = assignment_due %}
                                 {% endif %}
                             {% endfor %}  
-
-                            {% include schedule_row_{{ event.type }}.html event=event week=week due=due %}
+                            <div style="display: flex; justify-content: space-evenly; text-align: left;">
+                                {% include schedule_row_{{ event.type }}.html event=event week=week due=due %}
+                            </div>
                         {% endif %}
                     {% endfor %}                    
                 </div>
