@@ -9,7 +9,7 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-08-25T07:30:00+2:00
-    description: '<b>Entrega P1</b>: Configuração Inicial'
+    description: 'Entrega P1: Configuração Inicial'
 ---
 
 ## Objetivo

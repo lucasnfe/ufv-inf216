@@ -9,6 +9,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-09-22T07:30:00+2:00
-    description: '<b>Entrega P4</b>: Asteroids'
+    description: 'Entrega P4: Asteroids'
 ---
 Este é um exemplo de trabalho prático.

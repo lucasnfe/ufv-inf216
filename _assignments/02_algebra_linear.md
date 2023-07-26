@@ -9,6 +9,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-09-01T07:30:00+2:00
-    description: '<b>Entrega P2</b>: Vetores e matrízes'
+    description: 'Entrega P2: Vetores e matrízes'
 ---
 Este é um exemplo de trabalho prático.

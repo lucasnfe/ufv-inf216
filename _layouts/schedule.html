@@ -11,12 +11,12 @@ layout: default
 <div class="home" style="font-size: 0.8em;">
     <ul class="responsive-table" style="margin-left: 0;">
         <li class="table-header">
-            <div style="display: flex; align-items: center; text-align: left; width: 100%;">
-                <div style="width: 10%; text-align: center;">Semana</div>
-                <div style="display: flex; width: 90%; justify-content: space-between; margin-left: 100px;">
-                    <div style="width: 30%;">Data</div>
-                    <div style="width: 30%;">Evento</div>
-                    <div style="width: 30%;">Entrega</div>
+            <div style="display: flex; align-items: center; width: 100%;">
+                <div style="width: 10%; text-align: center; ">Semana</div>
+                <div style="display: flex; width: 90%;">
+                    <div style="width: 10%; text-align: center; margin-left: 10px;">Data</div>
+                    <div style="width: 45%; margin-left: 30px;">Evento</div>
+                    <div style="width: 45%; margin-left: 30px;">Avaliações</div>
                 </div>
             </div>
         </li>        
@@ -46,9 +46,9 @@ layout: default
             {% assign week_start = start_time | date: "%s" %}
             {% assign week_end = end_time | date: "%s" %}
 
-            <div style="display: flex; align-items: center; width: 100%; text-align: left;">
-                <div style="width: 10%; text-align: center; "><b>{{week}}</b></div>
-                <div style="width: 90%; justify-content: space-between; margin-left: 100px;">
+            <div style="display: flex; align-items: center; width: 100%;">
+                <div style="width: 10%; text-align: center;"><b>{{week}}</b></div>
+                <div style="width: 90%;">
                     <!-- Create one row for event in this week -->
                     {% for event in all_events_sorted %}
 

@@ -9,6 +9,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-10-06T07:30:00+2:00
-    description: '<b>Entrega P5</b>: Pacman'
+    description: 'Entrega P5: Pacman'
 ---
 Este é um exemplo de trabalho prático.

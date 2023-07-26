@@ -9,6 +9,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-12-15T07:30:00+2:00
-    description: '<b>Entrega Projeto Final</b>'
+    description: 'Entrega Projeto Final'
 ---
 Este é um exemplo de trabalho prático.

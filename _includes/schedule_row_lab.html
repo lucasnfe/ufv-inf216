@@ -1,20 +1,16 @@
-
-<div style="display: flex; justify-content: space-between; width: 100%; padding-top: 5px">
-    <div style="width: 30%;" data-label="Date">
-        {% assign weekday = include.event.date | date: "%A" %}
-        {% assign day = site.data.days.pt_br[weekday] %}
-
-        {{ day }} ({{ include.event.date | date: "%d/%m" }})
+<div style="display: flex; width: 100%;">
+    <div style="width: 10%; text-align: center; margin-left: 10px;" data-label="Date">
+        {{ include.event.date | date: "%d/%m" }}
     </div>
 
-    <div style="width: 30%;" data-label="Event">
+    <div style="width: 45%; margin-left: 30px;" data-label="Event">
         <b>L{{ include.event.index }}</b>: {{ include.event.title }}
-        <div class="schedule-lecture-links">
+        <!-- <div class="schedule-lecture-links">
         {% include lecture_links.html lecture=include.event %}
-        </div>
+        </div> -->
     </div>
 
-    <div style="width: 30%;" class="markdown-content" data-label="Course Material">
+    <div style="width: 45%; margin-left: 30px;" class="markdown-content" data-label="Course Material">
         <!-- {% if include.event.suggested_readings %}
         <p style="margin-bottom: 2px">Suggested Readings:</p>
         <ul>
@@ -25,9 +21,8 @@
             {% endfor %}
         </ul>
         {% endif %} -->
-
         {% if include.due %} 
-            {{include.due.description}}  
+            <b>{{include.due.description}}</b> 
         {% endif %}
     </div>
     

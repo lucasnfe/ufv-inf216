@@ -2,7 +2,7 @@
 type: lab
 date: 2023-09-22T08:00:00+2:00
 index: 6
-title: Pacman - Parte 1
+title: Pacman I
 tldr: "Implementar um componente SpriteRenderer para animação 2D com spritesheets."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 

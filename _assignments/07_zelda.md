@@ -9,6 +9,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-11-17T07:30:00+2:00
-    description: '<b>Entrega P7</b>: Legend of Zelda'
+    description: 'Entrega P7: Legend of Zelda'
 ---
 Este é um exemplo de trabalho prático.
