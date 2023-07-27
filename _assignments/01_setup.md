@@ -58,7 +58,7 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 1. Se você não tiver uma conta no GitHub, acesse o site e crie uma ([https://github.com](https://github.com/));
 2. Aceite o projeto P1 no GitHub Classroom ([{{page.github}}]({{page.github}})); 
 
-### **4. Escrever um programa C++/SDL que desenha um quadrado em uma janela**
+### **4. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
 
 Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 
