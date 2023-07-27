@@ -43,8 +43,8 @@ A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de 
 1. Acesse o [site da SDL](https://www.libsdl.org/index.php) e clique no botão *SDL Releases* 
 2. Clique no link da última versão da SDL para o seu sistema operacional
 3. Salve os arquivos de cabeçalho (*.h) e os binários da biblioteca em um diretório que você tem permissão de leitura
-4. Utilizando a CLion, crie um novo projeto C++11 chamado *inf216-projeto01* 
-5. Adicione as seguintes linhas ao arquivo CMakeLists.txt para incluir os cabeçalhos e linkar o binário da biblioteca:
+4. Utilizando a CLion, crie um novo projeto C++11 chamado `inf216-projeto01`
+5. Adicione as seguintes linhas ao arquivo `CMakeLists.txt` para incluir os cabeçalhos e linkar o binário da biblioteca:
 
     ```
     set(SDL2_LIB "<LIB_PATH>")
@@ -59,14 +59,14 @@ A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de 
 
 Modifique a função `main()` do arquivo `main.cpp` para:
 
-1. Inicializar um contexto SDL com a função `SDL_Init`
+1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função `SDL_Init` 
 2. Criar uma janela com uma determinada larguar e altura usando a função `SDL_CreateWindow`
 3. Criar um ponteiro para superfície da janela com a função `SDL_GetWindowSurface`
 4. Alterar a cor de funda da janela usando a função `SDL_FillRect`
 5. Atualizar o estado da janela com a função `SDL_UpdateWindowSurface`
 6. Criar um loop para processar eventos de entrada usando a função `SDL_PollEvent`, e saia do loop quando o evento do tipo `SDL_QUIT` for recebido.
 7. Quando o loop terminar, utilize as funções `SDL_DestroyWindow` para destruir a janela, seguida de `SDL_Quit` para 
-finalizar o contexto SDL aberto.
+finalizar o subsistema de vídeo aberto.
 
 ### **4. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
 ### **5. Fazer o commit do projeto no seu repositório**
