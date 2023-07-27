@@ -13,11 +13,13 @@ due_event:
     description: 'Entrega P1: Configuração Inicial'
 ---
 
+## Introdução
+
+Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, em contextos profissionais, eles são tipicamente desenvolvidos de maneira estruturada em um ambiente de desenvolvimento integrado (IDE) com um sistema de controle de versão. Além disso, ao final desses projetos, profissionais da área de jogos costumam organizá-los em um portfólio, que são utilizados para demonstrar suas habilidades técnicas e criativas a potenciais empregadores, clientes ou parceiros.
+
 ## Objetivo
 
-Nesse projeto você irá configurar o seu ambiente de desenvolvimento de jogos, incluindo uma IDE para programação e teste, um repositótio git para controle de versão e uma página web para publicação do seu portfólio pessoal.
-
-## Introdução
+Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositótio GitHub para o controle de versão do código desenvolvido e hospedagem de uma página web para publicação do seu portfólio pessoal. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela.
 
 <!-- No contexto da indústria de jogos digitais, um portfólio é uma coleção organizada de projetos relacionados à criação de jogos. É uma ferramenta essencial para os profissionais dessa área, incluindo programadores, artistas, designers, compositores, entre outros, que desejam mostrar suas habilidades, experiências e realizações aos potenciais empregadores, clientes ou parceiros.
 
@@ -25,13 +27,9 @@ O portfólio permite que os criadores de jogos demonstrem suas capacidades, esti
 
 Nesse projeto, você irá usar o GitHub para hospedar um repositório git que será usado durante a disciplina para o controle de versão dos seus projetos, bem como a página web do seu portfolio. -->
 
-Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, é extremamente importante que eles sejam desenvolvidos de maneira estruturada. Nesse projeto, você irá configurar o seu ambiente de projeto e desenvolvimento de jogos com um ambiente de desenvolvimento integrado (IDE) e um repositório para controle de versão. Nesse curso, utilizaremos a IDE CLion como ambiente de programação e o GitHub para controle de versão. Nesse primeiro projeto, você irá configurar esses ambientes para que os seus próximos projetos sejam conduzidos de maneira organizada, rápida e segura. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela.
-
 ## Instruções
 
 ### **1. Fazer o download e instalar a CLion**
-
-<!-- A CLion é uma IDE profissional multiplataforma desenvolvida e mantida pela empresa tcheca JetBrains. Apesar de ser uma IDE prorietária e paga, a JetBrains oferece licensas gratuitas para alunos e professores. Para fazer o download e instalar a CLion, você pode seguir as seguintes instruções: -->
 
 1. Acesse o site da CLion e clique no botão de download ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion));
 2. Execute o instalador baixado no seu sistema operacional;
