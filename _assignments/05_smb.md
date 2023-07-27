@@ -1,15 +1,14 @@
 ---
 type: assignment
-date: 2023-09-01T08:00
-title: 'P3: Pong'
-hide_from_announcments: true
+date: 2023-10-06T08:00
+title: 'P5: Super Mario Bros'
 # pdf: /static_files/assignments/asg.pdf
+hide_from_announcments: true
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 
     type: due
-    date: 2023-09-08T07:30:00+2:00
-    description: 'Entrega P3: Pong'
+    date: 2023-10-27T07:30:00+2:00
+    description: 'Entrega P5: Super Mario Bros'
 ---
-
 

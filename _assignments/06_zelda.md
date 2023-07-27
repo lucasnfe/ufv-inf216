@@ -1,14 +1,14 @@
 ---
 type: assignment
-date: 2023-08-25T08:00
-title: 'P2: Vetores e matrízes'
+date: 2023-10-20T08:00
+title: 'P6: Legend of Zelda'
 # pdf: /static_files/assignments/asg.pdf
 hide_from_announcments: true
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 
     type: due
-    date: 2023-09-01T07:30:00+2:00
-    description: 'Entrega P2: Vetores e matrízes'
+    date: 2023-11-17T07:30:00+2:00
+    description: 'Entrega P6: Legend of Zelda'
 ---
 
