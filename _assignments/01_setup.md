@@ -6,6 +6,7 @@ hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
+github: https://classroom.github.com/a/qhHAuinC
 due_event: 
     type: due
     date: 2023-08-25T07:30:00+2:00
@@ -40,7 +41,7 @@ Jogos digitais são projetos de software relativamente grandes e complexos. Send
 
 <!-- A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de áudio, controle, gráficos, entre outros. Ela é utilizada profissionalmente para o desenvolvivento de jogos, tocadores de vídeo, emuladores, etc. A SDL não é uma game engine, pois não fornece funcionalidades específicas de jogos, como simulações físicas ou inteligência artificial. Nessa disciplina, iremos utilzar a SDL para implementar tais funcionalidades e criar a nossa prória engine. Para fazer o download e configurar a SDL na CLion, você pode seguir as seguintes instruções: -->
 
-1. Acesse o site da SDL, clique no botão *SDL Releases* e escolhar a última versão da SDL para o seu sistema operacional ([https://www.libsdl.org](https://www.libsdl.org/index.php));
+1. Acesse o site da SDL, clique no botão de releases e escolha a versão para o seu sistema operacional ([https://www.libsdl.org](https://www.libsdl.org/index.php));
 3. Salve os arquivos de cabeçalho (*.h) e os binários da biblioteca em um diretório que você tem permissão de leitura;
 4. Utilizando a CLion, crie um novo projeto C++11 chamado `inf216-projeto01`;
 5. Adicione as seguintes linhas ao arquivo `CMakeLists.txt` para incluir os cabeçalhos e linkar o binário da biblioteca:
@@ -57,7 +58,7 @@ Jogos digitais são projetos de software relativamente grandes e complexos. Send
 ### **3. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
 
 1. Se você não tiver uma conta no GitHub, acesse o site e crie uma ([https://github.com](https://github.com/));
-2. 
+2. Aceite o projeto P1 no GitHub Classroom ([{{page.github}}]({{page.github}})); 
 
 ### **4. Escrever um programa C++/SDL que desenha um quadrado em uma janela**
 
@@ -72,7 +73,7 @@ Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 7. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`.
 8. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
 finalizar o subsistema de vídeo aberto.
-9. Fazer o commit e o pull do seu código no repositório.
+9. Fazer commit e pull do seu código no repositório.
 
 ### **5. Criar uma página web para o seu portfólio usando GitHub Pages**
 
