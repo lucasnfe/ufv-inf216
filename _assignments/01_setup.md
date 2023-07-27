@@ -34,7 +34,7 @@ A CLion é uma IDE profissional multiplataforma desenvolvida e mantida pela empr
 
 1. Acesse o [site da CLion](https://www.jetbrains.com/clion/) e clique no botão de download
 2. Execute o instalador baixado no seu sistema operacional
-3. Durante a instalação, você pode criar uma conta utilizando o seu email da UFV, o que irá ativar sua licensa gratuita
+3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
 
 ### **2. Fazer o download e configurar a biblioteca SDL na CLion**
 
@@ -57,15 +57,15 @@ A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de 
 
 ### **3. Escrever um programa C++/SDL que desenha um triângulo em uma janela**
 
-Modifique a função `main()` do arquivo `main.cpp` para:
+Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 
-1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função `SDL_Init` 
-2. Criar uma janela com uma determinada larguar e altura usando a função `SDL_CreateWindow`
-3. Criar um ponteiro para superfície da janela com a função `SDL_GetWindowSurface`
-4. Alterar a cor de funda da janela usando a função `SDL_FillRect`
-5. Atualizar o estado da janela com a função `SDL_UpdateWindowSurface`
-6. Criar um loop para processar eventos de entrada usando a função `SDL_PollEvent`, e saia do loop quando o evento do tipo `SDL_QUIT` for recebido.
-7. Quando o loop terminar, utilize as funções `SDL_DestroyWindow` para destruir a janela, seguida de `SDL_Quit` para 
+1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
+2. Crie uma janela com uma determinada largura e altura usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
+3. Crie um ponteiro para a superfície da janela com a função [`SDL_GetWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_GetWindowSurface)
+4. Altere a cor de fundo da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
+5. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
+6. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), até que ela retorne um evento do tipo `SDL_QUIT`.
+7. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
 finalizar o subsistema de vídeo aberto.
 
 ### **4. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
