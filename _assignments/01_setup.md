@@ -24,26 +24,25 @@ O portfólio permite que os criadores de jogos demonstrem suas capacidades, esti
 
 Nesse projeto, você irá usar o GitHub para hospedar um repositório git que será usado durante a disciplina para o controle de versão dos seus projetos, bem como a página web do seu portfolio. -->
 
-Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, é extremamente importante que eles sejam conduzidos de maneira organizada, tanto no nível de tarefas quanto no nível de código. Nesse projeto, você irá configurar o seu ambiente de projeto e desenvolvimento de jogos com (1) um ambiente de desenvolvimento integrado (IDE) para programação, (2) um repositório para controle de versão e (3) uma planner para gerenciamento de tarefas. Nesse curso, utilizaremos a IDE CLion como ambiente de programação, o GitHub para controle de versão e Planilhas Google para gerenciamento de tarefas. Nesse primeiro projeto, você irá configurar esses três ambientes para que os seus próximos projetos sejam conduzidos de maneira organizada, rápida e segura.
+Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, é extremamente importante que eles sejam desenvolvidos de maneira estruturada. Nesse projeto, você irá configurar o seu ambiente de projeto e desenvolvimento de jogos com um ambiente de desenvolvimento integrado (IDE) e um repositório para controle de versão. Nesse curso, utilizaremos a IDE CLion como ambiente de programação e o GitHub para controle de versão. Nesse primeiro projeto, você irá configurar esses ambientes para que os seus próximos projetos sejam conduzidos de maneira organizada, rápida e segura. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela.
 
 ## Instruções
 
 ### **1. Fazer o download e instalar a CLion**
 
-A CLion é uma IDE profissional multiplataforma desenvolvida e mantida pela empresa tcheca JetBrains. Apesar de ser uma IDE prorietária e paga, a JetBrains oferece licensas gratuitas para alunos e professores. Para fazer o download e instalar a CLion, você pode seguir as seguintes instruções:
+<!-- A CLion é uma IDE profissional multiplataforma desenvolvida e mantida pela empresa tcheca JetBrains. Apesar de ser uma IDE prorietária e paga, a JetBrains oferece licensas gratuitas para alunos e professores. Para fazer o download e instalar a CLion, você pode seguir as seguintes instruções: -->
 
-1. Acesse o [site da CLion](https://www.jetbrains.com/clion/) e clique no botão de download
-2. Execute o instalador baixado no seu sistema operacional
-3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
+1. Acesse o site da CLion e clique no botão de download ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion));
+2. Execute o instalador baixado no seu sistema operacional;
+3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
 
 ### **2. Fazer o download e configurar a biblioteca SDL na CLion**
 
-A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de áudio, controle, gráficos, etc. Ela é utilizada profissionalmente para o desenvolvivento de jogos, tocadores de vídeo, emuladores, entre outros. A SDL não é uma game engine, pois não fornece funcionalidades específicas de jogos, como simulações físicas ou inteligência artificial. Nessa disciplina, iremos utilzar a SDL para implementar tais funcionalidades e criar a nossa prória engine. Para fazer o download e configurar a SDL na CLion, você pode seguir as seguintes instruções:
+<!-- A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de áudio, controle, gráficos, entre outros. Ela é utilizada profissionalmente para o desenvolvivento de jogos, tocadores de vídeo, emuladores, etc. A SDL não é uma game engine, pois não fornece funcionalidades específicas de jogos, como simulações físicas ou inteligência artificial. Nessa disciplina, iremos utilzar a SDL para implementar tais funcionalidades e criar a nossa prória engine. Para fazer o download e configurar a SDL na CLion, você pode seguir as seguintes instruções: -->
 
-1. Acesse o [site da SDL](https://www.libsdl.org/index.php) e clique no botão *SDL Releases* 
-2. Clique no link da última versão da SDL para o seu sistema operacional
-3. Salve os arquivos de cabeçalho (*.h) e os binários da biblioteca em um diretório que você tem permissão de leitura
-4. Utilizando a CLion, crie um novo projeto C++11 chamado `inf216-projeto01`
+1. Acesse o site da SDL, clique no botão *SDL Releases* e escolhar a última versão da SDL para o seu sistema operacional ([https://www.libsdl.org](https://www.libsdl.org/index.php));
+3. Salve os arquivos de cabeçalho (*.h) e os binários da biblioteca em um diretório que você tem permissão de leitura;
+4. Utilizando a CLion, crie um novo projeto C++11 chamado `inf216-projeto01`;
 5. Adicione as seguintes linhas ao arquivo `CMakeLists.txt` para incluir os cabeçalhos e linkar o binário da biblioteca:
 
     ```
@@ -55,23 +54,27 @@ A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de 
     Onde `<LIB_PATH>` deve ser substituido pelo caminho do binário da bilioteca e `<SDL2_LIB>` deve ser substituido
     pelo caminho do diretório de cabeçalhos da biblioteca.
 
-### **3. Escrever um programa C++/SDL que desenha um quadrado em uma janela**
+### **3. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
+
+1. Se você não tiver uma conta no GitHub, acesse o site e crie uma ([https://github.com](https://github.com/));
+2. 
+
+### **4. Escrever um programa C++/SDL que desenha um quadrado em uma janela**
 
 Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 
 1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
-2. Crie uma janela com uma determinada largura e altura usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
+2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
 3. Crie um ponteiro para a superfície da janela com a função [`SDL_GetWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_GetWindowSurface)
-4. Altere a cor de fundo da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
-5. Desenhe um quadrado no centro da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect) e a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect)
+4. Altere a cor de fundo (escolha a cor) da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
+5. Desenhe um quadrado (escolha o tamanho e cor) no centro da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect) e a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect)
 6. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
 7. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`.
 8. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
 finalizar o subsistema de vídeo aberto.
+9. Fazer o commit e o pull do seu código no repositório.
 
-### **4. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
-### **5. Fazer o commit do projeto no seu repositório**
-### **6. Criar uma página web para o seu portfólio usando GitHub Pages**
+### **5. Criar uma página web para o seu portfólio usando GitHub Pages**
 
 ## Submissão
 
