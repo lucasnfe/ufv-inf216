@@ -4,9 +4,9 @@ layout: home
 
 ## Pré-requisitos
 
-Formalmente, essa disciplina tem como pré-requisito a INF213 - Estrutura de Dados da UFV. Na prática, é esperado
-que os alunos estejam confortáveis com Programação Orientada a Objetos em C++ e conheçam estruturas de dados fundamentais
-como listas, pilhas, heaps, tabelas hash, árvores, etc.
+- INF213: Estrutura de Dados
+
+É esperado que os alunos estejam confortáveis com programação orientada a objetos em C++ e que conheçam estruturas de dados fundamentais, bem como os algoritmos clássicos associados à elas.
 
 ## Ensalamento
 
