@@ -2,8 +2,8 @@
 type: assignment
 date: 2023-09-22T08:00
 title: 'P4: Pacman'
-# pdf: /static_files/assignments/asg.pdf
 hide_from_announcments: true
+# pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 

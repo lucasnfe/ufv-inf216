@@ -16,3 +16,4 @@ hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
 - Game Programming Algorithms and Techniques, Cap. 7, Págs. 127-148
+- [The Nature of Code, Cap. 2](https://natureofcode.com/book/chapter-2-forces/)

@@ -2,7 +2,7 @@
 type: lab
 date: 2023-12-15T08:00:00+2:00
 index: 16
-title: Projeto Final - Parte 4
+title: Projeto Final - Lançamento
 tldr: "Aula para resolver problemas do projeto final."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
