@@ -55,7 +55,7 @@ A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de 
     Onde `<LIB_PATH>` deve ser substituido pelo caminho do binário da bilioteca e `<SDL2_LIB>` deve ser substituido
     pelo caminho do diretório de cabeçalhos da biblioteca.
 
-### **3. Escrever um programa C++/SDL que desenha um triângulo em uma janela**
+### **3. Escrever um programa C++/SDL que desenha um quadrado em uma janela**
 
 Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 
@@ -63,9 +63,10 @@ Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 2. Crie uma janela com uma determinada largura e altura usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
 3. Crie um ponteiro para a superfície da janela com a função [`SDL_GetWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_GetWindowSurface)
 4. Altere a cor de fundo da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
-5. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
-6. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), até que ela retorne um evento do tipo `SDL_QUIT`.
-7. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
+5. Desenho um quadrado no centro da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect) e a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect)
+6. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
+7. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), até que ela retorne um evento do tipo `SDL_QUIT`.
+8. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
 finalizar o subsistema de vídeo aberto.
 
 ### **4. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
