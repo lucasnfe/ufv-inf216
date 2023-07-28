@@ -19,10 +19,6 @@ items:
   name: Projetos
   icon_class: fas fa-user-graduate
 
-- url: /avaliacao/
-  name: Avaliação
-  icon_class: fas fa-book-reader
-
 - url: /materiais/
   name: Materiais
   icon_class: fas fa-book
