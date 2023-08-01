@@ -16,11 +16,13 @@ due_event:
 
 ## Introdução
 
-Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, em contextos profissionais, eles são tipicamente desenvolvidos de maneira estruturada em um ambiente de desenvolvimento integrado (IDE) com um sistema de controle de versão. Além disso, ao final desses projetos, profissionais da área de jogos costumam organizá-los em um portfólio, que são utilizados para demonstrar suas habilidades técnicas e criativas a potenciais empregadores, clientes ou parceiros.
+Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, em contextos profissionais, eles são tipicamente desenvolvidos de maneira estruturada em um ambiente de desenvolvimento integrado (IDE) com um sistema de controle de versão. 
+
+<!-- Além disso, ao final desses projetos, profissionais da área de jogos costumam organizá-los em um portfólio, que são utilizados para demonstrar suas habilidades técnicas e criativas a potenciais empregadores, clientes ou parceiros. -->
 
 ## Objetivo
 
-Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositótio GitHub para o controle de versão do código desenvolvido e hospedagem de uma página web para publicação do seu portfólio pessoal. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela.
+Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositótio GitHub para o controle de versão e submissão do seu trabalho. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela.
 
 <!-- No contexto da indústria de jogos digitais, um portfólio é uma coleção organizada de projetos relacionados à criação de jogos. É uma ferramenta essencial para os profissionais dessa área, incluindo programadores, artistas, designers, compositores, entre outros, que desejam mostrar suas habilidades, experiências e realizações aos potenciais empregadores, clientes ou parceiros.
 
@@ -34,25 +36,74 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 1. Se você não tiver uma conta no GitHub, acesse o site e crie uma: [https://github.com](https://github.com/);
 2. Aceite o projeto `p1-configuracao-inicial` no GitHub classroom: [https://classroom.github.com/a/qhHAuinC](https://classroom.github.com/a/qhHAuinC);
-3. Clone o seu novo repositório com o comando [`git clone <url>`](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository), substituindo `<url>` pela URL do repositório.
+3. Clone o seu novo repositório no seu computador:
 
-### **2. Instalar a IDE CLion e a biblioteca SDL**
+    ```
+    # Substitua <GITHUB_USERNAME> pelo seu usuário do GitHub
+    git clone https://github.com/ufv-inf216/p1-configuracao-inicial-<GITHUB_USERNAME>.git
+    ```
 
-1. Acesse o site da CLion ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion)): 
-    1. Clique no botão de download;
-    2. Execute o instalador baixado e, durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
-2. Acesse o site da SDL ([https://www.libsdl.org](https://www.libsdl.org/index.php)): 
-    1. Clique no botão de releases e escolha a versão para o seu sistema operacional;
-    2. Salve os arquivos de cabeçalho (*.h) e os binários da SDL em um diretório que você tem permissão de leitura;
+### **2. Instalar a IDE CLion**
 
-### **3. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
+1. Acesse o site da CLion ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion));
+2. Clique no botão de download e execute o instalador baixado;
+3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
 
-#### **CMakeLists.txt**
+### **3. Instalar a bilioteca SDL**
 
-1. Edite a linha 11, alterando `<SDL_PATH>` para o caminho do binário da SDL no seu computador;
-2. Edite a linha 14, alterando `<SDL_HEADERS_PATH>` para o caminho do diretório com os arquivos de cabeçalho (*.h) da SDL.
+Acesse o site da SDL ([https://www.libsdl.org](https://www.libsdl.org/index.php)), clique no botão de releases e, na próxima página:
 
-#### **main.cpp**
+#### **Linux**
+
+2. Clique para baixar o código fonte da SDL `Source code`;
+3. Extraia o conteúdo do pacote em um diretório temporário (e.g., `/tmp/SDL2/`);
+4. Instale a biblioteca no diretório `/opt/SDL2/`:
+
+    ```
+    cd /tmp/SDL2/
+    ./configure --prefix /opt/SDL2/
+    make all
+    sudo make install
+    ```
+
+#### **Windows**
+
+2. Clique para baixar o pacote `SDL2-devel-2.28.1-VC.zip`;
+3. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`;
+
+#### **Mac**
+
+2. Clique para baixar a imagem `SDL2-2.28.1.dmg`;
+3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks`;
+
+### **4. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
+
+**CMakeLists.txt**
+
+1. Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` para o caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
+
+    **Linux** 
+
+    ```
+    11. target_link_libraries(${PROJECT_NAME} /opt/SDL2/include/
+    12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/lib/")
+    ```
+    
+    **Windows (64 bits)** 
+    
+    ```
+    11. target_link_libraries(${PROJECT_NAME} C:\Arquivos de Programas\SDL2\include\
+    12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\lib\x64")
+    ```
+    
+    **Mac** 
+    
+    ```
+    11. target_link_libraries(${PROJECT_NAME} /Library/Frameworks/SDL2.framework/Headers/
+    12. target_include_directories(${PROJECT_NAME} PRIVATE "/Library/Frameworks/SDL2.framework/SDL")
+    ```
+
+**main.cpp**
 
 1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
 2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
@@ -72,5 +123,5 @@ você no GitHub classroom.
 
 ## Referências
 
-
-
+- Introdução ao git, PET Computação, UFRGS: [https://petcomputacaoufrgs.github.io/intro-ao-git](https://petcomputacaoufrgs.github.io/intro-ao-git/)
+- Instalação da SDL: [https://wiki.libsdl.org/SDL2/Installation](https://wiki.libsdl.org/SDL2/Installation)
