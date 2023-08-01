@@ -124,4 +124,4 @@ você no GitHub classroom.
 ## Referências
 
 - Introdução ao git, PET Computação, UFRGS: [https://petcomputacaoufrgs.github.io/intro-ao-git](https://petcomputacaoufrgs.github.io/intro-ao-git/)
-- Instalação da SDL: [https://wiki.libsdl.org/SDL2/Installation](https://wiki.libsdl.org/SDL2/Installation)
+- Instalação da SDL: [https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php)
