@@ -2,6 +2,7 @@
 type: assignment
 date: 2023-08-18T08:00
 title: 'P1: Configuração Inicial'
+permalink: '/p1-configuracao-inicial/'
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
@@ -29,38 +30,29 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 ## Instruções
 
-### **1. Fazer o download e instalar a CLion**
+### **1. Aceitar o projeto P1 no GitHub Classroom**
 
-1. Acesse o site da CLion e clique no botão de download ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion));
-2. Execute o instalador baixado no seu sistema operacional;
-3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
+1. Se você não tiver uma conta no GitHub, acesse o site e crie uma: [https://github.com](https://github.com/);
+2. Aceite o projeto `p1-configuracao-inicial` no GitHub classroom: [https://classroom.github.com/a/qhHAuinC](https://classroom.github.com/a/qhHAuinC);
+3. Clone o seu novo repositório com o comando [`git clone <url>`](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository), substituindo `<url>` pela URL do repositório.
 
-### **2. Fazer o download e configurar a biblioteca SDL na CLion**
+### **2. Instalar a IDE CLion e a biblioteca SDL**
 
-<!-- A SDL é uma biblioteca que facilita o acesso multiplataforma a dispositivos de áudio, controle, gráficos, entre outros. Ela é utilizada profissionalmente para o desenvolvivento de jogos, tocadores de vídeo, emuladores, etc. A SDL não é uma game engine, pois não fornece funcionalidades específicas de jogos, como simulações físicas ou inteligência artificial. Nessa disciplina, iremos utilzar a SDL para implementar tais funcionalidades e criar a nossa prória engine. Para fazer o download e configurar a SDL na CLion, você pode seguir as seguintes instruções: -->
+1. Acesse o site da CLion ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion)): 
+    1. Clique no botão de download;
+    2. Execute o instalador baixado e, durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
+2. Acesse o site da SDL ([https://www.libsdl.org](https://www.libsdl.org/index.php)): 
+    1. Clique no botão de releases e escolha a versão para o seu sistema operacional;
+    2. Salve os arquivos de cabeçalho (*.h) e os binários da SDL em um diretório que você tem permissão de leitura;
 
-1. Acesse o site da SDL, clique no botão de releases e escolha a versão para o seu sistema operacional ([https://www.libsdl.org](https://www.libsdl.org/index.php));
-3. Salve os arquivos de cabeçalho (*.h) e os binários da biblioteca em um diretório que você tem permissão de leitura;
-4. Utilizando a CLion, crie um novo projeto C++11 chamado `inf216-projeto01`;
-5. Adicione as seguintes linhas ao arquivo `CMakeLists.txt` para incluir os cabeçalhos e linkar o binário da biblioteca:
+### **3. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
 
-    ```
-    set(SDL2_LIB "<LIB_PATH>")
-    target_include_directories(inf216_projeto01 PRIVATE "<HEADERS_DIR_PATH>")
-    target_link_libraries(inf216_projeto01 ${SDL2_LIB})
-    ```
+#### **CMakeLists.txt**
 
-    Onde `<LIB_PATH>` deve ser substituido pelo caminho do binário da bilioteca e `<SDL2_LIB>` deve ser substituido
-    pelo caminho do diretório de cabeçalhos da biblioteca.
+1. Edite a linha 11, alterando `<SDL_PATH>` para o caminho do binário da SDL no seu computador;
+2. Edite a linha 14, alterando `<SDL_HEADERS_PATH>` para o caminho do diretório com os arquivos de cabeçalho (*.h) da SDL.
 
-### **3. Criar um repositório privado no GitHub para fazer o controle de versão dos seus projetos**
-
-1. Se você não tiver uma conta no GitHub, acesse o site e crie uma ([https://github.com](https://github.com/));
-2. Aceite o projeto P1 no GitHub Classroom ([{{page.github}}]({{page.github}})); 
-
-### **4. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
-
-Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
+#### **main.cpp**
 
 1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
 2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
@@ -73,11 +65,10 @@ Modifique a função `main()` do arquivo `main.cpp` da seguinte forma:
 finalizar o subsistema de vídeo aberto.
 9. Fazer commit e pull do seu código no repositório.
 
-### **5. Criar uma página web para o seu portfólio usando GitHub Pages**
-
 ## Submissão
 
-Submer a URL do seu repositório via PVANet.
+Para submeter o seu trabalho, basta fazer o commit e o push das suas alterações no repositório que foi criado para
+você no GitHub classroom.
 
 ## Referências
 

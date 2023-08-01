@@ -2,6 +2,7 @@
 type: assignment
 date: 2023-09-08T08:00
 title: 'P3: Asteroids'
+permalink: /p3-asteroids/
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
