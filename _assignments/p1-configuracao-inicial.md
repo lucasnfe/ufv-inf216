@@ -34,9 +34,10 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 ### **1. Aceitar o projeto P1 no GitHub Classroom**
 
-1. Se você não tiver uma conta no GitHub, acesse o site e crie uma: [https://github.com](https://github.com/);
-2. Aceite o projeto `p1-configuracao-inicial` no GitHub classroom: [https://classroom.github.com/a/qhHAuinC](https://classroom.github.com/a/qhHAuinC);
-3. Clone o seu novo repositório no seu computador:
+1. Se você não tiver uma conta no GitHub, crie uma seguindo o tutorial [[nesse link]](https://git-scm.com/book/pt-br/v2/GitHub-Configurando-uma-conta)
+2. Se você não tiver o git instalado no seu computador, faça a instalação seguindo o tutorial [[nesse link]](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+3. Aceite o projeto **p1-configuracao-inicial** no GitHub classroom [[nesse link]](https://classroom.github.com/a/qhHAuinC)
+4. Clone o seu novo repositório no seu computador:
 
     ```
     # Substitua <GITHUB_USERNAME> pelo seu usuário do GitHub
@@ -45,19 +46,19 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 ### **2. Instalar a IDE CLion**
 
-1. Acesse o site da CLion ([https://www.jetbrains.com/clion](https://www.jetbrains.com/clion));
-2. Clique no botão de download e execute o instalador baixado;
-3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
+1. Acesse o site da CLion [[nesse link]](https://www.jetbrains.com/clion)
+2. Clique no botão de download e execute o instalador baixado
+3. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
 
 ### **3. Instalar a bilioteca SDL**
 
-Acesse o site da SDL ([https://www.libsdl.org](https://www.libsdl.org/index.php)), clique no botão de releases e, na próxima página:
+Acesse o site da SDL [[nesse link]](https://www.libsdl.org/index.php), clique no botão de releases e, na próxima página:
 
 #### **Linux**
 
-2. Clique para baixar o código fonte da SDL `Source code`;
-3. Extraia o conteúdo do pacote em um diretório temporário (e.g., `/tmp/SDL2/`);
-4. Instale a biblioteca no diretório `/opt/SDL2/`:
+2. Clique para baixar o pacote **Source code.zip**
+3. Extraia o conteúdo do pacote no diretório temporário **/tmp/SDL2/**
+4. Instale a biblioteca no diretório **/opt/SDL2/**:
 
     ```
     cd /tmp/SDL2/
@@ -68,19 +69,19 @@ Acesse o site da SDL ([https://www.libsdl.org](https://www.libsdl.org/index.php)
 
 #### **Windows**
 
-2. Clique para baixar o pacote `SDL2-devel-2.28.1-VC.zip`;
-3. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`;
+2. Clique para baixar o pacote **SDL2-devel-2.28.1-VC.zip**
+3. Extraia o conteúdo do pacote no diretório **C:\Arquivos de Programas\SDL2\\**
 
 #### **Mac**
 
-2. Clique para baixar a imagem `SDL2-2.28.1.dmg`;
-3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks`;
+2. Clique para baixar a imagem **SDL2-2.28.1.dmg**;
+3. Clique na imagem para abrí-la e copie e o pacote **SDL2.framework** para o diretório **/Library/Frameworks**;
 
 ### **4. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
 
 **CMakeLists.txt**
 
-1. Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` para o caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
+1. Edite as linha 11 e 12, substituindo **\<SDL_PATH\>** e **\<SDL_HEADERS_PATH\>** pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
 
     **Linux** 
 
@@ -123,5 +124,5 @@ você no GitHub classroom.
 
 ## Referências
 
-- Introdução ao git, PET Computação, UFRGS: [https://petcomputacaoufrgs.github.io/intro-ao-git](https://petcomputacaoufrgs.github.io/intro-ao-git/)
+- Pro Git: [https://git-scm.com/book/pt-br/v2](https://git-scm.com/book/pt-br/v2)
 - Instalação da SDL: [https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php)
