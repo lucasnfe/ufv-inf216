@@ -53,73 +53,79 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 1. Acesse o site da SDL [[nesse link]](https://www.libsdl.org/index.php), clique no botão de releases e, na próxima página:
 
-**Linux**
+    - **Linux**
 
-2. Clique para baixar o pacote `Source code.zip`
-3. Extraia o conteúdo do pacote no diretório temporário `/tmp/SDL2/`
-4. Instale a biblioteca no diretório `/opt/SDL2/`:
+        2. Clique para baixar o pacote `Source code.zip`
+        3. Extraia o conteúdo do pacote no diretório temporário `/tmp/SDL2/`
+        4. Instale a biblioteca no diretório `/opt/SDL2/`:
+        
+            ```
+            cd /tmp/SDL2/
+            ./configure --prefix /opt/SDL2/
+            make all
+            sudo make install
+            ```
 
-    ```
-    cd /tmp/SDL2/
-    ./configure --prefix /opt/SDL2/
-    make all
-    sudo make install
-    ```
+    - **Windows**
 
-**Windows**
+        2. Clique para baixar o pacote `SDL2-devel-2.28.1-VC.zip`
+        3. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`
 
-2. Clique para baixar o pacote `SDL2-devel-2.28.1-VC.zip`
-3. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`
+    - **Mac**
 
-**Mac**
-
-2. Clique para baixar a imagem `SDL2-2.28.1.dmg`
-3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`
+        2. Clique para baixar a imagem `SDL2-2.28.1.dmg`
+        3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`
 
 ### **4. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
 
-**CMakeLists.txt**
+- **CMakeLists.txt**
 
-1. Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
+    1. Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
 
-    **Linux** 
+        - **Linux** 
 
-        ```
-        11. target_link_libraries(${PROJECT_NAME} /opt/SDL2/include/
-        12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/lib/")
-        ```
-        
-    **Windows (64 bits)** 
-        
-        ```
-        11. target_link_libraries(${PROJECT_NAME} C:\Arquivos de Programas\SDL2\include\
-        12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\lib\x64")
-        ```
-        
-    **Mac** 
-        
-        ```
-        11. target_link_libraries(${PROJECT_NAME} /Library/Frameworks/SDL2.framework/Headers/
-        12. target_include_directories(${PROJECT_NAME} PRIVATE "/Library/Frameworks/SDL2.framework/SDL")
-        ```
+            ```
+            11. target_link_libraries(${PROJECT_NAME} /opt/SDL2/include/
+            12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/lib/")
+            ```
+            
+        - **Windows (64 bits)** 
+            
+            ```
+            11. target_link_libraries(${PROJECT_NAME} C:\Arquivos de Programas\SDL2\include\
+            12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\lib\x64")
+            ```
+            
+        - **Mac** 
+            
+            ```
+            11. target_link_libraries(${PROJECT_NAME} /Library/Frameworks/SDL2.framework/Headers/
+            12. target_include_directories(${PROJECT_NAME} PRIVATE "/Library/Frameworks/SDL2.framework/SDL")
+            ```
 
-**main.cpp**
+- **main.cpp**
 
-1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
-2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
-3. Crie um ponteiro para a superfície da janela com a função [`SDL_GetWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_GetWindowSurface)
-4. Altere a cor de fundo (escolha a cor) da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
-5. Desenhe um quadrado (escolha o tamanho e cor) no centro da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect) e a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect)
-6. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
-7. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`.
-8. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
-finalizar o subsistema de vídeo aberto.
-9. Fazer commit e pull do seu código no repositório.
+    1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
+    2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
+    3. Crie um ponteiro para a superfície da janela com a função [`SDL_GetWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_GetWindowSurface)
+    4. Altere a cor de fundo (escolha a cor) da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
+    5. Desenhe um quadrado (escolha o tamanho e cor) no centro da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect) e a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect)
+    6. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
+    7. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`.
+    8. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
+    finalizar o subsistema de vídeo aberto.
+    9. Fazer commit e pull do seu código no repositório.
 
 ## Submissão
 
 Para submeter o seu trabalho, basta fazer o commit e o push das suas alterações no repositório que foi criado para
 você no GitHub classroom.
+
+```
+git add .
+git commit -m 'Submissão P1'
+git push
+```
 
 ## Referências
 
