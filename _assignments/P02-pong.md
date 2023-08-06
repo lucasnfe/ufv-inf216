@@ -15,7 +15,7 @@ due_event:
 
 ## Introdução
 
-Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolvido pela Atari em 1972. O pong simula um jogo de tênis de mesa, onde cada jogodar controla verticalmente uma raquete posicionada em uma das extremidades da tela, com o objetivo de rebater uma bola de tal maneira que o oponente não consiga rebater de volta. Cada vez que um jogador não consegue rebater uma bola, o oponente recebe um ponto. O jogo termina quado um dos jogadores completa 11 pontos. Tanto as raquetes e a bola, quanto as marcações de meio de campo e de pontuação, são representados por retângulos brancos. O video a seguir mostra um gameplay do jogo original:
+Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolvido pela Atari em 1972. O pong simula um jogo de tênis de mesa, onde cada jogodar controla verticalmente uma raquete posicionada em uma das extremidades da tela, com o objetivo de rebater uma bola de tal maneira que o oponente não consiga rebater de volta. Cada vez que um jogador não consegue rebater uma bola, o oponente recebe um ponto. O jogo termina quando um dos jogadores completa 11 pontos. Tanto as raquetes e a bola, quanto as marcações de meio de campo e de pontuação, são representados por retângulos brancos. O video a seguir mostra um gameplay do jogo original:
 
 <div class="embed-youtube">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/e4VRgY3tkh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -24,7 +24,7 @@ Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolv
 
 ## Objetivo
 
-Nesse projeto, você irá desenvolver uma versão de 1 jogador do jogo Pong em C++ e SDL. Nessa versão, o jogador controla a raquete com o objetivo de rebater a bola contra a parede o maior número de vezes possível. Primeiro, você irá criar o laço princial do jogo (*game loop*) com uma taxa de quadros (*framerate*) dinâmica, que processa entradas do teclado, atualiza os objetos do jogo e renderiza os quadros. A modelagem de objetos terá uma arquitetura híbrida, com hierarquia de classes e componentes. Em seguida, você irá utilizar essa estrutura para definir os objetos de jogo do pong.
+Nesse projeto, você irá desenvolver uma versão de 1 jogador do jogo Pong em C++ e SDL. Nessa versão, o jogador controla a raquete com o objetivo de rebater a bola contra a parede o maior número de vezes possível. Primeiro, você irá criar o laço principal do jogo (*game loop*) com uma taxa de quadros (*framerate*) dinâmica, que processa entradas do teclado, atualiza os objetos do jogo e renderiza os quadros. A modelagem de objetos terá uma arquitetura híbrida, com hierarquia de classes e componentes. Em seguida, você irá utilizar essa estrutura para definir os objetos de jogo do pong.
 
 ## Inicialização
 
@@ -45,7 +45,7 @@ Abra o projeto *p2-pong* na CLion e, antes de começar a sua implementação, ve
 
 - **Actor**
 
-    Clase base para todos os objetos do jogo, contendo atributos para transformação (translação, rotação e escala) e métodos para processamento de eventos
+    Classe base para todos os objetos do jogo, contendo atributos para transformação (translação, rotação e escala) e métodos para processamento de eventos
     de entrada, atualização e gerenciamento de componentes. 
 
 - **Component**
@@ -77,7 +77,7 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
         Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para inicializar o atributo
         mTicksCount (Uint32), de tal forma que ele represente o tempo (em milisegundos) decorrido desde a inicialização da SDL.
 
-    2. **Implemente o método *RunLoop* para exectuar o laço principal do jogo**
+    2. **Implemente o método *RunLoop* para executar o laço principal do jogo**
 
         Escreva um laço `while` que é executado enquanto o atributo `mIsRunning` for verdadeiro. Dentro do laço, execute 
         os métodos `ProcessInput()`, `UpdateGame()` e  `GenerateOutput()`, nessa ordem.
@@ -92,6 +92,8 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
        3. Verifique se deltaTime é superior a 0.05 segundos e, se for, limite-a para 0.05 segundos;
        
        4. Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para atualizar o contador de tempo `mTicksCount`.
+
+       5. Chame a função `UpdateActors(deltaTime)` para atualizar os objetos do jogo.
 
 ### **Parte 2: Modelo de Objetos**
 
@@ -224,13 +226,13 @@ Na terceira, e última parte, você irá utilizar a estrutura de objetos criada 
 
         4. Verifique se a bola colidiu com a raquete. Se houve colisão, inverta (multiplique por -1) a velocidade horizontal da bola. Para que haja colisão, as seguintes condições devem ser verdadeiras:
             - A velocidade horizontal `mVelocity.x` da bola deve ser negativa;
-            - A distância vertical absoluta entra a bola e a raquete deve ser metade da altura da raquete mais o tamanho da bola `mSize`. Utilize a função 
+            - A distância vertical absoluta entre a bola e a raquete deve ser metade da altura da raquete mais o tamanho da bola `mSize`. Utilize a função 
               `paddle->GetHeight()` para acessar a altura da raquete;
             - A posição horizontal da bola `pos.x` deve estar entre as posições dos lados esquerdo e direito da raquete.
 
         5. Verifique se a bola saiu pelo lado esquerdo da tela. Se saiu, finalize o jogo chamando a função Quit do jogo `GetGame()->Quit()`;
 
-        6. Verifique se a bola colidiu com o lado direito da tela. Se houve colisão, inverta (multiplique por -1) a velocidade horizontal da bola. Para que hja colisão, a velocidade horizontal da bola `mVelocity.x` deve ser positiva e a posição horizontal da bola `pos.x` deve ser maior do que largura da tela menos a metade do tamanho da bola `mSize/2`. Utilize a função `GetGame()->GetWindowWidth()` para acessar a largura da tela;
+        6. Verifique se a bola colidiu com o lado direito da tela. Se houve colisão, inverta (multiplique por -1) a velocidade horizontal da bola. Para que haja colisão, a velocidade horizontal da bola `mVelocity.x` deve ser positiva e a posição horizontal da bola `pos.x` deve ser maior do que largura da tela menos a metade do tamanho da bola `mSize/2`. Utilize a função `GetGame()->GetWindowWidth()` para acessar a largura da tela;
 
         7. Verifique se a bola colidiu com o limite superior tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola `mVelocity.y` deve ser negativa e a posição vertical da bola `pos.y` deve ser menor ou igual ao limite superior da tela (zero) mais a metade do tamanho da bola (`mSize/2`).
 
@@ -238,9 +240,9 @@ Na terceira, e última parte, você irá utilizar a estrutura de objetos criada 
 
     1. **Implemente o método *InitializeActors* para inicializar a bola e a raquete**
 
-        1. Instancie a raquete `mPaddle` e inicialize sua posição com o método `SetPosition`;
+        1. Crie a raquete `mPaddle` e inicialize sua posição com o método `SetPosition`;
 
-        1. Instancie a bola `mBall` e inicialize sua posição e velocidade com os métodos `SetPosition` e `SetVelocity`, respectivamente.
+        1. Crie a bola `mBall` e inicialize sua posição e velocidade com os métodos `SetPosition` e `SetVelocity`, respectivamente.
 
 ## Submissão
 
@@ -257,5 +259,3 @@ git push
 
 - Pro Git: [https://git-scm.com/book/pt-br/v2](https://git-scm.com/book/pt-br/v2)
 - Instalação da SDL: [https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php)
-
-
