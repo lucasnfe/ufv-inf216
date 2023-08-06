@@ -79,7 +79,7 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
     1. **Estenda o método *Inicialize* para inicializar o contador de tempo *mTicksCount***
 
         Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para inicializar o atributo
-        mTicksCount (Uint32), de tal forma que ele represente o tempo (em milisegundos) decorrido desde a inicialização da SDL.
+        `mTicksCount`, de tal forma que ele represente o tempo (em milisegundos) decorrido desde a inicialização da SDL.
 
     2. **Implemente o método *RunLoop* para executar o laço principal do jogo**
 
