@@ -1,6 +1,6 @@
 # Site settings
 course_name: INF 216 - Projeto e Implementação de Jogos Digitais
-course_description: "Este curso é uma introdução às técnicas fundamentais para a programação de jogos 2D e 3D. Os alunos são apresentados a conceitos de projeto de software, física, gráficos, inteligência artificial e áudio aplicados para o desenvolvimento de jogos. Espera-se que os alunos produzam um protótipo funcional em C++ para cada tópico abordado em aula, além de um projeto final. Os alunos utilizam ferramentas profissionais de desenvolvimento para simular um ambiente de trabalho real (como um estúdio de jogos), tendo a oportunidade de publicar um portfólio pessoal com os trabalhos desenvolvidos ao longo do curso."
+course_description: "Essa disciplina é uma introdução às técnicas fundamentais para a programação de jogos 2D e 3D. Os alunos são apresentados a conceitos de projeto de software, física, gráficos, inteligência artificial e áudio aplicados para o desenvolvimento de jogos. Espera-se que os alunos produzam um protótipo funcional em C++ para cada tópico abordado em aula, além de um projeto final. Os alunos utilizam ferramentas profissionais de desenvolvimento para simular um ambiente de trabalho real (como um estúdio de jogos), tendo a oportunidade de publicar um portfólio pessoal com os trabalhos desenvolvidos ao longo do curso."
 course_semester: "2023/2"
 
 semester_start: 2023-08-14T08:00

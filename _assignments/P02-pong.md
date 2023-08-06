@@ -2,7 +2,7 @@
 type: assignment
 date: 2023-09-01T08:00
 title: 'P2: Pong'
-permalink: /p2-pong/
+permalink: /projetos/p2-pong/
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip

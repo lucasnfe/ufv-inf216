@@ -2,7 +2,7 @@
 type: assignment
 date: 2023-08-18T08:00
 title: 'P1: Configuração Inicial'
-permalink: '/p1-configuracao-inicial/'
+permalink: 'projetos/p1-configuracao-inicial/'
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
@@ -51,7 +51,7 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 ### **2. Instalar a bilioteca SDL**
 
-1. Acesse o site da SDL [[nesse link]](https://www.libsdl.org/index.php), clique no botão de releases e, na próxima página:
+1. Acesse o site da versão 2.28.2 da SDL [[nesse link]](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2):
 
     - **Linux**
 
@@ -68,12 +68,12 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
     - **Windows**
 
-        2. Clique para baixar o pacote `SDL2-devel-2.28.1-VC.zip`
+        2. Clique para baixar o pacote `SDL2-devel-2.28.2-mingw.zip`
         3. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`
 
     - **Mac**
 
-        2. Clique para baixar a imagem `SDL2-2.28.1.dmg`
+        2. Clique para baixar a imagem `SDL2-2.28.2.dmg`
         3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`
 
 ### **3. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
@@ -90,7 +90,7 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
             ```
             
         - **Windows (64 bits)** 
-            
+        
             ```
             11. target_link_libraries(${PROJECT_NAME} "C:\Arquivos de Programas\SDL2\lib\x64")
             12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\include\")
