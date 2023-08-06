@@ -103,11 +103,11 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
     1. **Implemente o construtor *Actor* para adicionar o objeto ao jogo**
 
-        Utilize a função `AddActor` do jogo (`mGame`) para adicionar esse (`this`) objeto ao jogo.
+        Utilize a função `AddActor` do jogo (`mGame`) para adicionar o novo objeto (`this`) ao jogo.
 
     2. **Implemente o destruidor *~Actor* para remover o objeto ao jogo**
 
-        1. Utilize a função `RemoveActor` do jogo (`mGame`) para remover esse (`this`) objeto ao jogo;
+        1. Utilize a função `RemoveActor` do jogo (`mGame`) para remover esse objeto (`this`) do jogo;
 
         2. Percorra o vetor de componentes `mComponents` deletando (`delete`) cada um deles e, em seguida, limpe (`clear`) o vetor de componentes.
 
@@ -153,7 +153,7 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
         Verifique se o jogo está atualizando objetos (`mUpdatingActors == true`). Se estiver, adicione o novo objeto `actor` ao final do vetor de objetos pendentes `mPendingActors`, se não, ao final do vetor de objetos ativos `mActors`.
 
-    3. **Implemente o método *RemoveActor* para remover objetos ao jogo**
+    3. **Implemente o método *RemoveActor* para remover objetos do jogo**
 
         1. Procure pelo objeto a ser removido no vetor de objetos pendentes `mPendingActors`. Se encontrar, remova-o;
 
@@ -163,12 +163,12 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
         1. Adicione o novo componente `drawable` ao final do vetor de componentes visuais `mDrawables`;
 
-        2. Ordene (std::sort) o vetor de componentes visuais `mDrawables` de acordo com o índice estabelecido na criação do componente. Utilize a função
+        2. Ordene (`std::sort`) o vetor de componentes visuais `mDrawables` de acordo com o índice estabelecido na criação do componente. Utilize a função
             `GetDrawOrder()` para acessar a ordem de desenho de um objeto.
 
     5. **Implemente o método *RemoveDrawable* para remover um componente visual ao jogo**
 
-        Procure (`std::find`) pelo componente dado `drawable` no vetor de componentes visuais `mDrawables` e o remova (`erase`) desse vetor.
+        Procure (`std::find`) pelo componente `drawable` no vetor de componentes visuais `mDrawables` e o remova (`erase`) desse vetor.
 
     6. **Estenda o método *ProcessInput* para passar os eventos de entrada aos objetos do jogo**
 
@@ -185,9 +185,9 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
         Percorra o vetor de objetos `mActors` enquanto (`while`) ele tiver elementos (`!mActors.empty()`), deletando (`delete`) o último elemento do 
         vetor (`mActors.back()`). É necessário usar um laço while porque o método destruidor da classe Actor chama `RemoveActor` no objeto do jogo.
 
-### **Parte 3: Pong Objects**
+### **Parte 3: Objetos do Pong**
 
-Na terceira, e última parte, você irá utilizar a estrutura de objetos criada na parte anterior para criar os objetos do Pong: Ball e Paddle.
+Na terceira, você irá utilizar a estrutura de objetos criada na parte anterior para criar os objetos do Pong: Ball e Paddle.
 
 - **Paddle.cpp**
 
@@ -244,6 +244,18 @@ Na terceira, e última parte, você irá utilizar a estrutura de objetos criada 
 
         1. Crie a bola `mBall` e inicialize sua posição e velocidade com os métodos `SetPosition` e `SetVelocity`, respectivamente.
 
+### **Parte 4: Customização**
+
+Na quarta, e última etapa, você irá ajustar as variáveis do jogo para criar uma versão única do Pong.
+
+1. Escolha um novo tamanho de quadra (janela);
+
+2. Defina um novo esquema de cores que modifique as cores do fundo, da raquete e da bola;
+
+3. Escolha uma nova posição horizontal e uma velocidade de movimentação para raquete;
+
+4. Altere a altura da raquete e o tamanho da bola.
+
 ## Submissão
 
 Para submeter o seu trabalho, basta fazer o commit e o push das suas alterações no repositório que foi criado para
@@ -254,6 +266,13 @@ git add .
 git commit -m 'Submissão P2'
 git push
 ```
+
+## Barema
+
+- Parte 1: Game Loop (10%)
+- Parte 2: Modelo de Objetos (50%)
+- Parte 3: Objetos do Pong (30%)
+- Parte 4: Customização (10%)
 
 ## Referências
 
