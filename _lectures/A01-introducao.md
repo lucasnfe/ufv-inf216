@@ -1,9 +1,9 @@
 ---
 type: lecture
-index: 3
-date: 2023-08-29T10:00:00+2:00
-title: Game Loop
-tldr: "Técnicas de controle de tempo de CPU para atualização de objetos do jogo."
+index: 1
+date: 2023-08-15T10:00
+title: Introdução
+tldr: "Logística da disciplina e visão geral do desenvolvimento de jogos digitais: história, mercado e tecnologias."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip
@@ -15,5 +15,4 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- Game Programming Algorithms and Techniques, Cap. 1, Pags. 5-15
-- [Game Programming Patterns, Cap. 9](https://gameprogrammingpatterns.com/game-loop.html)
+- Game Programming Algorithms and Techniques, Cap. 1, Pags. 2-5

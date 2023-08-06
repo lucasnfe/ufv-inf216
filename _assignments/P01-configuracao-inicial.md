@@ -30,9 +30,7 @@ O portfólio permite que os criadores de jogos demonstrem suas capacidades, esti
 
 Nesse projeto, você irá usar o GitHub para hospedar um repositório git que será usado durante a disciplina para o controle de versão dos seus projetos, bem como a página web do seu portfolio. -->
 
-## Instruções
-
-### **1. Aceitar o projeto P1 no GitHub Classroom**
+## Inicialização
 
 1. Se você não tiver uma conta no GitHub, crie uma seguindo o tutorial [[nesse link]](https://git-scm.com/book/pt-br/v2/GitHub-Configurando-uma-conta)
 2. Se você não tiver o git instalado no seu computador, faça a instalação seguindo o tutorial [[nesse link]](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
@@ -44,12 +42,14 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
     git clone https://github.com/ufv-inf216/p1-configuracao-inicial-<GITHUB_USERNAME>.git
     ```
 
-### **2. Instalar a IDE CLion**
+## Instruções
 
-1. Acesse o site da CLion [[nesse link]](https://www.jetbrains.com/clion), clique no botão de download e execute o instalador baixado
+### **1. Instalar a IDE CLion**
+
+1. Acesse o site da CLion [[nesse link]](https://www.jetbrains.com/clion) e siga as instruções de instalação para o seu sistema operacional
 2. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
 
-### **3. Instalar a bilioteca SDL**
+### **2. Instalar a bilioteca SDL**
 
 1. Acesse o site da SDL [[nesse link]](https://www.libsdl.org/index.php), clique no botão de releases e, na próxima página:
 
@@ -76,7 +76,7 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
         2. Clique para baixar a imagem `SDL2-2.28.1.dmg`
         3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`
 
-### **4. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
+### **3. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
 
 - **CMakeLists.txt**
 
@@ -85,21 +85,21 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
         - **Linux** 
 
             ```
-            11. target_link_libraries(${PROJECT_NAME} /opt/SDL2/include/
-            12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/lib/")
+            11. target_link_libraries(${PROJECT_NAME} "/opt/SDL2/lib/")
+            12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/include/")
             ```
             
         - **Windows (64 bits)** 
             
             ```
-            11. target_link_libraries(${PROJECT_NAME} C:\Arquivos de Programas\SDL2\include\
-            12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\lib\x64")
+            11. target_link_libraries(${PROJECT_NAME} "C:\Arquivos de Programas\SDL2\lib\x64")
+            12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\include\")
             ```
             
         - **Mac** 
             
             ```
-            11. target_link_libraries(${PROJECT_NAME} /Library/Frameworks/SDL2.framework/Headers/
+            11. target_link_libraries(${PROJECT_NAME} "/Library/Frameworks/SDL2.framework/Headers/")
             12. target_include_directories(${PROJECT_NAME} PRIVATE "/Library/Frameworks/SDL2.framework/SDL")
             ```
 

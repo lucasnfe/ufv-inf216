@@ -1,6 +1,6 @@
 ---
 type: raw_event
-date: 2023-09-29T10:50:00+2:00
+date: 2023-09-15T10:50
 name: Q2
 description: 'Q2: Física'
 hide_from_announcments: true
