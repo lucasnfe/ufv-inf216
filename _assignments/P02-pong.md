@@ -280,5 +280,6 @@ git push
 
 ## Referências
 
-- Game Programming in C++, Cap 1, Game Programming Overview
-- Game Programming in C++, Cap 2, Game Objects
+- Parte 1: [Game Programming in C++, Cap 1 - The Game Loop and Game Class](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec3)
+- Parte 2: [Game Programming in C++, Cap 2 - Game Objects](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch02.xhtml#ch02lev2sec1)    
+- Parte 3: [Game Programming in C++, Cap 1 - Updating the Game](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec11)

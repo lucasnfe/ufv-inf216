@@ -19,4 +19,5 @@ hide_from_announcments: true
   1. [The Game Loop](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch01.html#ch01lev1sec2)
   2. [Time and Games](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch01.html#ch01lev1sec3)
   3. [Game Objects](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch01.html#ch01lev1sec4)
+
 - [Game Programming Patterns, Cap. 9](https://gameprogrammingpatterns.com/game-loop.html)
