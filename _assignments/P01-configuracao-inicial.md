@@ -18,17 +18,11 @@ due_event:
 
 Jogos digitais são projetos de software relativamente grandes e complexos. Sendo assim, em contextos profissionais, eles são tipicamente desenvolvidos de maneira estruturada em um ambiente de desenvolvimento integrado (IDE) com um sistema de controle de versão. 
 
-<!-- Além disso, ao final desses projetos, profissionais da área de jogos costumam organizá-los em um portfólio, que são utilizados para demonstrar suas habilidades técnicas e criativas a potenciais empregadores, clientes ou parceiros. -->
-
 ## Objetivo
 
-Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositótio GitHub para o controle de versão e submissão do seu trabalho. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela.
+Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositório GitHub para o controle de versão e submissão do seu trabalho. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela. A figura a seguir ilustra o resultado esperado desse projeto:
 
-<!-- No contexto da indústria de jogos digitais, um portfólio é uma coleção organizada de projetos relacionados à criação de jogos. É uma ferramenta essencial para os profissionais dessa área, incluindo programadores, artistas, designers, compositores, entre outros, que desejam mostrar suas habilidades, experiências e realizações aos potenciais empregadores, clientes ou parceiros.
-
-O portfólio permite que os criadores de jogos demonstrem suas capacidades, estilo artístico, conhecimento técnico e criatividade. Ele pode conter uma variedade de materiais, dependendo da especialização do indivíduo e do seu envolvimento em diferentes aspectos do desenvolvimento de jogos. Como essa é uma disciplina de Ciência da Computação, o seu portfólio deverá destavar suas habilidades como programador. Sendo assim, os principais materiais do seu porfólio serão trechos de códigos associados a imagens ou vídeos do jogo e comentários que evidenciem suas princiais contribuições para aquele projeto.
-
-Nesse projeto, você irá usar o GitHub para hospedar um repositório git que será usado durante a disciplina para o controle de versão dos seus projetos, bem como a página web do seu portfolio. -->
+<img src="{{'/_images/asg/P01-configuracao-inicial.png' | prepend: site.baseurl }}" alt="p1-configuracao-inicial" width="560"/>
 
 ## Inicialização
 
@@ -78,6 +72,8 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 ### **3. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
 
+Abra o projeto *p1-configuracao-inicial* na CLion e siga as instruções para cada arquivo listado a seguir.
+
 - **CMakeLists.txt**
 
     1. Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
@@ -105,16 +101,25 @@ Nesse projeto, você irá usar o GitHub para hospedar um repositório git que se
 
 - **main.cpp**
 
-    1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_PollEvent)
-    2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow)
-    3. Crie um ponteiro para a superfície da janela com a função [`SDL_GetWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_GetWindowSurface)
-    4. Altere a cor de fundo (escolha a cor) da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect)
-    5. Desenhe um quadrado (escolha o tamanho e cor) no centro da janela usando a função [`SDL_FillRect`](https://wiki.libsdl.org/SDL2/SDL_FillRect) e a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect)
-    6. Atualize o estado da janela com a função [`SDL_UpdateWindowSurface`](https://wiki.libsdl.org/SDL2/SDL_UpdateWindowSurface)
-    7. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`.
-    8. Quando o loop terminar, utilize as funções [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a janela, seguida de [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para 
-    finalizar o subsistema de vídeo aberto.
-    9. Fazer commit e pull do seu código no repositório.
+    1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_Init) e verifique se a inicialização ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+
+    2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow) e verifique se a criação ocorreu com     sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+
+    3. Crie um buffer de fundo usando a função [`SDL_CreateRenderer`](https://wiki.libsdl.org/SDL2/SDL_CreateRenderer). Utilize as flags `SDL_RENDERER_ACCELERATED` e `SDL_RENDERER_PRESENTVSYNC`. Verifique se a criação ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+
+    4. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) para altere a cor de fundo (escolha a cor);
+
+    5. Utilize a função [`SDL_RenderClear`](https://wiki.libsdl.org/SDL2/SDL_RenderClear) para limpar o buffer de fundo com a cor configurada anteriormente;
+
+    6. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) novamente para alterar a cor do quadrado (escolha a cor) que será desenhado;
+
+    7. Crie um quadrado com a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect) e utilize a função [`SDL_RenderFillRect`](https://wiki.libsdl.org/SDL2/SDL_RenderFillRect) para desenhá-lo no buffer de fundo;
+    
+    8. Utilize a função [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL2/SDL_RenderPresent) para trocar o buffer da frente com o buffer de fundo;
+
+    9. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`;
+
+    10. Quando o loop terminar, utilize as funções [`SDL_DestroyRenderer`](https://wiki.libsdl.org/SDL2/SDL_DestroyRenderer) e [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a buffer de fundo e janela criados. Em seguida, utilize a função [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para finalizar o subsistema de vídeo da SDl.
 
 ## Submissão
 
