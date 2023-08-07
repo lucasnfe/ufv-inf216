@@ -2,8 +2,8 @@
 type: lecture
 index: 2
 date: 2023-08-22T10:00
-title: Game Loop
-tldr: "Técnicas de controle de tempo de CPU para atualização de objetos do jogo."
+title: Game Loop e Modelagem de Objetos
+tldr: "Técnicas de controle de tempo de CPU e modelagem de objetos do jogo."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip

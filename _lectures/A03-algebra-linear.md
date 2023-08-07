@@ -2,8 +2,8 @@
 type: lecture
 index: 3
 date: 2023-08-29T10:00
-title: Algebra Linear
-tldr: "Algebra linear para computação gráfica e jogos digitais."
+title: Álgebra Linear
+tldr: "Álgebra linear para computação gráfica e jogos digitais."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip
