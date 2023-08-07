@@ -15,4 +15,5 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- Game Programming Algorithms and Techniques, Cap. 1, Pags. 2-5
+- Game Programming Algorithms and Techniques, Cap. 1 
+    1. [Evolution of Video Game Programming](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch01.html#ch01lev1sec1)
