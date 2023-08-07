@@ -22,13 +22,13 @@ Jogos digitais são projetos de software relativamente grandes e complexos. Send
 
 Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositório GitHub para o controle de versão e submissão do seu trabalho. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela. A figura a seguir ilustra o resultado esperado desse projeto:
 
-<img src="{{'/_images/asg/P01-configuracao-inicial.png' | prepend: site.baseurl }}" alt="p1-configuracao-inicial" width="560"/>
+<img src="{{'/_images/asg/p1/result2.png' | prepend: site.baseurl }}" alt="p1-configuracao-inicial" width="560"/>
 
 ## Inicialização
 
-1. Se você não tiver uma conta no GitHub, crie uma seguindo o tutorial [[nesse link]](https://git-scm.com/book/pt-br/v2/GitHub-Configurando-uma-conta)
-2. Se você não tiver o git instalado no seu computador, faça a instalação seguindo o tutorial [[nesse link]](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
-3. Aceite o projeto `p1-configuracao-inicial` no GitHub classroom [[nesse link]](https://classroom.github.com/a/qhHAuinC)
+1. Se você não tiver uma conta no GitHub, crie uma seguindo o tutorial [**[nesse link]**](https://git-scm.com/book/pt-br/v2/GitHub-Configurando-uma-conta)
+2. Se você não tiver o git instalado no seu computador, faça a instalação seguindo o tutorial [**[nesse link]**](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+3. Aceite o projeto `p1-configuracao-inicial` no GitHub classroom [**[nesse link]**](https://classroom.github.com/a/qhHAuinC)
 4. Clone o seu novo repositório no seu computador:
 
     ```
@@ -38,19 +38,24 @@ Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que s
 
 ## Instruções
 
-### **1. Instalar a IDE CLion**
+### **Parte 1: Instalação**
 
-1. Acesse o site da CLion [[nesse link]](https://www.jetbrains.com/clion) e siga as instruções de instalação para o seu sistema operacional
-2. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
+Na primeira parte, você irá baixar e instalar a IDE CLion e a biblioteca SDL.
 
-### **2. Instalar a bilioteca SDL**
+1. **Instalar a IDE CLion**
 
-1. Acesse o site da versão 2.28.2 da SDL [[nesse link]](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2):
+    1. Acesse o site da CLion [**[nesse link]**](https://www.jetbrains.com/clion) e siga as instruções de instalação para o seu sistema operacional;
+
+    2. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
+
+2. **Instalar a bilioteca SDL**
 
     - **Linux**
 
-        2. Clique para baixar o pacote `Source code.zip`
-        3. Extraia o conteúdo do pacote no diretório temporário `/tmp/SDL2/`
+        1. Acesse o site da versão 2.28.2 da SDL [**[nesse link]**](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2) e baixe o pacote `Source code.zip`
+
+        2. Extraia o conteúdo do pacote no diretório temporário `/tmp/SDL2/`
+
         4. Instale a biblioteca no diretório `/opt/SDL2/`:
         
             ```
@@ -62,21 +67,28 @@ Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que s
 
     - **Windows**
 
-        2. Clique para baixar o pacote `SDL2-devel-2.28.2-mingw.zip`
-        3. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`
+        1. Acesse o site da versão 2.28.2 da SDL [**[nesse link]**](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2) e baixe o pacote `SDL2-devel-2.28.2-mingw.zip`
+
+        2. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`. Ao final dessa etapa, a SDL deve estar configurada dessa maneira:
+
+            <img src="{{'/_images/asg/p1/parte1-win.png' | prepend: site.baseurl }}" alt="p1-parte1" width="560"/>
 
     - **Mac**
+        1. Acesse o site da versão 2.28.2 da SDL [**[nesse link]**](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2) e baixe o pacote `SDL2-2.28.2.dmg`
 
-        2. Clique para baixar a imagem `SDL2-2.28.2.dmg`
-        3. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`
+        2. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`. Ao final dessa etapa, a SDL deve estar configurada dessa maneira:
 
-### **3. Escrever um programa em C++ com SDL que desenha um quadrado em uma janela**
+            <img src="{{'/_images/asg/p1/parte1-mac.png' | prepend: site.baseurl }}" alt="p1-parte1" width="560"/>
 
-Abra o projeto *p1-configuracao-inicial* na CLion e siga as instruções para cada arquivo listado a seguir.
+### **Parte 2: Um primeiro programa SDL**
+
+Nessa etapa, você irá utilizar a IDE Clion para escrever um programa em C++/SDL que desenha um quadrado em uma janela.
 
 - **CMakeLists.txt**
 
-    1. Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
+    1. **Configurar o *CMakeLists* para incluir os cabeçalhos e linkar a SDL**
+
+        Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
 
         - **Linux** 
 
@@ -84,16 +96,16 @@ Abra o projeto *p1-configuracao-inicial* na CLion e siga as instruções para ca
             11. target_link_libraries(${PROJECT_NAME} "/opt/SDL2/lib/")
             12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/include/")
             ```
-            
+                
         - **Windows (64 bits)** 
         
             ```
             11. target_link_libraries(${PROJECT_NAME} "C:\Arquivos de Programas\SDL2\lib\x64")
             12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\include\")
             ```
-            
+                
         - **Mac** 
-            
+                
             ```
             11. target_link_libraries(${PROJECT_NAME} "/Library/Frameworks/SDL2.framework/Headers/")
             12. target_include_directories(${PROJECT_NAME} PRIVATE "/Library/Frameworks/SDL2.framework/SDL")
@@ -101,25 +113,37 @@ Abra o projeto *p1-configuracao-inicial* na CLion e siga as instruções para ca
 
 - **main.cpp**
 
-    1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_Init) e verifique se a inicialização ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+    2. **Escreva um programa em C++/SDL que desenha um quadrado em uma janela**
 
-    2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow) e verifique se a criação ocorreu com     sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+        1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_Init) e verifique se a inicialização ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
-    3. Crie um buffer de fundo usando a função [`SDL_CreateRenderer`](https://wiki.libsdl.org/SDL2/SDL_CreateRenderer). Utilize as flags `SDL_RENDERER_ACCELERATED` e `SDL_RENDERER_PRESENTVSYNC`. Verifique se a criação ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+        2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow) e verifique se a criação ocorreu com     sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
-    4. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) para altere a cor de fundo (escolha a cor);
+        3. Crie um buffer de fundo usando a função [`SDL_CreateRenderer`](https://wiki.libsdl.org/SDL2/SDL_CreateRenderer). Utilize as flags `SDL_RENDERER_ACCELERATED` e `SDL_RENDERER_PRESENTVSYNC`. Verifique se a criação ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
-    5. Utilize a função [`SDL_RenderClear`](https://wiki.libsdl.org/SDL2/SDL_RenderClear) para limpar o buffer de fundo com a cor configurada anteriormente;
+        4. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) para altere a cor de fundo (escolha a cor);
 
-    6. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) novamente para alterar a cor do quadrado (escolha a cor) que será desenhado;
+        5. Utilize a função [`SDL_RenderClear`](https://wiki.libsdl.org/SDL2/SDL_RenderClear) para limpar o buffer de fundo com a cor configurada anteriormente;
 
-    7. Crie um quadrado com a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect) e utilize a função [`SDL_RenderFillRect`](https://wiki.libsdl.org/SDL2/SDL_RenderFillRect) para desenhá-lo no buffer de fundo;
-    
-    8. Utilize a função [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL2/SDL_RenderPresent) para trocar o buffer da frente com o buffer de fundo;
+        6. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) novamente para alterar a cor do quadrado (escolha a cor) que será desenhado;
 
-    9. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`;
+        7. Crie um quadrado com a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect) e utilize a função [`SDL_RenderFillRect`](https://wiki.libsdl.org/SDL2/SDL_RenderFillRect) para desenhá-lo no buffer de fundo;
+        
+        8. Utilize a função [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL2/SDL_RenderPresent) para trocar o buffer da frente com o buffer de fundo;
 
-    10. Quando o loop terminar, utilize as funções [`SDL_DestroyRenderer`](https://wiki.libsdl.org/SDL2/SDL_DestroyRenderer) e [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a buffer de fundo e janela criados. Em seguida, utilize a função [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para finalizar o subsistema de vídeo da SDl.
+        9. Implemente um loop que processa eventos de entrada com a função [`SDL_PollEvent`](https://wiki.libsdl.org/SDL2/SDL_PollEvent), enquanto ela não retornar um evento do tipo `SDL_QUIT`;
+
+        10. Quando o loop terminar, utilize as funções [`SDL_DestroyRenderer`](https://wiki.libsdl.org/SDL2/SDL_DestroyRenderer) e [`SDL_DestroyWindow`](https://wiki.libsdl.org/SDL2/SDL_DestroyWindow) para destruir a buffer de fundo e janela criados. Em seguida, utilize a função [`SDL_Quit`](https://wiki.libsdl.org/SDL2/SDL_Quit) para finalizar o subsistema de vídeo da SDl.
+
+### **Parte 3: Customização**
+
+Na terceira, e última etapa, você irá ajustar algumas das variáveis do programa.
+
+1. Escolha um novo tamanho de janela;
+
+2. Defina um novo esquema de cores que modifique as cores do fundo e do quadrado;
+
+3. Escolha uma nova posição e um novo tamanho para o quadrado;
 
 ## Submissão
 
@@ -131,6 +155,12 @@ git add .
 git commit -m 'Submissão P1'
 git push
 ```
+
+## Barema
+
+- Parte 1: Instalação (0%)
+- Parte 2: Um primeiro programa SDL (90%)
+- Parte 3: Customização (10%)
 
 ## Referências
 

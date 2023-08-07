@@ -3,7 +3,7 @@ type: lab
 date: 2023-09-01T08:00:00+2:00
 index: 3
 title: Pong - Parte 2
-tldr: "Implementar uma classe Game para executar o game loop (input, update, draw)."
+tldr: "Implementar uma estrutura de objetos com hierarquia de classes e componentes."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
 #     - url: /static_files/presentations/lec.zip

@@ -280,5 +280,5 @@ git push
 
 ## Referências
 
-- Pro Git: [https://git-scm.com/book/pt-br/v2](https://git-scm.com/book/pt-br/v2)
-- Instalação da SDL: [https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php)
+- Game Programming in C++, Cap 1, Game Programming Overview
+- Game Programming in C++, Cap 2, Game Objects

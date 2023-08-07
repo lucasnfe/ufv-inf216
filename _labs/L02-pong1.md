@@ -3,7 +3,7 @@ type: lab
 date: 2023-08-25T08:00:00+2:00
 index: 2
 title: Pong - Parte 1
-tldr: "Implementar uma Classe."
+tldr: "Implementar o laço principal do jogo utilizando uma abordagem de taxa de quadros dinâmica."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
 #     - url: /static_files/presentations/lec.zip

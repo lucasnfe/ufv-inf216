@@ -8,7 +8,15 @@ permalink: /materiais/
 
 ## Bibliografia
 
- * Game Programming Algorithms and Techniques, Sanjay Madhav
+Livro-texto:
+
+ * [Game Programming in C++](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/), Sanjay Madhav
+
+Livros complementares:
+
+ * [Game Programming Algorithms and Techniques](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/), Sanjay Madhav
+ * [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html), Robert Nystron
+ * [The Nature of Code](https://natureofcode.com/book/), Daniel Shiffman
 
 ## Linguagem de Programação e Bibliotecas
 
