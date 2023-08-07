@@ -24,10 +24,10 @@ permalink: /materiais/
 ## Linguagem de Programação e Bibliotecas
 
 ### C++
-Os projetos práticos dessa disciplina foram criados para serem implementados em C++, pois essa ainda é linguagem padrão da indústria de desenvolvimento de jogos. 
+Os projetos práticos dessa disciplina foram criados para serem implementados em C++, pois essa ainda é a linguagem padrão da indústria de desenvolvimento de jogos. 
 
 ### Simple DirectMedia Layer (SDL) 
-Para facilitar o acesso aos dispositivos multimedia (video, áudio, rede, entrada, etc) em diferentes plataformas, essa disciplina utiliza a biblioteca Simple DirectMedia Layer (SDL), que também é bastante difundida na indústria. A SDL não é um motor de jogos (*game engine*), pois não fornece funcionalidades específicas de jogos, como simulações físicas ou inteligência artificial. Nessa disciplina, os alunos utilzam a SDL para implementar tais funcionalidades e criar suas prória engines.
+Para facilitar o acesso aos dispositivos multimedia (video, áudio, rede, entrada, etc) em diferentes plataformas, essa disciplina utiliza a biblioteca Simple DirectMedia Layer (SDL), que também é bastante difundida na indústria de jogos. A SDL não é um motor de jogos (*game engine*), pois não fornece funcionalidades específicas de jogos, como simulações físicas ou inteligência artificial. Nessa disciplina, os alunos utilzam a SDL para implementar tais funcionalidades e criar seus prórios motores.
 
 ## Ambiente de Desenvolvimento
 
