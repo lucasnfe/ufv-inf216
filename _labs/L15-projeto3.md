@@ -3,7 +3,7 @@ type: lab
 date: 2023-12-01T08:00:00+2:00
 index: 15
 title: Projeto Final - Playtest
-tldr: "Aula para resolver problemas do projeto final."
+tldr: "Conduzir seção de teste com pares para testar o jogo."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
 #     - url: /static_files/presentations/lec.zip

@@ -3,7 +3,7 @@ type: lab
 date: 2023-11-24T08:00:00+2:00
 index: 14
 title: Projeto Final - Parte 2
-tldr: "Aula para resolver problemas do projeto final."
+tldr: "Trabalhar no projeto final."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
 #     - url: /static_files/presentations/lec.zip
