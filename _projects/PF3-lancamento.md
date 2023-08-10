@@ -1,5 +1,6 @@
 ---
-type: assignment
+layout: assignment
+type: project
 date: 2023-12-15T08:00
 title: 'Projeto Final: Lançamento'
 permalink: /projeto-final-lancamento/

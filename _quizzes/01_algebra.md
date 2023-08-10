@@ -1,7 +1,7 @@
 ---
 type: raw_event
 date: 2023-09-01T10:50
-description: 'Q1: Algebra Linear'
+description: 'T1: Algebra Linear'
 hide_from_announcments: true
 ---
 <!-- **Tópicos:**

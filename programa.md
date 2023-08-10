@@ -6,19 +6,40 @@ permalink: /programa/
 
 ## Pré-requisitos
 
-**INF213: Estrutura de dados**<br>
-É esperado que os alunos estejam confortáveis com programação orientada a objetos em C++ e que conheçam estruturas de dados fundamentais, bem como os algoritmos clássicos associados à elas.
+- **INF213: Estrutura de dados**
 
-## Avaliação
+    É esperado que os alunos estejam confortáveis com programação orientada a objetos em C++ e que conheçam estruturas de dados fundamentais, bem como os algoritmos clássicos associados à elas.
 
-**Quizzes (30%)**<br>
-Pequenos testes em sala de aula sobre apenas um tópico da disciplina com duração de 30 minutos.
+## Conteúdo Programático
 
-**Trabalhos práticos (40%)**<br>
-Implementação de jogos clássicos com duração de 1-2 semanas.
+1. **Introdução**
 
-**Projeto final (20%)**<br>
-Proposta, implementação e teste de um pequeno jogo completo com duração de 4, 4 e 2 semanas, respectivamente.
+    Visão geral do desenvolvimento de jogos; história, mercado e tecnologias; o laço principal do jogo; eventos de entrada; modelagem de objetos de jogo; síntede de imagens.
 
-**Participação (10%)**<br>
-Questionários online respondendo a perguntas em sala de aula com duração de 5-15 minutos.
+2. **Álgebra Linear**
+
+    Operações básicas de vetores e matrízes; sistemas de coordenadas; transformações geométricas; quarterions.
+
+3. **Física**
+
+    Mecânica linear para movimentação de objetos rígios; geometrias de colisão; detecção de colisão; estruturas de dados para otimização de simulações físicas.
+
+4. **Gráficos 2D**
+
+    Sprites; spritesheets; animações 2D; câmeras 2D; tilemaps; camadas.
+
+5. **Inteligência Articifial**
+
+    Controle reativo; máquina de estados finitos; comportamentos de navegação; planejamento de caminhos (*pathfinding*).
+
+6. **Interface com o Usuário**
+
+    Sistemas de menus; janelas de diálogo; heads-up display.
+
+7. **Áudio**
+
+    Processamento digital de áudio; sintetizadores; efeitos e mixagem; áudio 3D; áudio adaptativo; middlewares de aúdio.
+
+8. **Gráficos 3D**
+
+    Pipeline gráfico; modelos 3D; câmeras; iluminação e sombreamento; visibilidade; 
