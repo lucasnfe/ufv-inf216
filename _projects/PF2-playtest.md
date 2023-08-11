@@ -2,7 +2,7 @@
 layout: assignment
 type: project
 date: 2023-12-01T08:00
-title: 'Projeto Final: Playtest'
+title: 'PF: Playtest'
 permalink: /projeto-final-playtest/
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
@@ -11,6 +11,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-12-01T10:00
-    description: 'Entrega Resultado Playtest'
+    description: 'Entrega PF: Playtest'
 ---
 

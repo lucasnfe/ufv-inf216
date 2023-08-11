@@ -2,8 +2,8 @@
 type: lab
 date: 2023-12-15T08:00:00+2:00
 index: 16
-title: Projeto Final - Lançamento
-tldr: "Apresentar o projeto final."
+title: Apresentações dos Projetos Finais
+tldr: "Apresentação dos jogos desenvolidos pelos alunos.."
 # thumbnail: /static_files/presentations/lec.jpg
 # links: 
 #     - url: /static_files/presentations/lec.zip

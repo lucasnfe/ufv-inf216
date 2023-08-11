@@ -2,7 +2,7 @@
 layout: assignment
 type: project
 date: 2023-10-06T00:01
-title: 'Projeto Final: Proposta'
+title: 'PF: Documento de Design'
 permalink: /projeto-final-proposta/
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
@@ -11,6 +11,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-10-13T23:59
-    description: 'Entrega Proposta de Projeto'
+    description: 'Entrega PF: Documento de Design'
 ---
 

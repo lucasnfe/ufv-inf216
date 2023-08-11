@@ -2,14 +2,15 @@
     {{ include.event.date | date: "%d/%m" }}
 </div>
 
-<div style="width: 40%; margin: 0px 20px 0px 20px" data-label="Event">
-    <b>{{ include.event.name }}: {{include.event.description}}</b>
-    <div class="schedule-lecture-links">
+<div style="display: flex; width: 40%; margin: 0px 0px 0px 20px; flex-wrap: wrap" data-label="Event">
+    <div style="margin-right: 2px;"><b>{{ include.event.name }}:</b></div>
+    <div>{{include.event.description}}</div>
+    <!-- <div class="schedule-lecture-links">
     {% include lecture_links.html lecture=include.event %}
-    </div>
+    </div> -->
 </div>
 
-<div style="width: 40%; margin: 0px 20px 0px 20px" class="markdown-content" data-label="Course Material">
+<div style="width: 40%; margin: 0px 0px 0px 20px" class="markdown-content" data-label="Event">
     <!-- {% if include.event.suggested_readings %}
     <p style="margin-bottom: 2px">Suggested Readings:</p>
     <ul>

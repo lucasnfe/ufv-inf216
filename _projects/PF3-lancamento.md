@@ -2,7 +2,7 @@
 layout: assignment
 type: project
 date: 2023-12-15T08:00
-title: 'Projeto Final: Lançamento'
+title: 'PF: Lançamento'
 permalink: /projeto-final-lancamento/
 hide_from_announcments: true
 # pdf: /static_files/assignments/asg.pdf
@@ -11,6 +11,6 @@ hide_from_announcments: true
 due_event: 
     type: due
     date: 2023-12-15T10:00
-    description: 'Entrega Projeto Final'
+    description: 'Entrega PF: Lançamento'
 ---
 

@@ -3,7 +3,7 @@ type: assignment
 date: 2023-08-18T08:00
 title: 'P1: Configuração Inicial'
 permalink: 'projetos/p1-configuracao-inicial/'
-hide_from_announcments: true
+hide_from_announcments: false
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
