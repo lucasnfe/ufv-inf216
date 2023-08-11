@@ -138,5 +138,5 @@ git push
 
 ## Referências
 
-- Pro Git: [https://git-scm.com/book/pt-br/v2](https://git-scm.com/book/pt-br/v2)
+- Para o Git: [https://git-scm.com/book/pt-br/v2](https://git-scm.com/book/pt-br/v2)
 - Instalação da SDL: [https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php)
