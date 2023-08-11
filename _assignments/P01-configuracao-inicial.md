@@ -84,36 +84,10 @@ Na primeira parte, você irá baixar e instalar a IDE CLion e a biblioteca SDL.
 
 Nessa etapa, você irá utilizar a IDE Clion para escrever um programa em C++/SDL que desenha um quadrado em uma janela.
 
-- **CMakeLists.txt**
-
-    1. **Configurar o *CMakeLists* para incluir os cabeçalhos e linkar a SDL**
-
-        Edite as linha 11 e 12, substituindo `<SDL_PATH>` e `<SDL_HEADERS_PATH>` pelo caminho do binário e do diretório com os arquivos de cabeçalho da SDL no seu computador, respectivamente:
-
-        - **Linux** 
-
-            ```
-            11. target_link_libraries(${PROJECT_NAME} "/opt/SDL2/lib/")
-            12. target_include_directories(${PROJECT_NAME} PRIVATE "/opt/SDL2/include/")
-            ```
-                
-        - **Windows (64 bits)** 
-        
-            ```
-            11. target_link_libraries(${PROJECT_NAME} "C:\Arquivos de Programas\SDL2\lib\x64")
-            12. target_include_directories(${PROJECT_NAME} PRIVATE "C:\Arquivos de Programas\SDL2\include\")
-            ```
-                
-        - **Mac** 
-                
-            ```
-            11. target_link_libraries(${PROJECT_NAME} "/Library/Frameworks/SDL2.framework/Headers/")
-            12. target_include_directories(${PROJECT_NAME} PRIVATE "/Library/Frameworks/SDL2.framework/SDL")
-            ```
 
 - **main.cpp**
 
-    2. **Escreva um programa em C++/SDL que desenha um quadrado em uma janela**
+    1. **Escreva um programa em C++/SDL que desenha um quadrado em uma janela**
 
         1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_Init) e verifique se a inicialização ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
