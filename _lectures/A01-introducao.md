@@ -8,10 +8,10 @@ tldr: "Logística da disciplina e visão geral do desenvolvimento de jogos digit
 links: 
     - url: /static_files/presentations/lec.zip
       name: notas
-    # - url: /static_files/presentations/code.zip
-    #   name: código
     - url: https://google.com
       name: slides
+    # - url: /static_files/presentations/code.zip
+    #   name: código
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
