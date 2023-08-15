@@ -6,13 +6,9 @@ title: Introdução
 tldr: "Logística da disciplina e visão geral do desenvolvimento de jogos digitais: história, mercado e tecnologias."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
-    - url: /static_files/presentations/lec.zip
-      name: notas
-    - url: https://google.com
+    - url: /static_files/slides/A01-introducao.pdf
       name: slides
-    # - url: /static_files/presentations/code.zip
-    #   name: código
-hide_from_announcments: true
+hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
 - Game Programming Algorithms and Techniques, Cap. 1 

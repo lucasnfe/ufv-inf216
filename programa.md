@@ -14,11 +14,11 @@ permalink: /programa/
 
 1. **Introdução**
 
-    Visão geral do desenvolvimento de jogos; história, mercado e tecnologias; o laço principal do jogo; eventos de entrada; modelagem de objetos de jogo; síntede de imagens.
+    Visão geral do desenvolvimento de jogos; história, mercado e tecnologias; o laço principal do jogo; eventos de entrada; modelagem de objetos de jogo; síntese de imagens.
 
 2. **Álgebra Linear**
 
-    Operações básicas de vetores e matrízes; sistemas de coordenadas; transformações geométricas; quarterions.
+    Operações básicas de vetores e matrízes; sistemas de coordenadas; transformações geométricas; quaternions.
 
 3. **Física**
 
