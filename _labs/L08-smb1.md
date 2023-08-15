@@ -1,17 +1,17 @@
 ---
 type: lab
-date: 2023-10-06T08:00:00+2:00
+date: 2023-10-06T08:00
 index: 8
 title: Super Mario Bros - Parte 1
 tldr: "Implementar uma classe Camera para fazer a rolagem da câmera seguindo o movimento do jogador."
 # thumbnail: /static_files/presentations/lec.jpg
-# links: 
-#     - url: /static_files/presentations/lec.zip
-#       name: notas
-#     # - url: /static_files/presentations/code.zip
-#     #   name: código
-#     - url: https://google.com
-#       name: slides
+links: 
+    - url: /static_files/presentations/lec.zip
+      name: notas
+    # - url: /static_files/presentations/code.zip
+    #   name: código
+    - url: https://google.com
+      name: slides
 hide_from_announcments: true
 ---
 <!-- **Leituras Sugeridas:**

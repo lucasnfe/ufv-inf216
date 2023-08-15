@@ -1,7 +1,7 @@
 ---
 type: lecture
 date: 2023-12-12T10:00:00+2:00
-index: 16
+index: 17
 title: Conclusão
 tldr: "Revisão dos tópicos vistos na disciplina e discussão sobre como se tornar um desenvolvedor de jogos."
 # thumbnail: /static_files/presentations/lec.jpg
@@ -15,4 +15,4 @@ links:
 hide_from_announcments: true
 ---
 **Leituras Sugeridas:**
-- <!-- - [Game Programming Algorithms and Techniques, Capítulo 2, Págs. 19-29](https://gameprogrammingpatterns.com/game-loop.html) -->
+- [Game Programming Algorithms and Techniques, Capítulo 2, Págs. 19-29](https://gameprogrammingpatterns.com/game-loop.html)
