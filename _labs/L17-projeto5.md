@@ -1,9 +1,9 @@
 ---
 type: lab
-date: 2023-12-07T08:00
-index: 16
-title: Projeto Final - Parte 3
-tldr: "Trabalhar no projeto final."
+date: 2023-12-15T08:00
+index: 17
+title: Apresentações dos Projetos Finais
+tldr: "Apresentação dos jogos desenvolidos pelos alunos."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
     - url: /static_files/presentations/lec.zip

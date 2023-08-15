@@ -1,7 +1,7 @@
 ---
 type: lecture
 date: 2023-12-12T10:00:00+2:00
-index: 16
+index: 17
 title: Conclusão
 tldr: "Revisão dos tópicos vistos na disciplina e discussão sobre como se tornar um desenvolvedor de jogos."
 # thumbnail: /static_files/presentations/lec.jpg
