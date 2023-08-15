@@ -18,11 +18,11 @@ permalink: /programa/
 
 2. **Álgebra Linear**
 
-    Operações básicas de vetores e matrízes; sistemas de coordenadas; transformações geométricas; quaternions.
+    Operações básicas de vetores e matrizes; sistemas de coordenadas; transformações geométricas; quarternions.
 
 3. **Física**
 
-    Mecânica linear para movimentação de objetos rígios; geometrias de colisão; detecção de colisão; estruturas de dados para otimização de simulações físicas.
+    Mecânica linear para movimentação de objetos rígidos; geometrias de colisão; detecção de colisão; estruturas de dados para otimização de simulações físicas.
 
 4. **Gráficos 2D**
 
@@ -42,4 +42,4 @@ permalink: /programa/
 
 8. **Gráficos 3D**
 
-    Pipeline gráfico; modelos 3D; câmeras; iluminação e sombreamento; visibilidade; 
+    Pipeline gráfico; modelos 3D; câmeras; iluminação e sombreamento; visibilidade. 
