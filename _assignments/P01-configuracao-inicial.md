@@ -3,7 +3,7 @@ type: assignment
 date: 2023-08-18T08:00
 title: 'P1: Configuração Inicial'
 permalink: '/avaliacoes/p1-configuracao-inicial/'
-hide_from_announcments: true
+hide_from_announcments: false
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
@@ -20,7 +20,7 @@ Jogos digitais são projetos de software relativamente grandes e complexos. Send
 
 ## Objetivo
 
-Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositório GitHub para o controle de versão e submissão do seu trabalho. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela. A figura a seguir ilustra o resultado esperado desse projeto:
+Nesse projeto você irá configurar o ambiente de desenvolvimento de jogos que será utilizado ao longo do curso. Primeiro você irá baixar e instalar a IDE CLion para programação e teste dos jogos. Em seguida, você irá criar um repositório GitHub (via Gihub Classroom) para o controle de versão e submissão do seu trabalho. Além disso, como primeiro projeto do seu repositório, você irá escrever um pequeno programa em C++ usando a biblioteca SDL para desenhar um quadrado em uma janela. A figura a seguir ilustra o resultado esperado desse projeto:
 
 <img src="{{'/_images/asg/p1/result2.png' | prepend: site.baseurl }}" alt="p1-configuracao-inicial" width="560"/>
 
@@ -46,7 +46,7 @@ Na primeira parte, você irá baixar e instalar a IDE CLion e a biblioteca SDL.
 
     1. Acesse o site da CLion [**[nesse link]**](https://www.jetbrains.com/clion) e siga as instruções de instalação para o seu sistema operacional;
 
-    2. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita
+    2. Durante a instalação, crie uma conta utilizando o seu email da UFV, o que irá ativar uma licensa gratuita.
 
 2. **Instalar a bilioteca SDL**
 
@@ -65,22 +65,26 @@ Na primeira parte, você irá baixar e instalar a IDE CLion e a biblioteca SDL.
             sudo make install
             ```
 
-    - **Windows**
+    - **Windows (64 bits)**
 
-        1. Acesse o site da versão 2.28.2 da SDL [**[nesse link]**](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2) e baixe o pacote `SDL2-devel-2.28.2-mingw.zip`
+        1. Acesse o site da versão 2.28.2 da SDL [**[nesse link]**](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2) e baixe o pacote `SDL2-devel-2.28.2-VC.zip`
 
-        2. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`. Ao final dessa etapa, a SDL deve estar configurada dessa maneira:
+        2. Extraia o conteúdo do pacote no diretório `C:\Arquivos de Programas\SDL2\`, como na figura a seguir:
 
-            <img src="{{'/_images/asg/p1/parte1-win.png' | prepend: site.baseurl }}" alt="p1-parte1" width="560"/>
+            <img src="{{'/_images/asg/p1/parte1-win.png' | prepend: site.baseurl }}" alt="p1-parte1" width="1024"/>
+
+        3. Copie o arquivo `SDL2.dll` do diretório `C:\Arquivos de Programas\SDL2\lib\x64\` para o diretório `C:\Windows\System32\`, como na figura a seguir:
+
+            <img src="{{'/_images/asg/p1/parte2-win.png' | prepend: site.baseurl }}" alt="p1-parte2" width="1024"/>            
 
     - **Mac**
         1. Acesse o site da versão 2.28.2 da SDL [**[nesse link]**](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.2) e baixe o pacote `SDL2-2.28.2.dmg`
 
         2. Clique na imagem para abrí-la e copie e o pacote `SDL2.framework` para o diretório `/Library/Frameworks/`. Ao final dessa etapa, a SDL deve estar configurada dessa maneira:
 
-            <img src="{{'/_images/asg/p1/parte1-mac.png' | prepend: site.baseurl }}" alt="p1-parte1" width="560"/>
+            <img src="{{'/_images/asg/p1/parte1-mac.png' | prepend: site.baseurl }}" alt="p1-parte1" width="1024"/>
 
-### **Parte 2: Um primeiro programa SDL**
+### **Parte 2: primeiro programa SDL**
 
 Nessa etapa, você irá utilizar a IDE Clion para escrever um programa em C++/SDL que desenha um quadrado em uma janela.
 
@@ -91,17 +95,17 @@ Nessa etapa, você irá utilizar a IDE Clion para escrever um programa em C++/SD
 
         1. Inicialize o subsistema de vídeo da SDL (`SDL_INIT_VIDEO`) com a função [`SDL_Init`](https://wiki.libsdl.org/SDL2/SDL_Init) e verifique se a inicialização ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
-        2. Crie uma janela (escolha largura e altura) usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow) e verifique se a criação ocorreu com     sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
+        2. Crie uma janela com tamanho 1024x768 usando a função [`SDL_CreateWindow`](https://wiki.libsdl.org/SDL2/SDL_CreateWindow) e verifique se a criação ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
         3. Crie um buffer de fundo usando a função [`SDL_CreateRenderer`](https://wiki.libsdl.org/SDL2/SDL_CreateRenderer). Utilize as flags `SDL_RENDERER_ACCELERATED` e `SDL_RENDERER_PRESENTVSYNC`. Verifique se a criação ocorreu com sucesso. Se não, imprima uma mensagem de erro para o usuário com a função SDL_Log e retorne -1;
 
-        4. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) para altere a cor de fundo (escolha a cor);
+        4. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) para alterar a cor de fundo para preto;
 
-        5. Utilize a função [`SDL_RenderClear`](https://wiki.libsdl.org/SDL2/SDL_RenderClear) para limpar o buffer de fundo com a cor configurada anteriormente;
+        5. Utilize a função [`SDL_RenderClear`](https://wiki.libsdl.org/SDL2/SDL_RenderClear) para limpar o buffer de fundo com a cor preta, conforme configurado na etapa anterior;
 
-        6. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) novamente para alterar a cor do quadrado (escolha a cor) que será desenhado;
+        6. Utilize a função [`SDL_SetRenderDrawColor`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) novamente para alterar a cor do quadrado que será desenhado para branco;
 
-        7. Crie um quadrado com a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect) e utilize a função [`SDL_RenderFillRect`](https://wiki.libsdl.org/SDL2/SDL_RenderFillRect) para desenhá-lo no buffer de fundo;
+        7. Crie um quadrado no meio da tela com a estrutura [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect) e utilize a função [`SDL_RenderFillRect`](https://wiki.libsdl.org/SDL2/SDL_RenderFillRect) para desenhá-lo no buffer de fundo;
         
         8. Utilize a função [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL2/SDL_RenderPresent) para trocar o buffer da frente com o buffer de fundo;
 
