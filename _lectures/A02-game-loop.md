@@ -6,13 +6,11 @@ title: Game Loop e Modelagem de Objetos
 tldr: "Técnicas de controle de tempo de CPU e modelagem de objetos do jogo."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
-    - url: /static_files/presentations/lec.zip
-      name: notas
-    # - url: /static_files/presentations/code.zip
-    #   name: código
-    - url: https://google.com
+    - url: /static_files/slides/A02-game-loop.pdf
       name: slides
-hide_from_announcments: true
+    - url: https://youtu.be/_kuA9kuxiF0
+      name: vídeo
+hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
 - Game Programming Algorithms and Techniques, Cap. 1
