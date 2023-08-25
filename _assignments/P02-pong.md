@@ -240,6 +240,8 @@ Na terceira, você irá utilizar a estrutura de objetos criada na parte anterior
 
         7. Verifique se a bola colidiu com o limite superior tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola `mVelocity.y` deve ser negativa e a posição vertical da bola `pos.y` deve ser menor ou igual ao limite superior da tela (zero) mais a metade do tamanho da bola (`mSize/2`).
 
+        8. Verifique se a bola colidiu com o limite inferior da tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola (mVelocity.y) deve ser positiva e a posição vertical da bola (pos.y) deve ser maior ou igual ao limite inferior da tela (altura) menos a metade do tamanho da bola (mSize/2). Utilize a função GetGame()->GetWindowHeight() para acessar a altura da tela.
+
 - **Game.cpp**
 
     1. **Implemente o método *InitializeActors* para inicializar a bola e a raquete**
