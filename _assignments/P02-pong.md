@@ -32,7 +32,7 @@ Nesse projeto, você irá desenvolver uma versão de 1 jogador do jogo Pong em C
 
 ## Inicialização
 
-Aceite o projeto *p2-pong* no GitHub classroom [[nesse link]](https://classroom.github.com/a/qhHAuinC) e clone o seu novo repositório no seu computador:
+Aceite o projeto *p2-pong* no GitHub classroom [[nesse link]](https://classroom.github.com/a/_BxYB5Mm) e clone o seu novo repositório no seu computador:
 
 ```
 # Substitua <GITHUB_USERNAME> pelo seu usuário do GitHub
