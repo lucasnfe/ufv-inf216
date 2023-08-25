@@ -2,8 +2,8 @@
 type: assignment
 date: 2023-09-01T08:00
 title: 'P2: Pong'
-permalink: /projetos/p2-pong/
-hide_from_announcments: true
+permalink: /avaliacoes/p2-pong/
+hide_from_announcments: false
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
@@ -280,6 +280,12 @@ git push
 
 ## Referências
 
-- Parte 1: [Game Programming in C++, Cap 1 - The Game Loop and Game Class](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec3)
-- Parte 2: [Game Programming in C++, Cap 2 - Game Objects](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch02.xhtml#ch02lev2sec1)    
-- Parte 3: [Game Programming in C++, Cap 1 - Updating the Game](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec11)
+- Parte 1: 
+    - [Game Programming in C++, Cap 1: The Game Loop and Game Class](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec3)
+    - [Game Programming in C++, Cap 1: Updating the Game](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec11)
+
+- Parte 2: 
+    - [Game Programming in C++, Cap 2: Game Objects](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch02.xhtml#ch02lev2sec1)    
+
+- Parte 3: 
+    - [Game Programming in C++, Cap 1: Updating the Game](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch01.xhtml#ch01lev2sec11)
