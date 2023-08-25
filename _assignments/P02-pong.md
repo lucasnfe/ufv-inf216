@@ -15,7 +15,7 @@ due_event:
 
 ## Introdução
 
-Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolvido pela Atari em 1972. O pong simula um jogo de tênis de mesa, onde cada jogodar controla verticalmente uma raquete posicionada em uma das extremidades da tela, com o objetivo de rebater uma bola de tal maneira que o oponente não consiga rebater de volta. Cada vez que um jogador não consegue rebater uma bola, o oponente recebe um ponto. O jogo termina quando um dos jogadores completa 11 pontos. Tanto as raquetes e a bola, quanto as marcações de meio de campo e de pontuação, são representados por retângulos brancos. O video a seguir mostra um gameplay do jogo original:
+Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolvido pela Atari em 1972. O pong simula um jogo de tênis de mesa, onde cada jogador controla verticalmente uma raquete posicionada em uma das extremidades da tela, com o objetivo de rebater uma bola de tal maneira que o oponente não consiga rebater de volta. Cada vez que um jogador não conseguir rebater a bola, o oponente receberá um ponto. O jogo termina quando um dos jogadores completar 11 pontos. Tanto as raquetes e a bola quanto as marcações de meio de campo e de pontuação são representados por retângulos brancos. O video a seguir mostra um *gameplay* do jogo original:
 
 <div class="embed-youtube">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/e4VRgY3tkh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -76,7 +76,7 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
 
 - **Game.cpp**
 
-    1. **Estenda o método *Inicialize* para inicializar o contador de tempo *mTicksCount***
+    1. **Estenda o método *Initialize* para inicializar o contador de tempo *mTicksCount***
 
         Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para inicializar o atributo
         `mTicksCount`, de tal forma que ele represente o tempo (em milisegundos) decorrido desde a inicialização da SDL.
@@ -84,7 +84,7 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
     2. **Implemente o método *RunLoop* para executar o laço principal do jogo**
 
         Escreva um laço `while` que é executado enquanto o atributo `mIsRunning` for verdadeiro. Dentro do laço, execute 
-        os métodos `ProcessInput()`, `UpdateGame()` e  `GenerateOutput()`, nessa ordem.
+        os métodos `ProcessInput()`, `UpdateGame()` e  `GenerateOutput()` nessa ordem.
 
     3. **Implemente o método UpdateGame para controlar a taxa de atualização de quadros**
 
@@ -176,7 +176,7 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
     6. **Estenda o método *ProcessInput* para passar os eventos de entrada aos objetos do jogo**
 
-        1. Utilize a função [`SDL_GetKeyboardState`](https://wiki.libsdl.org/SDL2/SDL_GetKeyboardState) para acessar o estado do jogo. Salve o estado em uma variável `Uint8* state`;
+        1. Utilize a função [`SDL_GetKeyboardState`](https://wiki.libsdl.org/SDL2/SDL_GetKeyboardState) para acessar o estado do jogo. Salve o estado em uma constante `Uint8* state`;
 
         2. Percorra o vetor de objetos `mActors`, chamando a função `ProcessInput(state)` para cada um deles.
 
