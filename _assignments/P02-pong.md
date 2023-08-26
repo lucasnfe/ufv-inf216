@@ -15,7 +15,7 @@ due_event:
 
 ## Introdução
 
-Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolvido pela Atari em 1972. O pong simula um jogo de tênis de mesa, onde cada jogodar controla verticalmente uma raquete posicionada em uma das extremidades da tela, com o objetivo de rebater uma bola de tal maneira que o oponente não consiga rebater de volta. Cada vez que um jogador não consegue rebater uma bola, o oponente recebe um ponto. O jogo termina quando um dos jogadores completa 11 pontos. Tanto as raquetes e a bola, quanto as marcações de meio de campo e de pontuação, são representados por retângulos brancos. O video a seguir mostra um gameplay do jogo original:
+Um dos primeiros e mais populares jogos da era do fliperama é o Pong, desenvolvido pela Atari em 1972. O pong simula um jogo de tênis de mesa, onde cada jogador controla verticalmente uma raquete posicionada em uma das extremidades da tela, com o objetivo de rebater uma bola de tal maneira que o oponente não consiga rebater de volta. Cada vez que um jogador não conseguir rebater a bola, o oponente receberá um ponto. O jogo termina quando um dos jogadores completar 11 pontos. Tanto as raquetes e a bola quanto as marcações de meio de campo e de pontuação são representados por retângulos brancos. O video a seguir mostra um *gameplay* do jogo original:
 
 <div class="embed-youtube">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/e4VRgY3tkh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -76,7 +76,7 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
 
 - **Game.cpp**
 
-    1. **Estenda o método *Inicialize* para inicializar o contador de tempo *mTicksCount***
+    1. **Estenda o método *Initialize* para inicializar o contador de tempo *mTicksCount***
 
         Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para inicializar o atributo
         `mTicksCount`, de tal forma que ele represente o tempo (em milisegundos) decorrido desde a inicialização da SDL.
@@ -84,7 +84,7 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
     2. **Implemente o método *RunLoop* para executar o laço principal do jogo**
 
         Escreva um laço `while` que é executado enquanto o atributo `mIsRunning` for verdadeiro. Dentro do laço, execute 
-        os métodos `ProcessInput()`, `UpdateGame()` e  `GenerateOutput()`, nessa ordem.
+        os métodos `ProcessInput()`, `UpdateGame()` e  `GenerateOutput()` nessa ordem.
 
     3. **Implemente o método UpdateGame para controlar a taxa de atualização de quadros**
 
@@ -137,7 +137,9 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
         1. Utilize a função `SDL_SetRenderDrawColor` para alterar a cor do renderer para branco;
 
-        2. Crie um retângulo `SDL_Rect` para representar o objeto visualmente;
+        2. Crie um retângulo SDL_Rect para representar o objeto visualmente. A posição do retângulo deve ser o centro do objeto (não o canto esquerdo superior, como originalmente definido pela SDL). Isso facilitará os cálculos de colisão. Utilize a função mOwner->GetPosition() para obter a posição original do objeto (canto esquerdo superior) e os atributos mWidth e mHeight para obter a sua largura e altura respectivamente.
+           Para deslocar a posição do objeto para o seu centro, subtraia da coordenada x a posição original pela metade da largura do objeto (mWidth/2) e da coordenada y a metade da altura (mHeight/2). Atribua o resultado dessas operações como posição final do retângulo criado.
+           Altura e largura do objeto não precisam ser transformadas.
 
         3. Desenhe o retângulo criado com a função `SDL_RenderFillRect`.
 
@@ -176,7 +178,7 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
     6. **Estenda o método *ProcessInput* para passar os eventos de entrada aos objetos do jogo**
 
-        1. Utilize a função [`SDL_GetKeyboardState`](https://wiki.libsdl.org/SDL2/SDL_GetKeyboardState) para acessar o estado do jogo. Salve o estado em uma variável `Uint8* state`;
+        1. Utilize a função [`SDL_GetKeyboardState`](https://wiki.libsdl.org/SDL2/SDL_GetKeyboardState) para acessar o estado do jogo. Salve o estado em uma constante `Uint8* state`;
 
         2. Percorra o vetor de objetos `mActors`, chamando a função `ProcessInput(state)` para cada um deles.
 
@@ -239,6 +241,8 @@ Na terceira, você irá utilizar a estrutura de objetos criada na parte anterior
         6. Verifique se a bola colidiu com o lado direito da tela. Se houve colisão, inverta (multiplique por -1) a velocidade horizontal da bola. Para que haja colisão, a velocidade horizontal da bola `mVelocity.x` deve ser positiva e a posição horizontal da bola `pos.x` deve ser maior do que largura da tela menos a metade do tamanho da bola `mSize/2`. Utilize a função `GetGame()->GetWindowWidth()` para acessar a largura da tela;
 
         7. Verifique se a bola colidiu com o limite superior tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola `mVelocity.y` deve ser negativa e a posição vertical da bola `pos.y` deve ser menor ou igual ao limite superior da tela (zero) mais a metade do tamanho da bola (`mSize/2`).
+
+        8. Verifique se a bola colidiu com o limite inferior da tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola (mVelocity.y) deve ser positiva e a posição vertical da bola (pos.y) deve ser maior ou igual ao limite inferior da tela (altura) menos a metade do tamanho da bola (mSize/2). Utilize a função GetGame()->GetWindowHeight() para acessar a altura da tela.
 
 - **Game.cpp**
 
