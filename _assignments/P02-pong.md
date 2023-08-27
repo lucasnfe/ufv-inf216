@@ -149,9 +149,9 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
         2. Escreva um laço for para percorrer todos os elementos do vetor de objetos pendentes `mPendingActors`, adicionando-os ao vetor de objetos ativos `mActors`. Após o laço, remova todos os elementos do vetor de objetos pendentes `mPendingActors`;
 
-        3. Crie um vetor chamado `deadActors` para armazenar os objetos a serem destruídos. Depois, escreva um laço for para percorrer todos os elementos do vetor de objetos ativos `mActors`, adicionando os que estiverem no estado `Actor::EDead` ao vetor de objetos mortos `deadActors`;
+        3. Crie um vetor chamado `deadActors` para armazenar os objetos a serem destruídos. Depois, escreva um laço for para percorrer todos os elementos do vetor de objetos ativos `mActors`, adicionando os que estiverem no estado `ActorState::Destroy` ao vetor de objetos mortos `deadActors`;
 
-        4. Escreva um laço for para percorrer todos os elementos do vetor `deadActors` e removê-los um-a-um.
+        4. Escreva um laço for para percorrer todos os elementos do vetor `deadActors` e removê-los um a um.
 
     2. **Implemente o método *AddActor* para adicionar objetos ao jogo**
 
@@ -209,7 +209,7 @@ Na terceira, você irá utilizar a estrutura de objetos criada na parte anterior
     
     3. **Implemente o método *OnUpdate* para atualizar a posição da raquete**
 
-        1. Some à coordenada y da posição da raquete `pos.y`: a velocidade da raquete `mVerticalSpeed` multiplicada 
+        1. Some à coordenada y da posição da raquete `mPosition.y`: a velocidade da raquete `mVerticalSpeed` multiplicada 
         pela sua direção `mDir` e pelo tempo decorrido desde o último quadro `deltaTime`;
 
         2. Limite a coordenada y da raquete para que ela não ultrapasse os limites superior e inferior da tela.
