@@ -137,9 +137,7 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
         1. Utilize a função `SDL_SetRenderDrawColor` para alterar a cor do renderer para branco;
 
-        2. Crie um retângulo SDL_Rect para representar o objeto visualmente. A posição do retângulo deve ser o centro do objeto (não o canto esquerdo superior, como originalmente definido pela SDL). Isso facilitará os cálculos de colisão. Utilize a função mOwner->GetPosition() para obter a posição original do objeto (canto esquerdo superior) e os atributos mWidth e mHeight para obter a sua largura e altura respectivamente.
-           Para deslocar a posição do objeto para o seu centro, subtraia da coordenada x a posição original pela metade da largura do objeto (mWidth/2) e da coordenada y a metade da altura (mHeight/2). Atribua o resultado dessas operações como posição final do retângulo criado.
-           Altura e largura do objeto não precisam ser transformadas.
+        2. Crie um retângulo SDL_Rect para representar o objeto visualmente. A posição do retângulo deve ser o centro do objeto (não o canto esquerdo superior, como originalmente definido pela SDL). Isso facilitará os cálculos de colisão. Utilize a função `mOwner->GetPosition()` para obter a posição original do objeto (canto esquerdo superior) e os atributos mWidth e mHeight para obter a sua largura e altura respectivamente. Para deslocar a posição do objeto para o seu centro, subtraia da coordenada x a posição original pela metade da largura do objeto (`mWidth/2`) e da coordenada y a metade da altura (`mHeight/2`). Atribua o resultado dessas operações como posição final do retângulo criado. Altura e largura do objeto não precisam ser transformadas.
 
         3. Desenhe o retângulo criado com a função `SDL_RenderFillRect`.
 
@@ -242,7 +240,7 @@ Na terceira, você irá utilizar a estrutura de objetos criada na parte anterior
 
         7. Verifique se a bola colidiu com o limite superior tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola `mVelocity.y` deve ser negativa e a posição vertical da bola `pos.y` deve ser menor ou igual ao limite superior da tela (zero) mais a metade do tamanho da bola (`mSize/2`).
 
-        8. Verifique se a bola colidiu com o limite inferior da tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola (mVelocity.y) deve ser positiva e a posição vertical da bola (pos.y) deve ser maior ou igual ao limite inferior da tela (altura) menos a metade do tamanho da bola (mSize/2). Utilize a função GetGame()->GetWindowHeight() para acessar a altura da tela.
+        8. Verifique se a bola colidiu com o limite inferior da tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola (`mVelocity.y`) deve ser positiva e a posição vertical da bola (`pos.y`) deve ser maior ou igual ao limite inferior da tela (altura) menos a metade do tamanho da bola (`mSize/2`). Utilize a função GetGame()->GetWindowHeight() para acessar a altura da tela.
 
 - **Game.cpp**
 
