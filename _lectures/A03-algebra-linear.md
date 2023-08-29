@@ -6,14 +6,12 @@ title: Álgebra Linear
 tldr: "Álgebra linear para computação gráfica e jogos digitais."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
-    - url: /static_files/presentations/lec.zip
-      name: notas
-    # - url: /static_files/presentations/code.zip
-    #   name: código
-    - url: https://google.com
+    - url: /static_files/slides/A03-algebra-linear.pdf
       name: slides
-hide_from_announcments: true
+    # - url: https://youtu.be/_kuA9kuxiF0
+    #   name: vídeo
+hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
-- Game Programming Algorithms and Techniques, Cap. 3
-- [The Nature of Code, Cap. 1](https://natureofcode.com/book/chapter-1-vectors/)
+- Game Programming Algorithms and Techniques, [Cap. 3: Linear Algebra for Games](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch03.html)
+- The Nature of Code, [Cap. 1: Vectors](https://natureofcode.com/book/chapter-1-vectors/)
