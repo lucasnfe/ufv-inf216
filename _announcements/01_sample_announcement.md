@@ -1,4 +1,4 @@
-<!-- ---
-date: 2018-10-03T10:00:00+3:30
 ---
-Anúncio exemplo, clique [aqui](/). -->
+date: 2023-09-29T14:00
+---
+**Não haverá laboratório no dia 01/09 (sexta-feira) por conta da [[Semana de Informática]](https://semanainfoufv.github.io/SI2023/)**!

@@ -2,7 +2,7 @@
 type: lab
 date: 2023-09-01T08:00
 index: 3
-title: Pong - Parte 2
+title: <s>Pong - Parte 2</s> (Semana da Informática)
 tldr: "Implementar uma estrutura de objetos com hierarquia de classes e componentes."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
