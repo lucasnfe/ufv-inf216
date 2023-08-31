@@ -76,28 +76,27 @@ Na primeira parte, você irá implementar o laço principal do jogo utilizando u
 
 - **Game.cpp**
 
-    1. **Estenda o método *Initialize* para inicializar o contador de tempo *mTicksCount***
+    1. **Estenda o método `Initialize` para inicializar o contador de tempo `mTicksCount`**
 
         Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para inicializar o atributo
-        `mTicksCount`, de tal forma que ele represente o tempo (em milisegundos) decorrido desde a inicialização da SDL.
+        `mTicksCount` de tal forma que ele represente o tempo (em milissegundos) decorrido desde a inicialização da SDL.
 
-    2. **Implemente o método *RunLoop* para executar o laço principal do jogo**
+    2. **Implemente o método `RunLoop` para executar o laço principal do jogo**
 
         Escreva um laço `while` que é executado enquanto o atributo `mIsRunning` for verdadeiro. Dentro do laço, execute 
         os métodos `ProcessInput()`, `UpdateGame()` e  `GenerateOutput()` nessa ordem.
 
-    3. **Implemente o método UpdateGame para controlar a taxa de atualização de quadros**
+    3. **Implemente o método `UpdateGame` para controlar a taxa de atualização de quadros**
 
-       1. Utilize a função [`SDL_TICKS_PASSED()`](https://wiki.libsdl.org/SDL2/SDL_TICKS_PASSED) para garantir que pelo menos 
-       16 milissegundos tenham se passado desde o último quadro (`mTicksCount + 16`);
+       1. Utilize a função [`SDL_TICKS_PASSED()`](https://wiki.libsdl.org/SDL2/SDL_TICKS_PASSED) para garantir que pelo menos `16` milissegundos tenham se passado desde o último quadro (`mTicksCount + 16`);
        
-       2. Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para obter o tempo (em ms) decorrido até o quadro atual e subtraia por `mTicksCount`, obtendo o tempo (em ms) entre o quadro atual e o passado. Converta o resultado para segundos e armazene o resultado em uma variável do tipo float chamada deltaTime;
+       2. Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para obter o tempo (em ms) decorrido até o quadro atual e subtraia por `mTicksCount`, obtendo o tempo (em ms) entre o quadro atual e o passado. Converta o resultado para segundos e armazene o resultado em uma variável do tipo `float` chamada `deltaTime`;
        
-       3. Verifique se deltaTime é superior a 0.05 segundos e, se for, limite-a para 0.05 segundos;
+       3. Verifique se deltaTime é superior a `0.05` segundos e, se for, limite-a para `0.05` segundos;
        
-       4. Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para atualizar o contador de tempo `mTicksCount`.
+       4. Utilize a função [`SDL_GetTicks()`](https://wiki.libsdl.org/SDL2/SDL_GetTicks) para atualizar o contador de tempo `mTicksCount`;
 
-       5. Chame a função `UpdateActors(deltaTime)` para atualizar os objetos do jogo.
+       5. Chame a função `UpdateActors(deltaTime)` para atualizar os objetos do jogo;
 
 ### **Parte 2: Modelo de Objetos**
 
@@ -105,89 +104,88 @@ Na segunda parte, você irá implementar uma estrutura de objetos com hierarquia
 
 - **Actor.cpp**
 
-    1. **Implemente o construtor *Actor* para adicionar o objeto ao jogo**
+    1. **Implemente o construtor `Actor` para adicionar o objeto ao jogo**
 
         Utilize a função `AddActor` do jogo (`mGame`) para adicionar o novo objeto (`this`) ao jogo.
 
-    2. **Implemente o destruidor *~Actor* para remover o objeto ao jogo**
+    2. **Implemente o destrutor `~Actor` para remover o objeto ao jogo**
 
         1. Utilize a função `RemoveActor` do jogo (`mGame`) para remover esse objeto (`this`) do jogo;
 
         2. Percorra o vetor de componentes `mComponents` deletando (`delete`) cada um deles e, em seguida, limpe (`clear`) o vetor de componentes.
 
-    3. **Implemente o método *Update* para atualizar os componentes**
+    3. **Implemente o método `Update` para atualizar os componentes**
 
-        Verifique se o objeto está no estado `mState` ativo (`ActorState::Active`). Se estiver, percorra o vetor de componentes, chamando a função `Update(deltaTime)` para cada um deles e, em seguida, chame a função `OnUpdate(deltaTime)`.
+        Verifique se o objeto está no estado (`mState`) ativo (`ActorState::Active`). Se estiver, percorra o vetor de componentes, chamando a função `Update(deltaTime)` para cada um deles e, em seguida, chame a função `OnUpdate(deltaTime)`.
 
-    4. **Implemente o método *ProcessInput* para processar a entrada**
+    4. **Implemente o método `ProcessInput` para processar a entrada**
 
-        De forma similar ao método Update, verifique se o objeto está no estado `mState` ativo (`ActorState::Active`). Se estiver, percorra o vetor de componentes, chamando a função `ProcessInput(keyState)` para cada um deles e, em seguida, chame a função `OnProcessInput(keyState)`.
+        De forma similar ao método `Update`, verifique se o objeto está no estado (`mState`) ativo (`ActorState::Active`). Se estiver, percorra o vetor de componentes, chamando a função `ProcessInput(keyState)` para cada um deles e, em seguida, chame a função `OnProcessInput(keyState)`.
 
 - **DrawComponent.cpp**
 
-    1. **Implemente o construtor *DrawComponent* para adicionar o componente desenhável ao jogo**
+    1. **Implemente o construtor `DrawComponent` para adicionar o componente desenhável ao jogo**
 
         Utilize a função `AddDrawable` do jogo (`mOwner->GetGame()`) para adicionar esse (`this`) componente ao vetor de objetos desenháveis do jogo.
 
-    2. **Implemente o construtor *~DrawComponent* para remover o componente desenhável ao jogo**
+    2. **Implemente o destrutor `~DrawComponent` para remover o componente desenhável ao jogo**
 
         Utilize a função `RemoveDrawable` do jogo (`mOwner->GetGame()`) para remover esse (`this`) componente ao vetor de objetos desenháveis do jogo.
 
-    3. **Implemente o método *Draw* para desenhar um quadrado**
+    3. **Implemente o método `Draw` para desenhar um quadrado**
 
-        1. Utilize a função `SDL_SetRenderDrawColor` para alterar a cor do renderer para branco;
+        1. Utilize a função [`SDL_SetRenderDrawColor()`](https://wiki.libsdl.org/SDL2/SDL_SetRenderDrawColor) para alterar a cor do renderer para branco;
 
-        2. Crie um retângulo SDL_Rect para representar o objeto visualmente. A posição do retângulo deve ser o centro do objeto (não o canto esquerdo superior, como originalmente definido pela SDL). Isso facilitará os cálculos de colisão. Utilize a função `mOwner->GetPosition()` para obter a posição original do objeto (canto esquerdo superior) e os atributos mWidth e mHeight para obter a sua largura e altura respectivamente. Para deslocar a posição do objeto para o seu centro, subtraia da coordenada x a posição original pela metade da largura do objeto (`mWidth/2`) e da coordenada y a metade da altura (`mHeight/2`). Atribua o resultado dessas operações como posição final do retângulo criado. Altura e largura do objeto não precisam ser transformadas.
+        2. Crie um retângulo [`SDL_Rect`](https://wiki.libsdl.org/SDL2/SDL_Rect) para representar o objeto visualmente. A posição do retângulo deve ser o centro do objeto (não o canto esquerdo superior, como originalmente definido pela SDL). Isso facilitará os cálculos de colisão. Utilize a função `mOwner->GetPosition()` para obter a posição original do objeto (canto esquerdo superior) e os atributos `mWidth` e `mHeight` para obter a sua largura e altura respectivamente. Para deslocar a posição do objeto para o seu centro, subtraia da coordenada `x` metade da largura do objeto (`mWidth/2`) e da coordenada `y` metade da altura (`mHeight/2`). Atribua o resultado dessas operações como posição final do retângulo criado. Altura e largura do objeto não precisam ser transformadas.
 
-        3. Desenhe o retângulo criado com a função `SDL_RenderFillRect`.
+        3. Desenhe o retângulo criado com a função [`SDL_RenderFillRect()`](https://wiki.libsdl.org/SDL2/SDL_RenderFillRect).
 
 - **Game.cpp**
 
-    1. **Implemente o método *UpdateActors* para atualizar os objetos do jogo**
+    1. **Implemente o método `UpdateActors` para atualizar os objetos do jogo**
 
-        1. Atribua verdadeiro para `mUpdatingActors` e, em seguida, escreva um laço para percorrer todos os elementos do vetor de objetos ativos `mActors`, chamando a função `Update(deltaTime)` para cada um deles. Ao final do laço, atribua falso para `mUpdatingActors`;
+        1. Atribua verdadeiro para `mUpdatingActors` e, em seguida, escreva um laço para percorrer todos os elementos do vetor de objetos ativos `mActors` chamando a função `Update(deltaTime)` para cada um deles. Ao final do laço, atribua falso para `mUpdatingActors`;
 
-        2. Escreva um laço for para percorrer todos os elementos do vetor de objetos pendentes `mPendingActors`, adicionando-os ao vetor de objetos ativos `mActors`. Após o laço, remova todos os elementos do vetor de objetos pendentes `mPendingActors`;
+        2. Escreva um laço `for` para percorrer todos os elementos do vetor de objetos pendentes `mPendingActors` adicionando-os ao final do vetor de objetos ativos `mActors`. Após o laço, remova todos os elementos do vetor de objetos pendentes `mPendingActors`;
 
-        3. Crie um vetor chamado `deadActors` para armazenar os objetos a serem destruídos. Depois, escreva um laço for para percorrer todos os elementos do vetor de objetos ativos `mActors`, adicionando os que estiverem no estado `ActorState::Destroy` ao vetor de objetos mortos `deadActors`;
+        3. Crie um vetor chamado `deadActors` para armazenar ponteiros (`std::vector<Actor*>`) para os objetos a serem destruídos. Depois, escreva um laço `for` para percorrer todos os elementos do vetor de objetos ativos `mActors` adicionando os que estiverem no estado `ActorState::Destroy` ao final do vetor de objetos mortos `deadActors`;
 
-        4. Escreva um laço for para percorrer todos os elementos do vetor `deadActors` e removê-los um a um.
+        4. Escreva um laço `for` para percorrer todos os elementos do vetor `deadActors` e removê-los um a um.
 
-    2. **Implemente o método *AddActor* para adicionar objetos ao jogo**
+    2. **Implemente o método `AddActor` para adicionar objetos ao jogo**
 
-        Verifique se o jogo está atualizando objetos (`mUpdatingActors == true`). Se estiver, adicione o novo objeto `actor` ao final do vetor de objetos pendentes `mPendingActors`, se não, ao final do vetor de objetos ativos `mActors`.
+        Verifique se o jogo está atualizando objetos (`mUpdatingActors == true`). Se estiver, adicione o novo objeto `actor` ao final do vetor de objetos pendentes `mPendingActors`. Se não, ao final do vetor de objetos ativos `mActors`.
 
-    3. **Implemente o método *RemoveActor* para remover objetos do jogo**
+    3. **Implemente o método `RemoveActor` para remover objetos do jogo**
 
-        1. Procure pelo objeto a ser removido no vetor de objetos pendentes `mPendingActors`. Se encontrar, remova-o;
+        1. Utilize a função `std::find` para procurar pelo objeto a ser removido no vetor de objetos pendentes `mPendingActors`. Se encontrar, utilize a função `std::iter_swap` para trocar o objeto encontrado de posição com o último elemento de `mPendingActors`. Em seguida, remova o último elemento de `mPendingActors` com a função `pop_back`. **NÃO** utilize o `delete` para remover o elemento encontrado pois isso irá gerar um loop infinito;
 
-        2. Procure pelo objeto a ser removido no vetor de objetos ativos `mActors`. Se encontrar, remova-o.
+        2. Utilize a função `std::find` para procurar pelo objeto a ser removido no vetor de objetos ativos `mActors`. Se encontrar, utilize a função `std::iter_swap` para trocar o objeto encontrado de posição com o último elemento de `mActors`. Em seguida, remova o último elemento de `mActors` com a função `pop_back`. **NÃO** utilize o `delete` para remover o elemento encontrado pois isso irá gerar um loop infinito;
 
-    4. **Implemente o método *AddDrawable* para adicionar um componente visual ao jogo**
+    4. **Implemente o método `AddDrawable` para adicionar um componente visual ao jogo**
 
         1. Adicione o novo componente `drawable` ao final do vetor de componentes visuais `mDrawables`;
 
-        2. Ordene (`std::sort`) o vetor de componentes visuais `mDrawables` de acordo com o índice estabelecido na criação do componente. Utilize a função
-            `GetDrawOrder()` para acessar a ordem de desenho de um objeto.
+        2. Ordene (`std::sort`) de forma crescente o vetor de componentes visuais `mDrawables` de acordo com a prioridade `GetDrawOrder()` estabelecida na criação do componente;
 
-    5. **Implemente o método *RemoveDrawable* para remover um componente visual ao jogo**
+    5. **Implemente o método `RemoveDrawable` para remover um componente visual ao jogo**
 
-        Procure (`std::find`) pelo componente `drawable` no vetor de componentes visuais `mDrawables` e o remova (`erase`) desse vetor.
+        Procure (`std::find`) pelo componente dado `drawable` no vetor de componentes visuais `mDrawables` e remova-o (`erase`) desse vetor.
 
-    6. **Estenda o método *ProcessInput* para passar os eventos de entrada aos objetos do jogo**
+    6. **Estenda o método `ProcessInput` para passar os eventos de entrada aos objetos do jogo**
 
         1. Utilize a função [`SDL_GetKeyboardState`](https://wiki.libsdl.org/SDL2/SDL_GetKeyboardState) para acessar o estado do jogo. Salve o estado em uma constante `Uint8* state`;
 
-        2. Percorra o vetor de objetos `mActors`, chamando a função `ProcessInput(state)` para cada um deles.
+        2. Percorra o vetor de objetos `mActors` chamando a função `ProcessInput(state)` para cada um deles.
 
-    7. **Estenda o método *GenerateOutput* para desenhar os componentes visuais**
+    7. **Estenda o método `GenerateOutput` para desenhar os componentes visuais**
 
         Percorra o vetor de componentes visuais `mDrawables` e chame a função `Draw(mRenderer)` para cada um deles.
 
-    8. **Estenda o método *Shutdown* para deletar os objetos do jogo**
+    8. **Estenda o método `Shutdown` para deletar os objetos do jogo**
 
-        Percorra o vetor de objetos `mActors` enquanto (`while`) ele tiver elementos (`!mActors.empty()`), deletando (`delete`) o último elemento do 
-        vetor (`mActors.back()`). É necessário usar um laço while porque o método destruidor da classe Actor chama `RemoveActor` no objeto do jogo.
+        Percorra o vetor de objetos `mActors` enquanto (`while`) ele tiver elementos (`!mActors.empty()`) deletando (`delete`) o último elemento do 
+        vetor (`mActors.back()`). É necessário usar um laço `while` pois o `for` percorre por índices e estes seriam desconfigurados no momento da remoção (`delete`).
 
 ### **Parte 3: Objetos do Pong**
 
@@ -195,60 +193,59 @@ Na terceira, você irá utilizar a estrutura de objetos criada na parte anterior
 
 - **Paddle.cpp**
 
-    1. **Implemente o construtor *Paddle* para adicionar um componente de desenho**
+    1. **Implemente o construtor `Paddle` para adicionar um componente de desenho**
 
         Crie um novo componente visual `DrawComponent` e atribua ao ponteiro `mDrawComponent`.
 
-    2. **Implemente o método *OnProcessInput* para atualizar a direção do movimento da raquete**
+    2. **Implemente o método `OnProcessInput` para atualizar a direção do movimento da raquete**
 
-        1. Reinicialize a direção da raquete `mDir` para 0;
+        1. Reinicialize a direção da raquete `mDir` para `0`;
 
-        2. Verifique se tecla w está sendo pressionada. Se estiver, altere a direção `mDir` para -1;
+        2. Verifique se tecla `w` está sendo pressionada. Se estiver, altere a direção `mDir` para `-1`;
 
-        3. Verifique se tecla s está sendo pressionada. Se estiver, altere a direção `mDir` para +1.
+        3. Verifique se tecla `s` está sendo pressionada. Se estiver, altere a direção `mDir` para `+1`.
     
-    3. **Implemente o método *OnUpdate* para atualizar a posição da raquete**
+    3. **Implemente o método `OnUpdate` para atualizar a posição da raquete**
 
-        1. Some à coordenada y da posição da raquete `mPosition.y`: a velocidade da raquete `mVerticalSpeed` multiplicada 
+        1. Some à coordenada `y` da posição da raquete `mPosition.y` a velocidade da raquete `mVerticalSpeed` multiplicada 
         pela sua direção `mDir` e pelo tempo decorrido desde o último quadro `deltaTime`;
 
-        2. Limite a coordenada y da raquete para que ela não ultrapasse os limites superior e inferior da tela.
+        2. Limite a coordenada `y` da raquete para que ela não ultrapasse os limites superior e inferior da tela. Utilize a função `mGame->GetWindowHeight()` para acessar a altura da tela. Lembre-se de que a posição da raquete se refere ao centro dela.
     
 - **Ball.cpp**
 
-    1. **Implemente o construtor *Ball* para adicionar um componente de desenho**
+    1. **Implemente o construtor `Ball` para adicionar um componente de desenho**
 
         Crie um novo componente visual `DrawComponent` e atribua ao ponteiro `mDrawComponent`.
 
-    2. **Implemente o método *OnUpdate* para atualizar a posição da bola**
+    2. **Implemente o método `OnUpdate` para atualizar a posição da bola**
 
-        1. Some à posição horizontal da bola `pos.x` a sua velocidade horizontal `mVelocity.x` multiplicado pelo tempo decorrido desde o último quadro (deltaTime);
+        1. Some à posição horizontal da bola (`mPosition.x`) a sua velocidade horizontal (`mVelocity.x`) multiplicado pelo tempo decorrido desde o último quadro (`deltaTime`);
 
-        2. Some à posição vertical da bola `pos.y` a sua velocidade vertical `mVelocity.y` multiplicado pelo tempo decorrido desde o último quadro (deltaTime);
+        2. Some à posição vertical da bola (`mPosition.y`) a sua velocidade vertical (`mVelocity.y`) multiplicado pelo tempo decorrido desde o último quadro (`deltaTime`);
 
-        3. Calcule a distância vertical absoluta entra a bola e a raquete. Utilize a função `paddle->GetPosition()` para acessar a posição da raquete;
+        3. Calcule as distâncias vertical e horizontal entra a bola e a raquete. Utilize a função `paddle->GetPosition()` para acessar a posição da raquete.
 
-        4. Verifique se a bola colidiu com a raquete. Se houve colisão, inverta (multiplique por -1) a velocidade horizontal da bola. Para que haja colisão, as seguintes condições devem ser verdadeiras:
-            - A velocidade horizontal `mVelocity.x` da bola deve ser negativa;
-            - A distância vertical absoluta entre a bola e a raquete deve ser metade da altura da raquete mais o tamanho da bola `mSize`. Utilize a função 
-              `paddle->GetHeight()` para acessar a altura da raquete;
-            - A posição horizontal da bola `pos.x` deve estar entre as posições dos lados esquerdo e direito da raquete.
+        4. Verifique se a bola colidiu com a raquete. Se houver colisão, inverta (multiplique por `-1`) a velocidade horizontal da bola. Para que haja colisão, as seguintes condições devem ser satisfeitas:
+            - A velocidade horizontal da bola (`mVelocity.x`) deve ser negativa;
+            - A distância vertical entra a bola e a raquete deve ser menor ou igual à metade da altura da raquete mais a metade tamanho da bola (`mSize/2`). Utilize a função (`paddle->GetHeight()`) para acessar a altura da raquete;
+            - A distância horizontal entre a bola e a raquete deve ser menor que a largura da raquete (`paddle->GetWidth()`);
 
-        5. Verifique se a bola saiu pelo lado esquerdo da tela. Se saiu, finalize o jogo chamando a função Quit do jogo `GetGame()->Quit()`;
+        5. Verifique se a bola saiu pelo lado esquerdo da tela (zero). Se saiu, finalize o jogo chamando a função Quit do jogo `game->Quit()`;
 
-        6. Verifique se a bola colidiu com o lado direito da tela. Se houve colisão, inverta (multiplique por -1) a velocidade horizontal da bola. Para que haja colisão, a velocidade horizontal da bola `mVelocity.x` deve ser positiva e a posição horizontal da bola `pos.x` deve ser maior do que largura da tela menos a metade do tamanho da bola `mSize/2`. Utilize a função `GetGame()->GetWindowWidth()` para acessar a largura da tela;
+        6. Verifique se a bola colidiu com o lado direito da tela. Se houver colisão, inverta (multiplique por `-1`) a velocidade horizontal da bola. Para que haja colisão, a velocidade horizontal da bola `mVelocity.x` deve ser positiva e a posição horizontal da bola `mPosition.x` deve ser maior ou igual à largura da tela menos a metade do tamanho da bola `mSize/2`. Utilize a função `game->GetWindowWidth()` para acessar a largura da tela;
 
-        7. Verifique se a bola colidiu com o limite superior tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola `mVelocity.y` deve ser negativa e a posição vertical da bola `pos.y` deve ser menor ou igual ao limite superior da tela (zero) mais a metade do tamanho da bola (`mSize/2`).
+        7. Verifique se a bola colidiu com o limite superior tela. Se houver colisão, inverta (multiplique por `-1`) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola `mVelocity.y` deve ser negativa e a posição vertical da bola `mPosition.y` deve ser menor ou igual ao limite superior da tela (zero) mais a metade do tamanho da bola (`mSize/2`).
 
-        8. Verifique se a bola colidiu com o limite inferior da tela. Se houve colisão, inverta (multiplique por -1) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola (`mVelocity.y`) deve ser positiva e a posição vertical da bola (`pos.y`) deve ser maior ou igual ao limite inferior da tela (altura) menos a metade do tamanho da bola (`mSize/2`). Utilize a função GetGame()->GetWindowHeight() para acessar a altura da tela.
+        8. Verifique se a bola colidiu com o limite inferior da tela. Se houver colisão, inverta (multiplique por `-1`) a velocidade vertical da bola. Para que haja colisão, a velocidade vertical da bola (`mVelocity.y`) deve ser positiva e a posição vertical da bola (`mPosition.y`) deve ser maior ou igual ao limite inferior da tela (altura) menos a metade do tamanho da bola (`mSize/2`). Utilize a função `game->GetWindowHeight()` para acessar a altura da tela.
 
 - **Game.cpp**
 
-    1. **Implemente o método *InitializeActors* para inicializar a bola e a raquete**
+    1. **Implemente o método `InitializeActors` para inicializar a bola e a raquete**
 
-        1. Crie a raquete `mPaddle` e inicialize sua posição com o método `SetPosition`;
+        1. Instancie a raquete `mPaddle` e inicialize sua posição com o método `SetPosition`;
 
-        1. Crie a bola `mBall` e inicialize sua posição e velocidade com os métodos `SetPosition` e `SetVelocity`, respectivamente.
+        2. Instancie a bola `mBall` e inicialize sua posição e velocidade com os métodos `SetPosition` e `SetVelocity`, respectivamente;
 
 ### **Parte 4: Customização**
 
