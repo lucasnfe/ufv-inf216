@@ -8,8 +8,10 @@ tldr: "Álgebra linear para computação gráfica e jogos digitais."
 links: 
     - url: /static_files/slides/A03-algebra-linear.pdf
       name: slides
-    # - url: https://youtu.be/_kuA9kuxiF0
-    #   name: vídeo
+    - url: https://youtu.be/lrkHBg0E6sk
+      name: vídeo 1
+    - url: https://youtu.be/6KuJLdeR_O0
+      name: vídeo 2      
 hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
