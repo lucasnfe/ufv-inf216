@@ -294,10 +294,4 @@ git push
 ## Referências
 
 - Parte 1: 
-   - 
-
-- Parte 2: 
-   -  
-
-- Parte 3: 
-    - 
+    - [Game Programming in C++, Cap 3, Vectors nad Basic Physics](https://learning.oreilly.com/library/view/game-programming-in/9780134598185/ch03.xhtml)
