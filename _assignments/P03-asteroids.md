@@ -97,11 +97,11 @@ colisões dos objetos do jogo.
 
     4. **Implemente o método `Intersect` para detectar a colisão de círculos com círculos**
 
-        1. Calcule a distância quadrada entre o centro **desse círculo** `GetCenter` e o do **círculo c** `c.GetCenter`. Primeiro, subtraia do centro do primeiro círculo o centro segundo círculo e armazene o resultado em um vetor `diff`. Depois use o método `diff.LengthSq` para calcular a distância quadrada entre os centros e armazene o resultado em um escalar `distSq`.
+        1. Calcule o quadrado da distância entre o centro **desse círculo** (`GetCenter`) e o do **círculo c** passado como parâmetro (`c.GetCenter`). Para isso, subtraia do centro **desse círculo** o centro do **círculo c** e armazene o resultado em um vetor `diff`. Depois use o método `diff.LengthSq` para calcular o quadrado da distância entre os centros e armazene o resultado em um escalar `distSq`.
 
-        2. Calcule o quadrado das somas dos raios e armazene o resultado em um escalar `radiiSq`.
+        2. Calcule o quadrado da soma dos raios e armazene o resultado em um escalar `radiiSq`.
 
-        3. Retorne verdadeiro se `distSq` é menor ou igual a `radiiSq`. Caso contrário, retorne falso.
+        3. Retorne verdadeiro se `distSq` for menor ou igual a `radiiSq`. Caso contrário, retorne falso.
 
 ### **Parte 2: Desenhos Vetoriais**
 
@@ -111,13 +111,13 @@ Na segunda parte, você irá modificar o componente `DrawComponent` para desenha
 
     1. **Implemente o método `DrawPolygon` para desenhar um polígono formado por um conjunto de vértices**
 
-        1. Percorra do primeiro até o penúltimo vértice utilizando a função [[SDL_RenderDrawLine]](https://wiki.libsdl.org/SDL2/SDL_RenderDrawLine) para desenhar as linhas entre os vértices `i` e `i+1`.
+        1. Percorra do primeiro (`i = 0`) até o penúltimo (`i = vertices.size() - 1`) vértice utilizando a função [[SDL_RenderDrawLine]](https://wiki.libsdl.org/SDL2/SDL_RenderDrawLine) para desenhar as linhas entre os vértices `i` e `i+1`.
 
         2. Utilize a função [[SDL_RenderDrawLine]](https://wiki.libsdl.org/SDL2/SDL_RenderDrawLine) para desenhar uma linha entre o último e o primeiro vértices.
 
     2. **Implemente o método `DrawCircle` para gerar e desenhar um conjunto de vértices em um círculo**
 
-        1. Inicialize variável `angle` (float) com `zero`. Ela será utilizada para percorrer o arco de uma circunferência em intervalos angulares de tamanho fixo.
+        1. Inicialize uma variável `angle` (float) com `zero`. Ela será utilizada para percorrer o arco de uma circunferência em intervalos angulares de tamanho fixo.
 
         2. Repita o seguinte procedimento para um dado número de vértices `numVertices`: 
             
@@ -153,7 +153,7 @@ Na terceira parte, você irá utilizar os novos componentes para implementar uma
 
     2. **Instancie a nave e os asteroides**
 
-        1. Instancie um objeto da classe `Ship` com `20` pixels de altura e armazene seu ponteiro em `mShip`. Em seguida, posicione a nave `mShip->SetPosition` no meio da tela. Lembre-se que as variáveis `mWindowWidth` e `mWindowHeight` armazenam as dimensões da tela.
+        1. Instancie um objeto da classe `Ship` com `20` pixels de altura e armazene seu ponteiro em `mShip`. Em seguida, posicione a nave (`mShip->SetPosition`) no meio da tela. Lembre-se que as variáveis `mWindowWidth` e `mWindowHeight` armazenam as dimensões da tela.
 
         2. Escreva um laço para instanciar `10` objetos da classe `Asteroid`, cada um com `80` pixels de raio.
 
@@ -162,14 +162,14 @@ Na terceira parte, você irá utilizar os novos componentes para implementar uma
         1. No método `AddAsteroid`, adicione (`emplace_back`) o asteroide `ast` ao vetor de asteroides `mAsteroids`.
 
         2. No método `RemoveAsteroid`, utilize a função `std::find` para procurar pelo asteroide `ast` no vetor de
-        asteroides `mAsteroids`. Se o encontrar, remova-o do vetor de asteroides `mAsteroids.erase`.
+        asteroides `mAsteroids`. Se o encontrar, remova-o do vetor de asteroides (`mAsteroids.erase`).
 
 - **Ship.cpp**
 
     1. **Implemente o construtor de `Ship` criando um triângulo para representar a nave visualmente e instanciando seus componentes**
 
         1. Crie 3 vértices (`Vector2`) considerando o centro da nave como origem e o atributo `mHeight` como altura do triângulo. 
-        Por exemplo: `v1 = (-h,h/2)`, `v2 = (h, 0)` e `v3 = (-h/2)`
+        Por exemplo: `v1 = (-h, h/2)`, `v2 = (h, 0)` e `v3 = (-h, -h/2)`
 
         2. Adicione esses 3 vértices em um contêiner `std::vector`.
 
@@ -186,7 +186,7 @@ Na terceira parte, você irá utilizar os novos componentes para implementar uma
         3. Verifique se o jogador está pressionando a tecla `D`. Se estiver, subtraia da velocidade angular `angularSpeed` a 
         velocidade de rotação `mRotationForce`.
 
-        4. Verifique se o jogador está pressionando a `barra de espaço` e se o tempo de resfriamento do laser já terminou `mLaserCooldown <= 0f`. Se ambas as condições forem verdadeiras:
+        4. Verifique se o jogador está pressionando a tecla `espaço` e se o tempo de resfriamento do laser já terminou `mLaserCooldown <= 0f`. Se ambas as condições forem verdadeiras:
 
             1. Instancie uma nova partícula de laser com `5.0` pixels de comprimento;
 
@@ -204,7 +204,7 @@ Na terceira parte, você irá utilizar os novos componentes para implementar uma
 
         1. Subtraia `deltaTime` do tempo de resfriamento do laser `mLaserCooldown`
 
-        2. Calcule a força de resistência do ar para parar lentamente a nave. Lembre-se de que essa força é um vetor 
+        2. Calcule a força de resistência do meio para parar lentamente a nave. Lembre-se de que essa força é um vetor 
         `f_r = -v.norm() * ||v||^2 * c_r`, onde `v` é o vetor velocidade `velocity` e `c_r` é o coeficiente de resistência `mFrictionCoefficient`. Armazene a força calculada em um vetor chamado `dragForce`.
 
         3. Aplique a força `drag` na nave com a função `ApplyForce` do `mRigidBodyComponent`
