@@ -11,4 +11,4 @@ links:
 hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
-- Game Programming Algorithms and Techniques, [Cap. 7: Physics](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch07.html#ch07lev1sec2), Sec. 2-3
+- Game Programming Algorithms and Techniques, [Cap. 7: Physics](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch07.html#ch07lev1sec2), Secs. 2-3
