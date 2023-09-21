@@ -1,6 +1,6 @@
 ---
 type: raw_event
-date: 2023-09-15T10:50
+date: 2023-09-22T08:00
 description: 'T2: Física'
 hide_from_announcments: true
 ---
