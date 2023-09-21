@@ -1,6 +1,6 @@
 ---
 type: assignment
-date: 2023-09-22T07:30
+date: 2023-09-18T07:30
 title: 'P3: Asteroids'
 permalink: /p3-asteroids/
 hide_from_announcments: false
@@ -9,7 +9,7 @@ hide_from_announcments: false
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 
     type: due
-    date: 2023-09-22T07:30
+    date: 2023-09-25T23:59
     description: 'Entrega P3: Asteroids'
 ---
 
