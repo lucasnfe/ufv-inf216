@@ -343,15 +343,21 @@ Na quinta parte, você irá implementar os goombas e os spawners, que criam goom
 
 ### **Parte 6: Customização**
 
-Na sexta, e última etapa, você irá ajustar as variáveis do jogo para criar uma versão única do Asteroids.
+Na sexta, e última etapa, você irá ajustar as variáveis do jogo para criar uma versão única do Super Mário Bros.
 
 1. Altere os parâmetros de movimentação (velocidade, massa, coeficientes de atrito, etc.) do jogador para encontrar uma jogabilidade
 que mais lhe agrada.
 
 2. Altere o nível dado ou crie um completamente novo.
 
-3. Ao invés de carregar níveis de aquivos texto, integre o seu jogo com o editor de níveis [[Tiled]](https://www.mapeditor.org/).
+- **Extras:**
 
+1. Toque a animação de "stomp" quando o jogador pula em cima do goomba.
+
+2. Implemente a lógica para mover os blocos para cima quando o jogador os acerta por baixo. Blocos com um ponto de interrogação
+   podem ser configurados para dar uma moeda ou não (os cogumelos estão fora de escopo pois adicionam uma complexidade maior). 
+
+3. Ao invés de carregar níveis de arquivos texto, integre o seu jogo com o editor de níveis [[Tiled]](https://www.mapeditor.org/).
 
 ## Submissão
 
