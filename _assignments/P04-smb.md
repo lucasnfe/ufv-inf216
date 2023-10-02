@@ -345,8 +345,13 @@ Na quinta parte, você irá implementar os goombas e os spawners, que criam goom
 
 Na sexta, e última etapa, você irá ajustar as variáveis do jogo para criar uma versão única do Asteroids.
 
-1. Altere os parâmetros de movimentação (velocidade, massa, coeficientes de atrito etc.) do jogador para encontrar uma jogabilidade
+1. Altere os parâmetros de movimentação (velocidade, massa, coeficientes de atrito, etc.) do jogador para encontrar uma jogabilidade
 que mais lhe agrada.
+
+2. Altere o nível dado ou crie um completamente novo.
+
+3. Ao invés de carregar níveis de aquivos texto, integre o seu jogo com o editor de níveis [[Tiled]](https://www.mapeditor.org/).
+
 
 ## Submissão
 
