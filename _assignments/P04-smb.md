@@ -350,14 +350,14 @@ que mais lhe agrada.
 
 2. Altere o nível dado ou crie um completamente novo.
 
+3. Altere o fps da animação "run" com base na velocidade horizontal do jogador.
+
 - **Extras:**
 
-1. Toque a animação de "stomp" quando o jogador pula em cima do goomba.
-
-2. Implemente a lógica para mover os blocos para cima quando o jogador os acerta por baixo. Blocos com um ponto de interrogação
+1. Implemente a lógica para mover os blocos para cima quando o jogador os acerta por baixo. Blocos com um ponto de interrogação
    podem ser configurados para dar uma moeda ou não (os cogumelos estão fora de escopo pois adicionam uma complexidade maior). 
 
-3. Ao invés de carregar níveis de arquivos texto, integre o seu jogo com o editor de níveis [[Tiled]](https://www.mapeditor.org/).
+2. Ao invés de carregar níveis de arquivos texto, integre o seu jogo com o editor de níveis [[Tiled]](https://www.mapeditor.org/).
 
 ## Submissão
 
