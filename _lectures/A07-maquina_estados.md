@@ -1,6 +1,6 @@
 ---
 type: lecture
-date: 2023-09-25T10:00:00+2:00
+date: 2023-09-25T10:00
 index: 7
 title: IA - Controle Reativo
 tldr: "Máquina de estados e árvores de comportamento."

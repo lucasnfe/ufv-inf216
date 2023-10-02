@@ -10,7 +10,7 @@ hide_from_announcments: true
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 
     type: due
-    date: 2023-10-13T23:59
+    date: 2023-10-17T23:59
     description: 'Entrega PF: Documento de Design'
 ---
 

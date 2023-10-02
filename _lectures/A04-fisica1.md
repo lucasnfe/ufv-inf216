@@ -1,7 +1,7 @@
 ---
 type: lecture
 index: 4
-date: 2023-09-05T10:00:00+2:00
+date: 2023-09-05T10:00
 title: Física - Objetos Rígidos
 tldr: "Mecânica linear para movimentação de objetos rígidos."
 # thumbnail: /static_files/presentations/lec.jpg
