@@ -3,7 +3,7 @@ layout: assignment
 type: project
 date: 2023-10-06T00:01
 title: 'PF: Documento de Design'
-permalink: /projeto-final-proposta/
+permalink: /projeto/documento-design/
 hide_from_announcments: false
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
