@@ -31,12 +31,11 @@ experiência fundamental para quem quer se tornar um profissional da área.
 
 ## Instruções
 
-Nessa primeira etapa, você irá escrever um Documento de Design de Jogo, do inglês, Game Design Document (GDD), para 
-formalizar as ideias do jogo que planeja desenvolver ao longo da disciplina. O seu GDD deve ter entre 6 e 10 páginas e conter as seguinte seções: 
+O seu jogo deve ser desenvovlido em C++/SDL em um grupo de no máximo 3 pessoas e deve conter: (1) menu inicial, (2) início e fim bem definidos, (3) sistema de progressão básica (dificuldade, narrativa, etc) e (4) interface para reiniciar o jogo quando ele terminar. Nessa primeira etapa, você irá escrever um Documento de Design de Jogo, do inglês, Game Design Document (GDD), para formalizar suas ideias de projeto. Seu GDD deve conter as seguinte seções escritas respeitando um limite de 6 a 10 páginas (1 coluna, espaçamento simples, margem 2.5cm): 
 
 1. **Título e Autores** 
 
-    Apresente o título do projeto e o nome dos membros do grupo (máximo 3 alunos).
+    Apresente o título do projeto e o nome dos membros do grupo.
 
 2. **Declaração Artística** 
 
