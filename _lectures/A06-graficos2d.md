@@ -6,13 +6,9 @@ title: Gráficos 2D
 tldr: "Utilizando texturas para representar objetos 2D estáticos/animados e compor cenas com múltiplas camadas."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
-    - url: /static_files/presentations/lec.zip
-      name: notas
-    # - url: /static_files/presentations/code.zip
-    #   name: código
-    - url: https://google.com
+    - url: /static_files/slides/A06-graficos-2d.pdf
       name: slides
-hide_from_announcments: true
+hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
-- Game Programming Algorithms and Techniques, Cap. 2, Pags. 19-30, 35-39
+- Game Programming Algorithms and Techniques, [Cap. 2: 2D Graphics](https://learning.oreilly.com/library/view/game-programming-algorithms/9780133463200/ch02.html)
