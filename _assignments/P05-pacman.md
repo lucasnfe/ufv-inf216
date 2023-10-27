@@ -206,11 +206,31 @@ Na segunda parte, você irá implementar o componente `FSMComponent` para contro
 
     1. **Implemente a função `Start` para iniciar a execução da máquina de estados**
 
+        Para dar inicio à execução da máquina de estados, basta alterar o valor da variável membro `mIsRunning` para verdadeiro e 
+        alterar o estado (`SetState`) da máquina com estado `startState` passado como parâmetro. A máquina começa sua execução
+        nesse estado. 
+
     2. **Implemente a função `SetState` para fazer a transição para um novo estado**
+
+        Para fazer a transição de estados, você precisa primeiro verificar se o estado destino (parâmetro `stateName`) existe
+        no mapa de estados `mStates`. Se não exister, interrompa a função (`return`). Caso contrário, você deve:
+
+        1. Executar a função de saída do estado atual `mStates[mCurrentState]->Exit()`
+        2. Resetar o contador de tempo `mStateTime` para zero
+        3. Atualizar o estado atual `mCurrentState` para o estado destino `stateName`
+        4. Executar a função de entrada do estado atual `mStates[mCurrentState]->Start()`
 
     3. **Implemente a função `Update` para atualizar o estado atual**
 
+        Para atualizar o estado atual, primeiro você precisa verificar se a máquina está em execução `mIsRunning`.
+        Se não estiver, interrompa a função. Caso contrário, incremente o contador de tempo `mStateTime` com
+        o `deltaTime` e execute as funcões `Update(deltaTime)` e `HandleStateTransition(mStateTime)` para o estado atual,
+        nessa ordem. 
+
     4. **Implemente a função `AddState` para adicionar um estado atual**
+
+        Para adicionar um estado na máquina de estados, basta inserir o estado `state` passado como parâmetro no 
+        mapa de estados `mStates` com a chave `stateName`.
 
 ### **Parte 3: Estado Base**
 
