@@ -27,7 +27,7 @@ O objetivo desse projeto é praticar a implementação de máquina de estados fi
 
 ## Inicialização
 
-Aceite o projeto *p5-pacman* no GitHub classroom [[nesse link]](https://classroom.github.com/a/y2VeqftW) e clone o seu novo repositório no seu computador:
+Aceite o projeto *p5-pacman* no GitHub classroom [[nesse link]](https://classroom.github.com/a/epK8Tngq) e clone o seu novo repositório no seu computador:
 
 ```
 # Substitua <GITHUB_USERNAME> pelo seu usuário do GitHub
