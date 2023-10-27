@@ -17,8 +17,7 @@ due_event:
 
 O Super Mario Bros (SMB), lançado pela Nintendo em 1985, foi um dos jogos mais populares da era dos consoles 8 bits. 
 SMB é um jogo de plataforma de rolagem lateral onde o objetivo do jogador é se mover para a direita para chegar a um 
-mastro de bandeira no final de cada nível. O jogador controla o Mario, protagonista da série. O irmão de Mario, Luigi, é controlado pelo segundo jogador no modo multijogador e assume o mesmo papel e funcionalidade de Mario. Na narrativa do jogo, o mundo
-é chamado de Reino do Cogumelo e o Mario está atravessando-o para salvar a Princesa Peach do antagonista Bowser. 
+mastro de bandeira no final de cada nível. O jogador controla o Mario, protagonista da série. O irmão de Mario, Luigi, é controlado pelo segundo jogador no modo multijogador e assume o mesmo papel e funcionalidade de Mario. Na narrativa do jogo, o mundo é chamado de Reino do Cogumelo e o Mario está atravessando-o para salvar a Princesa Peach do antagonista Bowser. 
 O video a seguir mostra um *gameplay* do jogo original:
 
 <div class="embed-youtube">

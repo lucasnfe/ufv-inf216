@@ -3,13 +3,247 @@ type: assignment
 date: 2023-10-06T08:00
 title: 'P5: Pacman'
 permalink: /p5-pacman/
-hide_from_announcments: true
+hide_from_announcments: false
 # pdf: /static_files/assignments/asg.pdf
 # attachment: /static_files/assignments/asg.zip
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 
     type: due
-    date: 2023-10-27T07:30
+    date: 2023-11-07T07:30
     description: 'Entrega P5: Pacman'
 ---
 
+## Introdução
+
+O Pac-Man foi lançado originalmente para arcade pela empresa japonesa Namco em 1980 e é um dos jogos mais vendidos da história até hoje. O objetivo do jogo é comer todas as pastilhas colocadas no labirinto, evitando quatro fantasmas coloridos que perseguem o jogador – Blinky (vermelho), Pinky (rosa), Inky (ciano) e Clyde (laranja). Quando Pac-Man come todos as pastilhas, o jogador avança para o próximo nível. Além das pastilhas comuns, o labirinto contém 4 pastilhas especiais que o jogador pode comer para assustar os fantasmas. Quando os fantasmas estão assustados, o jogador pode comê-los, fazendo com que eles voltem para a casa dos fantasmas no centro do labirinto. Uma das grandes inovações do Pac-Man na época foi a inteligência artificial dos fantasmas, pois cada um deles tem um comportamento distinto para perseguir o jogador. O vídeo a seguir mostra um gameplay do jogo original:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DRlQgdGLRP8?si=etDIJC3pIdoluAo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Objetivo
+
+O objetivo desse projeto é praticar a implementação de máquina de estados finita como técnica de inteligência artificial para controle reativo de personagens não controláveis por jogador (NPCs). Para isso, você irá implementar os comportamentos dos quatro fantasmas do Pac-Man. Primeiro, você irá construir o grafo que define os pontos de interesse no mapa bem como os caminhos que os fantasmas podem percorrer. Em seguida, você irá implementar o comportamento do primeiro fantasma, o Blinky (vermelho). Por fim, você irá utilizar essa implmentação inicial para implementar o comportamento dos fantasmas restantes. O vídeo a seguir mostra um gameplay da versão que você irá implementar:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/odc7vA75We0?si=9HYMX5gDOk-CgEhC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Inicialização
+
+Aceite o projeto *p5-pacman* no GitHub classroom [[nesse link]](https://classroom.github.com/a/y2VeqftW) e clone o seu novo repositório no seu computador:
+
+```
+# Substitua <GITHUB_USERNAME> pelo seu usuário do GitHub
+git clone https://github.com/ufv-inf216/p5-pacman-<GITHUB_USERNAME>.git
+```
+
+## Código Base
+
+Abra o projeto *p5-pacman* na CLion e, antes de começar a sua implementação, verique com cuidado as definições de métodos e atributos de cada classe. O código base desse projeto foi construído a partir do código do projeto anterior [[P4: Super Mario Bros]](https://ufv-inf216.lucasnferreira.com/p4-smb/), portanto muitas das classes já foram introduzidas anteriormente. As novas classes desse projeto são:
+
+- **FSMComponent**
+
+    Componente que implementa uma máquina de estados finita para controle reativo dos fantasmas. 
+
+- **FSMState**
+
+    Interface para a criação de estados de uma máquina de estados finita. 
+
+- **GhostState**
+
+    Classe que estente `FMSState` para executar o comportamento compartilhado entre todos os estados dos fantasmas.     
+
+- **ScatterState, ChaseState, FrightenedState e DeadState**
+
+    Classes que estentem `FMSState` para executar os comportamentos específicos dos estados de dispersão, perseguição, assustado, e morto, respectivamente. 
+
+- **PathNode**
+
+    Classe que estende `Actor` para representar um nó do grafo de caminhos do mapa. 
+
+- **Ghost**
+
+    Classe que estende `Actor` para representar um fantasma do jogo.  
+    
+- **Item**
+
+    Classe que estende `Actor` para representar um item do jogo.
+
+- **Pacman**
+
+    Classe que estende `Actor` para representar o jogador (Pac-Man).    
+
+- **Wall**
+
+    Classe que estende `Actor` para representar os muros do mapa (espaço).    
+
+## Instruções
+
+Os fantasmas no Pac-Man serão implementados com uma máquina de estados finita com quatro estados diferentes:
+
+- **Dispersão**
+
+    O fantasma desloca-se de sua posição atual até um vértice de dispersão `D` fixo no mapa. Quando `D` é alcançado, o fantasma deve circular em torno de `D` até que o estado mude. Cada fantasma tem um vértice de dispersão diferente.
+
+- **Perseguição**
+
+    O fantasma desloca-se de sua posição atual até um vértice de perseguição `G`, que normalmente é relativo à posição do Pac-Man. Cada fantasma tem um vértice de perseguição diferente.
+
+- **Assustado**
+
+    O fantasma escolhe um vértice aleatório para virar em cada cruzamento.
+
+- **Morto**
+
+    O fantasma volta para o vértice de morte no centro do labirinto dentro da casa dos fantasmas, onde ele voltará à vida.
+
+A forma como os fantasmas se movimentam nos diferentes estados é a mesma. Cada vez que o fantasma atinge um novo vértice no grafo de caminhos, ele escolherá o vértice vizinho (diferente do anterior) que está mais próximo de seu vértice alvo. A única diferença é que cada estado tem uma lógica diferente para selecionar o vértice alvo. Isso significa que, uma vez que você implementar o estado de dispersão funcione corretamente, os outros estados darão muito menos trabalho para implementar. 
+
+Um detalhe importante sobre o movimento dos fantasmas é que eles geralmente não se viram ao longo de um caminho. Por exemplo, se um fantasma viaja de um vértice `v` para outro `q`, ele não pode decidir dar meia volta e voltar para o nó `q`. Em cada cruzamento, o fantasma deve seguir em frente, virar à esquerda ou à direita. Há uma única exceção a esta regra, quando um fantasma inicialmente fica assustado, ele inverte a direção.
+
+### **Parte 1: Grafo de Caminhos**
+
+Na primeira parte, você irá construir o grafo de caminhos que os fanstasmas podem percorrer no labirinto. O grafo de caminhos está definido no arquivo `Levels/Paths.txt`: 
+
+        ```
+        A*XX*X**X**X..X**X**X*XX*B
+        *....*.....*..*.....*....*
+        *....X.....*..*.....X....*
+        *....*.....*..*.....*....*
+        X*XX*X**X**XXXX**X**X*XX*X
+        *....*..*........*..*....*
+        *....*..*........*..*....*
+        X*XX*X..X**X..X**X..X*XX*X
+        .....*.....*..*.....*.....
+        .....X.....*..*.....X.....
+        .....*..X**1XX2**X..*.....
+        .....X..*...**...*..X.....
+        .....*..*...**...*..*.....
+        T*X**X**X..3GP4..X**X**X*T
+        .....*..*........*..*.....
+        .....*..*........*..*.....
+        .....X..X**XXXX**X..X.....
+        .....*..*........*..*.....
+        .....*..*........*..*.....
+        X*XX*X**X**X..X**X**X*XX*X
+        *....*.....*..*.....*....*
+        *....*.....*..*.....*....*
+        X*X..X**X**X*MX**X**X..X*X
+        ..*..*..*........*..*..*..
+        ..*..*..*........*..*..*..
+        X*X**X..X**X..X**X..X**X*X
+        *..........*..*..........*
+        *..........*..*..........*
+        C*X**X**X**X**X**X**X**X*D
+        ```
+
+Esse arquivo define um grafo de caminhos com uma grade (grid) de caracteres, onde cada caracter define um tipo de vértice diferente:
+
+- `X` representa um vértice no grafo de caminhos, ou seja, uma posição do labirinto que os fanstasmas podem utilizar para planejar seus caminhos. 
+- `A`, `B`, `C` e `D` representam os vértices de dispersão dos fantasmas Blinky, Pinky, Inky e Clyde, respectivamente.
+- `1`, `2`, `3` e `4` representam os vértices de nascimento dos fantasmas Blinky, Pinky, Inky e Clyde, respectivamente.
+- `M` representa o vértice de nascimento do jogador (Pac-Man).
+- `P` representa o vértice de morte dentro da casa dos fantasmas para onde eles vão quando morrem.
+- `G` representa vértices dentro da casa dos fantasmas onde eles podem se mover enquanto esperam para renascer.
+- `T` representam vértices do tipo túnel, ou seja, posições que não são vizinhas na grade do labiritndo mas que são adjacentes no grafo de caminhos.
+- `.` representa um espaço do labirinto que não pode ser utilizado para planejamento de caminhos dos fantasmas. Esses caracteres podem ser desconsiderados, pois são utilizados apenas para possibilitar que
+o grafo seja definido em uma estrutura de grade (grid). 
+
+Além disso, os caracteres são agrupados em três tipos diferentes para organizar o planejamento de caminhos dos fantasmas nos diferentes estados:
+
+- *Default*: [`X`, `A`, `B`, `C`, `D`, `1`, `2`, `M`]
+- *Ghost*: [`G`, `P`, `3`, `4`]
+- *Tunnel*: [`T`]
+
+As arestas do grafo de caminhos são definidas pelos caracteres `*` entre os vértices na grade do labirinto. Para que haja uma aresta entre dois vértices `v` e `q` no grafo, deve haver uma sequência vertical ou horizontal contígua de caracteres `*` entre `v` e `q`. Além disso, dois vértices adjacentes na grade também possuem arestas entre si no grafo de caminhos.
+
+- **Game.cpp**
+
+    1. **Implemente a função `BuildPathGraphVertices` para construir os vértices do grafo de caminhos**
+
+        1. Carregue a grade do labirinto em uma matriz de caracteres
+
+            A função `BuildPathGraphVertices` recebe como parâmetro o arquivo (`std::ifstream`) com a grade do labirinto. Para criar o grafo de caminhos, você terá que ler esse arquivo e armazená-lô na matriz de caracteres `txtGrid` mantendo a estrutura de grade do arquivo. Essa matriz é importante para determinar a vizinhança de um determinado vértice.
+
+        2. Crie os vértices do grafo de caminhos
+
+            Percorra as linhas e colunas da matriz `txtGrid` criando um vértice para cada caracter de caminho no labirinto (todos os listados acima, exceto  `*`). Para criar um vértice, basta instanciar um objeto do tipo `PathNode`. Você pode utilizar a função `IsPathNode` para verificar se um dado caracter é um vértice de caminho. 
+            
+            - Tipo do vértice
+        
+                Para instanciar um objeto `PathNode`, você terá que passar o tipo do vértice como parâmetro para o construtor. Por exemplo, para criar um vértice a partir do caracter `G` você terá que executar `new PathNode(this, PathNode::Ghost)`. Quando você criar um vértice dessa maneira, ele será automaticamente adicionado ao vetor `mPathNodes` da classe `Game`. Apesar disso, será mais fácil criar as arestas do grafo se você criar matriz temporária `nodeGrid` com a mesma estrutura da `txtGrid` (mesmo número de linhas e colunas), porém com ponteiros para os vértices criados (`PathNode *`) ao invés de caracteres (`char`).
+            
+            - Posição
+
+                Depois de instanciar um vértice, você precisa definir sua posição `(x, y)` em função de suas coordenadas `(i, j)` na grade do labirinto. Formalmente, as posições `x` e `y` de um vértice são definidas por:
+                
+                - `x = STARTX + SPACING * i`
+                - `y = STARTY + SPACING * j`
+                    
+                Onde `STARTX` e `STARTY` são as coordenadas do vértice mais acima e à esquerda do labirinto, `SPACING` é o tamanho de cada célula da grade, `i` é índice da coluna do vértice e `j` é o índice da linha. 
+
+                Para os vértices de nascimento do jogador `M` e tunel `T`, você terá que subtrair metade do tamanho da célula
+                do grid da coordenada `x -= SPACING / 2.0f` para centraliza-los no labirinto.
+
+        3. Armazene os pontos de referência do labirinto
+
+            Enquanto estiver percorrendo a matriz `txtGrid`, alguns vértices precisam ser armazenados nos objetos do jogo para faciliar a implementação da IA dos fantasmas. Para os vértices de disperção (`A-D`), você terá que utilizar a função `Ghost::SetScatterNode` para armazená-los nos respectivos fantasmas que os utilizam para dispersão. Para os vértices de nascimento (`1-4`), você terá que utilizar a função `Ghost::SetSpawnNode` para armazená-los nos objetos dos respectivos fantasmas que os utilizam para nascimento. Os objetos dos fantasmas Blinky, Pinky, Inky e Clyde estão armazenados nas posições 0, 1, 2 e 3 do vetor `mGhosts` da classe `Game`, respectivamente. Para o vértice de nascimento do jogador `M`, você terá que utilizar a função `Pacman::SetSpawnNode` para armazenar esse vértice no objeto que representa o Pac-Man.
+
+            Para os vértices de túnel (`T`), você terá que armazená-los nos variáveis `mTunnelLeft` e `mTunnelRight` da classe
+            `Game`, onde o primeiro armazena o túnel da esquerda e o segundo o da direita. Finalmente, para o vértice de morte
+            (`G`), você terá que armazená-lo na variável `mGhostPen` da classe `Game`.
+
+    2. **Implemente a função `BuildPathGraphEdges` para construir as arestas do grafo de caminhos**
+
+        Percorra as linhas e colunas da matriz `txtGrid` verificando, para cada elemento `txtGrid[i][j]`, se existe um
+        caminho à direita ou abaixo de `txtGrid[i][j]`. Para verificar se há um caminho à direita de `txtGrid[i][j]`, você pode percorrer as colunas `k = [j + 1, ..., numCols]` testando se o mesmo elemento na matriz `nodeGrid[i][j]` é 
+        definido (diferente de `nullptr`). Além disso, você pode utilizar a função `IsPath` para testar se um caracter na grade é um vértice de caminho ou não. Se `nodeGrid[i][j]` for definido, você pode criar uma aresta entre `nodeGrid[i][j]` e `nodeGrid[i][k]`. Para isso, utilize a função `PathNode::AddAdjacent` tanto de `nodeGrid[i][j]` para `nodeGrid[i][k]` quanto de `nodeGrid[i][k]` para  `nodeGrid[i][j]`. Após criar as arestas, você pode pode parar de percorrer (`break`) essa coluna. A mesma ideia pode ser aplicada para construir uma aresta abaixo de `txtGrid[i][j]` caso haja um caminho nesse sentido. Note que você não precisa verificar se há caminhos acima ou à esquerda, pois quando você encontra um caminho, você adiciona arestas em ambas as direções. 
+
+        Após percorrer toda a matriz `txtGrid`, percorra o vetor `mPathNodes` para encontrar por dois nós do tipo tunel e crie arestas entre eles.
+    
+### **Parte 2: Máquina de Estados Finita**
+
+Na segunda parte, você irá implementar o componente `FSMComponente` para controlar os estados dos fantasmas.
+
+### **Parte 3: Estado Base**
+
+Na teceira parte, você irá implementar o estado `GhostState` para executar o comportamento compartilhado entre todos os estados dos fantasmas.
+
+### **Parte 4: Estado de Dispersão**
+
+Na quarta parte, você irá implementar o estado `ScatterState` para dispersar os fantasmas.
+
+### **Parte 5: Estado de Perseguição**
+
+Na quinta parte, você irá implementar o estado `ChaseState` para que os fantasmas fiquem assustando quando o jogador comer uma das quatro pastilhas grandes.
+
+### **Parte 6: Estado Assustado**
+
+Na sexta parte, você irá implementar o estado `FrightenedState` para que os fantasmas persigam o jogador.
+
+### **Parte 7: Estado Morto**
+
+Na última parte, você irá implementar o estado `DeadState` para que os fantasmas morram e voltem para a casa quando o jogador os comer no estado assustado.
+
+## Submissão
+
+Para submeter o seu trabalho, basta fazer o *commit* e o *push* das suas alterações no repositório que foi criado para
+você no GitHub classroom.
+
+```
+git add .
+git commit -m 'Submissão P5'
+git push
+```
+
+## Barema
+
+- Parte 1: Grafo de Caminhos (20%)
+- Parte 2: Máquina de Estados Finita (10%)
+- Parte 3: Estado Base (15%)
+- Parte 4: Estado de Dispersão (15%)
+- Parte 5: Estado de Perseguição (20%)
+- Parte 6: Estado Assustado (10%)
+- Parte 7: Estado Morto (10%)
+
+## Referências
+
+- [Game Programming Patterns, Cap 7, State](https://gameprogrammingpatterns.com/state.html)
+- [The Pacman Dossier](https://pacman.holenet.info/#Chapter_1)
