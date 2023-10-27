@@ -200,27 +200,79 @@ As arestas do grafo de caminhos são definidas pelos caracteres `*` entre os vé
     
 ### **Parte 2: Máquina de Estados Finita**
 
-Na segunda parte, você irá implementar o componente `FSMComponente` para controlar os estados dos fantasmas.
+Na segunda parte, você irá implementar o componente `FSMComponent` para controlar os estados dos fantasmas.
+
+- **FSMComponent.cpp**- 
+
+    1. **Implemente a função `Start` para iniciar a execução da máquina de estados**
+
+    2. **Implemente a função `SetState` para fazer a transição para um novo estado**
+
+    3. **Implemente a função `Update` para atualizar o estado atual**
+
+    4. **Implemente a função `AddState` para adicionar um estado atual**
 
 ### **Parte 3: Estado Base**
 
 Na teceira parte, você irá implementar o estado `GhostState` para executar o comportamento compartilhado entre todos os estados dos fantasmas.
 
+- **GhostState.cpp**- 
+
+    1. **Implemente a função `Update` para iniciar a execução da máquina de estados**
+
+    2. **Implemente a função `UpdateDirection` para iniciar a execução da máquina de estados**
+
+    3. **Implemente a função `FindNearestNode` para iniciar a execução da máquina de estados**
+
 ### **Parte 4: Estado de Dispersão**
 
 Na quarta parte, você irá implementar o estado `ScatterState` para dispersar os fantasmas.
+
+- **ScatterState.cpp**
+
+    1. **Implemente a função `Start` para inicializar o estado de dispersão**
+
+    2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
+
+    3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
 
 ### **Parte 5: Estado de Perseguição**
 
 Na quinta parte, você irá implementar o estado `ChaseState` para que os fantasmas fiquem assustando quando o jogador comer uma das quatro pastilhas grandes.
 
+- **ChaseState.cpp**
+
+    1. **Implemente a função `Start` para inicializar o estado de perseguição**
+
+    2. **Implemente a função `FindTargetState` para decidir o vértice alvo**
+
+    3. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
+
+    4. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
+
 ### **Parte 6: Estado Assustado**
 
 Na sexta parte, você irá implementar o estado `FrightenedState` para que os fantasmas persigam o jogador.
 
+- **FrightenedState.cpp**
+
+    1. **Implemente a função `Start` para inicializar o estado assustado**
+
+    2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
+
+    3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
+
 ### **Parte 7: Estado Morto**
 
 Na última parte, você irá implementar o estado `DeadState` para que os fantasmas morram e voltem para a casa quando o jogador os comer no estado assustado.
+
+- **DeadState.cpp**
+
+    1. **Implemente a função `Start` para inicializar o estado morto**
+
+    2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
+
+    3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
 
 ## Submissão
 
