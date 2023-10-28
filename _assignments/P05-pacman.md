@@ -285,7 +285,7 @@ Na quarta parte, você irá implementar o estado `ScatterState` para dispersar o
 
 ### **Parte 5: Estado de Perseguição**
 
-Na quinta parte, você irá implementar o estado `ChaseState` para que os fantasmas fiquem assustando quando o jogador comer uma das quatro pastilhas grandes.
+Na quinta parte, você irá implementar o estado `ChaseState` para que os fantasmas persigam o jogador.
 
 - **ChaseState.cpp**
 
@@ -299,7 +299,7 @@ Na quinta parte, você irá implementar o estado `ChaseState` para que os fantas
 
 ### **Parte 6: Estado Assustado**
 
-Na sexta parte, você irá implementar o estado `FrightenedState` para que os fantasmas persigam o jogador.
+Na sexta parte, você irá implementar o estado `FrightenedState` para que os fantasmas fiquem assustando quando o jogador comer uma das quatro pastilhas grandes.
 
 - **FrightenedState.cpp**
 
