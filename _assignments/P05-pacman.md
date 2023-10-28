@@ -98,6 +98,9 @@ A forma como os fantasmas se movimentam nos diferentes estados é a mesma. Cada 
 
 Um detalhe importante sobre o movimento dos fantasmas é que eles geralmente não se viram ao longo de um caminho. Por exemplo, se um fantasma viaja de um vértice `v` para outro `q`, ele não pode decidir dar meia volta e voltar para o nó `q`. Em cada cruzamento, o fantasma deve seguir em frente, virar à esquerda ou à direita. Há uma única exceção a esta regra, quando um fantasma inicialmente fica assustado, ele inverte a direção.
 
+Nesse projeto você irá implementar apenas a primeira fase do Pac-man. Portanto, enquanto o labirinto ainda tiver pastilhas para serem comidas, os fantasmas devem alternar entre os estados de dispersão e perseguição. Sendo que o estado de disperção deve durar
+5 segundos e o de perseguição 20 segundos. Os fantasmas só não estarão em um desses dois estados quando o Pac-Man comer uma pastilha, o que causará os fantasmas mudarem para o estado Assustado, onde devem ficar por `7` segundos. Se o Pac-man comer um fantasma enquanto eles estiverem no estado Assustado, esse fantasma deve mudar para o estado Morto, onde deve ficar até voltar para a casa dos fantasmas.
+
 ### **Parte 1: Grafo de Caminhos**
 
 Na primeira parte, você irá construir o grafo de caminhos que os fanstasmas podem percorrer no labirinto. O grafo de caminhos está definido no arquivo `Levels/Paths.txt`: 
@@ -234,7 +237,7 @@ Na segunda parte, você irá implementar o componente `FSMComponent` para contro
 
 ### **Parte 3: Estado Base**
 
-Na teceira parte, você irá implementar o estado `GhostState` para executar a base de movimentação dos fantasmas. Todos os fantasmas, em qualquer estado, se movem em linha reta de um vértice `mPrevNode` para outro `mNextNode` visando alcançar um vértice alvo `mTargetNode`. Quando um fantasma chega em `mNextNode` vindo de `mPrevNode`, ele escolhe dentre os vizinhos de `mNextNode` direrentes de `mPrevNode` aquele com menor distância até `mTargetNode`. O que muda de um estado para outro é a forma de escolher o próximo vértice `mPrevNode` e o vértice alvo `mTargetNode`.
+Na teceira parte, você irá implementar o estado `GhostState` para executar a base de movimentação dos fantasmas. Todos os fantasmas, em qualquer estado, se movem em linha reta de um vértice `mPrevNode` para outro `mNextNode` visando alcançar um vértice alvo `mTargetNode`. Quando um fantasma chega em `mNextNode` vindo de `mPrevNode`, ele escolhe dentre os vizinhos de `mNextNode` direrentes de `mPrevNode` aquele com menor distância até `mTargetNode`. O que muda de um estado para outro é a lógica para escolher o vértice alvo `mTargetNode` e as restrições para escolher o próximo vértice `mNextNode`.
 
 - **GhostState.cpp**- 
 
@@ -264,9 +267,21 @@ Na quarta parte, você irá implementar o estado `ScatterState` para dispersar o
 
     1. **Implemente a função `Start` para inicializar o estado de dispersão**
 
+        Para iniciar o estado de dispersão, basta utilizar a função `SetTargetNode()` para alterar o vértice alvo do fantasma para o seu vértice de dispersão `GetScatterNode()` e a função `SetForwardSpeed` para alterar a velocidade do fantasma para `90.0f`.
+
     2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
 
+        Lembre-se que a função `FindNextNode` é chamada quando o fantasma colide com o próximo vértice `mNextNode` atual. Utilize a função `FindNearestNode` implementada anteriormente para buscar pelo vértice vizinho `newNextNode` mais próximo do vértice alvo `mGhost->GetTargetNode()`. Passe como parâmetro para essa função o vetor de vizinhos de `mNextNode` e a posição do vértice alvo. Passe também um mapa `set<PathNode *>ignoreNode` contendo o vértice anterior do fantasma e outro mapa `set<PathNode::Type>ignoreType` contendo os tipos `Ghost` e `Tunnel`. Para acessar os visiznhos de `mNextNode` você pode usar a função `mGhost->GetNextNode()->GetAdjacents()`.
+
+        Note que a chamada da função `FindNearestNode` pode retornar vazio caso o fantasma esteja dentro da casa de fantasmas.
+        Por isso, você terá que fazer uma segunda tentativa, dessa vez permitindo vértices do tipo `Tunnel` (continue ignorando
+        o vértice anterior). Caso essa segunda tentativa também não funcione, faça uma terceira tentativa permitindo todos os
+        tipos de vértices, inclusive o vértice anterior. Após essa terceira tentativa, retorne o vértice `newNextNode` encontrado.
+
     3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
+
+        O estado de disperção sempre dura `5` segundos. Portanto, verifique se o contador de tempo do estado `stateTime`
+        é maior que `5.0f`, se for, altere o estado do fantasma (`mFSM->SetState`) para `"chase"`.
 
 ### **Parte 5: Estado de Perseguição**
 
