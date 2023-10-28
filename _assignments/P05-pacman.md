@@ -309,11 +309,11 @@ Na quinta parte, você irá implementar o estado `ChaseState` para que os fantas
         - **Pinky (rosa)**
 
             Persegue o vértice `v` que fica 80 pixels à frente do Pac-Man. Utilize a função `GetPointInFrontOf` do Pac-Man
-            para calcular o ponto `P` 80 pixels à sua frente. Em seguida, utilize a função `FindNearestNode` para encontra o vértice `v` do tipo `Default` mais próximo de `P`. Retorne o vértice encontrado.
+            para calcular o ponto `P` 80 pixels à sua frente. Em seguida, utilize a função `FindNearestNode` para encontra o vértice `v` do tipo `Default` (ignore os outros tipos) mais próximo de `P`. Retorne o vértice encontrado.
 
         - **Inky (ciano)**:
 
-            Primeiro, obtenha um ponto `P` que esteja 40 pixels à frente do Pac-Man. Em seguida, crie um vetor `v` da posição do fantasma até `P`. Dobre o comprimento de `v` e adicione-o à posição do fantasma para obter um ponto `Q`. Em seguida, utilize a função `FindNearestNode` para encontrar o vértice do tipo `Default` mais próximo de `Q`. Retorne o vértice encontrado.
+            Primeiro, obtenha um ponto `P` que esteja 40 pixels à frente do Pac-Man. Em seguida, crie um vetor `v` da posição do fantasma até `P`. Dobre o comprimento de `v` e adicione-o à posição do fantasma para obter um ponto `Q`. Em seguida, utilize a função `FindNearestNode` para encontrar o vértice do tipo `Default` (ignore os outros tipos) mais próximo de `Q`. Retorne o vértice encontrado.
 
         - **Clyde (laranja)**:
 
@@ -332,9 +332,18 @@ Na sexta parte, você irá implementar o estado `FrightenedState` para que os fa
 
     1. **Implemente a função `Start` para inicializar o estado assustado**
 
+        Para iniciar o estado assustato, altere o vértice alvo do fantasma para vazio `nullptr` e sua velocidade 
+        para `65.0f`. Além disso, inverta o vértice anterior `mPrevNode` com o próximo vértice `mNextNode` do fantasma
+        e atualize a direção com a função `UpdateDirection()`.
+
     2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
 
+        Difentemente dos outros estados, quando estão assustados, os fantasmas não buscam o vértice adjacente mais próximo
+        do vértice alvo, mas um vértice adjacente aleatório. Primeiro tente escolher um vizinho aleatório que não seja o vértice anterior do tipo `Default` (ignore os outros tipos). Se nenhum nó satisfizer, tente escolher um vizinho aleatório que não seja o vértice anterior nem seja do tipo `Tunnel`. Se nenhum deles satisfizer, então permita a escolha de qualquer vizinho aleatório.
+
     3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
+
+        O estado Assustado sempre dura 7 segundos. Portanto, verifique se o contador de tempo do estado `stateTime` é maior que `7.0f`, se for, altere o estado do fantasma (`mFSM->SetState`) para `"scatter"`.
 
 ### **Parte 7: Estado Morto**
 
