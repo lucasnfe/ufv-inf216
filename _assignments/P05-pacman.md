@@ -347,15 +347,22 @@ Na sexta parte, você irá implementar o estado `FrightenedState` para que os fa
 
 ### **Parte 7: Estado Morto**
 
-Na última parte, você irá implementar o estado `DeadState` para que os fantasmas morram e voltem para a casa quando o jogador os comer no estado assustado.
+Na última parte, você irá implementar o estado `DeadState` para que os fantasmas morram e voltem para a casa quando o jogador os comer no estado assustado. 
 
 - **DeadState.cpp**
 
     1. **Implemente a função `Start` para inicializar o estado morto**
 
+        Para iniciar o estado de dispersão, basta utilizar a função `SetTargetNode()` para alterar o vértice alvo do fantasma para o vértice da casa dos fantasmas e a função `SetForwardSpeed` para alterar a velocidade do fantasma para `125.0f`.
+        Para acessar o vértice da casa dos fantasmas, utilize a função `GetGhostPen` da classe `Game`.
+
     2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
 
+        Lembre-se que a função `FindNextNode` é chamada quando o fantasma colide com o próximo vértice `mNextNode` atual. Utilize a função `FindNearestNode` para buscar pelo vértice vizinho mais próximo do vértice alvo `mGhost->GetTargetNode()`. Na primeira tentativa, procure apenas pelos vizinhos do tipo `Ghost` (ignore os outros), excluindo o vértice anterior do fantasma `mPrevNode`. Caso o resultado dessa tentativa seja nulo, faça um segunda tentativa possibilitando vértices do tipo `Default` (continue ignorando `mPrevNode`). Caso o resultado nulo persista, faça uma terceira tentativa sem nenhuma restrição de tipo ou vértice. Retorne o vértice `nextNode` encontrado.
+
     3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
+
+        O estado Morto é o único que não usa o tempo como condição de transição. Nesse estado, para mudar de estado, você terá que verificar se o fantasma colidiu com o vértice da casa dos fantasmas. Se colidiu, altere o estado para `"scatter"`. Utilize a função `GetGhostPen` da classe `Game` para acessar o vértice da casa dos fantasmas e a função `Intersect` do `AABBColliderComponent` para verificar essa colisão.
 
 ## Submissão
 
