@@ -271,31 +271,58 @@ Na quarta parte, você irá implementar o estado `ScatterState` para dispersar o
 
     2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
 
-        Lembre-se que a função `FindNextNode` é chamada quando o fantasma colide com o próximo vértice `mNextNode` atual. Utilize a função `FindNearestNode` implementada anteriormente para buscar pelo vértice vizinho `newNextNode` mais próximo do vértice alvo `mGhost->GetTargetNode()`. Passe como parâmetro para essa função o vetor de vizinhos de `mNextNode` e a posição do vértice alvo. Passe também um mapa `set<PathNode *>ignoreNode` contendo o vértice anterior do fantasma e outro mapa `set<PathNode::Type>ignoreType` contendo os tipos `Ghost` e `Tunnel`. Para acessar os visiznhos de `mNextNode` você pode usar a função `mGhost->GetNextNode()->GetAdjacents()`.
+        Lembre-se que a função `FindNextNode` é chamada quando o fantasma colide com o próximo vértice `mNextNode` atual. Utilize a função `FindNearestNode` implementada anteriormente para buscar pelo vértice vizinho mais próximo do vértice alvo `mGhost->GetTargetNode()`. Passe como parâmetro para essa função o vetor de vizinhos de `mNextNode` e a posição do vértice alvo. Passe também um mapa `set<PathNode *>ignoreNode` contendo o vértice anterior do fantasma e outro mapa `set<PathNode::Type>ignoreType` contendo os tipos `Ghost` e `Tunnel`. Para acessar os visiznhos de `mNextNode` você pode usar a função `mGhost->GetNextNode()->GetAdjacents()`.
 
         Note que a chamada da função `FindNearestNode` pode retornar vazio caso o fantasma esteja dentro da casa de fantasmas.
         Por isso, você terá que fazer uma segunda tentativa, dessa vez permitindo vértices do tipo `Tunnel` (continue ignorando
         o vértice anterior). Caso essa segunda tentativa também não funcione, faça uma terceira tentativa permitindo todos os
-        tipos de vértices, inclusive o vértice anterior. Após essa terceira tentativa, retorne o vértice `newNextNode` encontrado.
+        tipos de vértices, inclusive o vértice anterior. Após essa terceira tentativa, retorne o vértice `nextNode` encontrado.
 
     3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
 
-        O estado de disperção sempre dura `5` segundos. Portanto, verifique se o contador de tempo do estado `stateTime`
+        O estado de disperção sempre dura 5 segundos. Portanto, verifique se o contador de tempo do estado `stateTime`
         é maior que `5.0f`, se for, altere o estado do fantasma (`mFSM->SetState`) para `"chase"`.
 
 ### **Parte 5: Estado de Perseguição**
 
-Na quinta parte, você irá implementar o estado `ChaseState` para que os fantasmas persigam o jogador.
+Na quinta parte, você irá implementar o estado `ChaseState` para que os fantasmas persigam o jogador. O fantasma só chega nesse estado após passar 5 segundos no estado de dispersão.
 
 - **ChaseState.cpp**
 
     1. **Implemente a função `Start` para inicializar o estado de perseguição**
 
-    2. **Implemente a função `FindTargetState` para decidir o vértice alvo**
+        Para iniciar o estado de perseguição, basta alterar a velocidade do fantasma para `90.0f`. Diferente do estado de dispersão, nesse estado não alteramos o vértice alvo durante a inicialização pois ele será constantemente atualizado com relação à posição do jogador.
 
-    3. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
+    2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
+
+        Lembre-se que a função `FindNextNode` é chamada quando o fantasma colide com o próximo vértice `mNextNode` atual. Utilize a função `FindNearestNode` para buscar pelo vértice vizinho mais próximo do vértice alvo `mGhost->GetTargetNode()`. Na primeira tentativa, ignore os vértices do tipo `Ghost` e o vértice anterior do fantasma `mPrevNode`. Caso o resultado dessa tentativa seja nulo, faça um segunda tentativa sem nenhuma restrição de tipo ou vértice. Retorne o vértice `nextNode` encontrado.
+
+    3. **Implemente a função `FindTargetState` para decidir o vértice alvo**
+
+        Essa função deve retornar um vértice no grafo relativo à posição do Pac-man. Cada fantasma persegue o Pac-Man (i.e, escolhe o vértice alvo) de uma maneira diferente:
+
+        - **Blinky (vermelho)**
+            
+            Persegue o vértice anterior `mPrevNode` do Pac-Man, ou seja, basta retornar um ponteiro para o `mPrevNode` do 
+            Pac-man. Você pode usar a função `GetPrevNode` do Pac-Man para acessar esse vértice. Lembre-se que o fantasma é um `Actor` e portanto ele tem acesso ao objeto `mGame` via a função `GetGame`, que por sua vez acesso ao Pac-man via a função `GetPlayer`. 
+
+        - **Pinky (rosa)**
+
+            Persegue o vértice `v` que fica 80 pixels à frente do Pac-Man. Utilize a função `GetPointInFrontOf` do Pac-Man
+            para calcular o ponto `P` 80 pixels à sua frente. Em seguida, utilize a função `FindNearestNode` para encontra o vértice `v` do tipo `Default` mais próximo de `P`. Retorne o vértice encontrado.
+
+        - **Inky (ciano)**:
+
+            Primeiro, obtenha um ponto `P` que esteja 40 pixels à frente do Pac-Man. Em seguida, crie um vetor `v` da posição do fantasma até `P`. Dobre o comprimento de `v` e adicione-o à posição do fantasma para obter um ponto `Q`. Em seguida, utilize a função `FindNearestNode` para encontrar o vértice do tipo `Default` mais próximo de `Q`. Retorne o vértice encontrado.
+
+        - **Clyde (laranja)**:
+
+            Se a distância entre o fantasma e o jogador for maior que 150 pixels, então o fantasma tem como alvo o vértice anterior do Pac-Man `mPrevNode` (como Blinky). Caso contrário, o fantasma terá como alvo seu vértice de dispersão.
 
     4. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
+
+        O estado de perseguição sempre dura 20 segundos. Portanto, verifique se o contador de tempo do estado `stateTime`
+        é maior que `20.0f`, se for, altere o estado do fantasma (`mFSM->SetState`) para `"scatter"`.
 
 ### **Parte 6: Estado Assustado**
 
