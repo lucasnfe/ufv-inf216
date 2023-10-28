@@ -240,14 +240,21 @@ Na teceira parte, você irá implementar o estado `GhostState` para executar a b
 
     1. **Implemente a função `Update` para o estado base**
 
-        Primeiro, verifique se o próximo vértice do fantasma `mGhost->GetNextNode()` não é nulo. 
-        Se for, interrompa a função. Caso contrário, utilize a função `Intersect` do componente `AABBColliderComponent`
-        do fantasma para verificar se ele colidiu com esse vértice. Se houve colisão, atualize a posição
-        do fantasma com a posição do vértice e zere a velocidade do fantasma. Em seguida, utilize a função `FindNextNode` para decidir o novo próximo vértice do fantasma. Nesse momento, você só irá chamar essa função. Ela será implementada de maneira diferente para cada estado nas próximas partes desse trabalho. Se a função `FindNextNode` retornar um vértice não nulo, atualize o vértice anterior do fantasma `mGhost->SetPreviousNode()` para o vértice com o qual ele acabou de colidir e atualize o próximo vértice `mGhost->SetNextNode()` para aquele retornado por `FindNextNode`.
+        Primeiro, verifique se o próximo vértice do fantasma `mGhost->GetNextNode()` não é nulo. Se for, interrompa a função. Caso contrário, utilize a função `Intersect` do componente `AABBColliderComponent` do fantasma para verificar se ele colidiu com esse vértice. Se houve colisão, atualize a posição do fantasma com a posição do vértice e zere a velocidade do fantasma. Em seguida, utilize a função `FindNextNode` para decidir o novo próximo vértice do fantasma. Nesse momento, você só irá chamar essa função. Ela será implementada de maneira diferente para cada estado nas próximas partes desse trabalho. Se a função `FindNextNode` retornar um vértice não nulo, atualize o vértice anterior do fantasma `mGhost->SetPreviousNode()` para o vértice com o qual ele acabou de colidir e atualize o próximo vértice `mGhost->SetNextNode()` para aquele retornado por `FindNextNode`. Após essas atualizações, chame a função
+        `UpdateDirection()`, que será implementada em seqguida, para atualizar a direção do fantasma considerando os
+        vértices atualizados.
 
     2. **Implemente a função `UpdateDirection` para atualizar a direção do fantasma**
 
+        Para atualizar a direção do fantasmas basta subtrair o próximo vértice `mGhost->GetNextNode()` pelo vértice 
+        anterior `mGhost->GetPreviousNode()` e normalizar o resultado. Assumindo que o resultado foi armazenado em uma
+        vetor (`Vector2`) chamado `newDirection`, verifique se o próximo vértice e o vértice anterior são do tipo `PathNode::Type::Tunnel` e se forem, inverta a direção  de `newDirection`. Por fim, atualize a direção do fantasma com `mGhost->SetDirection(newDirection);`
+
     3. **Implemente a função `FindNearestNode` para encontrar o vértice mais próximo de uma determina posição**
+
+        Essa função recebe como parâmetro um vetor de vértices `nodes`, uma posição `targetPosition` e dois conjuntos, 
+        `ignoreTypes` e `ignoreNodes`. Procure no vetor `nodes` pelo vértice mais próximo de `targetPosition`, ignorando
+        os vértices de qualquer tipo presente em `ignoreTypes` e qualter vértice presente em `ignoreNodes`.
 
 ### **Parte 4: Estado de Dispersão**
 
