@@ -234,15 +234,20 @@ Na segunda parte, você irá implementar o componente `FSMComponent` para contro
 
 ### **Parte 3: Estado Base**
 
-Na teceira parte, você irá implementar o estado `GhostState` para executar o comportamento compartilhado entre todos os estados dos fantasmas.
+Na teceira parte, você irá implementar o estado `GhostState` para executar a base de movimentação dos fantasmas. Todos os fantasmas, em qualquer estado, se movem em linha reta de um vértice `mPrevNode` para outro `mNextNode` visando alcançar um vértice alvo `mTargetNode`. Quando um fantasma chega em `mNextNode` vindo de `mPrevNode`, ele escolhe dentre os vizinhos de `mNextNode` direrentes de `mPrevNode` aquele com menor distância até `mTargetNode`. O que muda de um estado para outro é a forma de escolher o próximo vértice `mPrevNode` e o vértice alvo `mTargetNode`.
 
 - **GhostState.cpp**- 
 
-    1. **Implemente a função `Update` para iniciar a execução da máquina de estados**
+    1. **Implemente a função `Update` para o estado base**
 
-    2. **Implemente a função `UpdateDirection` para iniciar a execução da máquina de estados**
+        Primeiro, verifique se o próximo vértice do fantasma `mGhost->GetNextNode()` não é nulo. 
+        Se for, interrompa a função. Caso contrário, utilize a função `Intersect` do componente `AABBColliderComponent`
+        do fantasma para verificar se ele colidiu com esse vértice. Se houve colisão, atualize a posição
+        do fantasma com a posição do vértice e zere a velocidade do fantasma. Em seguida, utilize a função `FindNextNode` para decidir o novo próximo vértice do fantasma. Nesse momento, você só irá chamar essa função. Ela será implementada de maneira diferente para cada estado nas próximas partes desse trabalho. Se a função `FindNextNode` retornar um vértice não nulo, atualize o vértice anterior do fantasma `mGhost->SetPreviousNode()` para o vértice com o qual ele acabou de colidir e atualize o próximo vértice `mGhost->SetNextNode()` para aquele retornado por `FindNextNode`.
 
-    3. **Implemente a função `FindNearestNode` para iniciar a execução da máquina de estados**
+    2. **Implemente a função `UpdateDirection` para atualizar a direção do fantasma**
+
+    3. **Implemente a função `FindNearestNode` para encontrar o vértice mais próximo de uma determina posição**
 
 ### **Parte 4: Estado de Dispersão**
 
