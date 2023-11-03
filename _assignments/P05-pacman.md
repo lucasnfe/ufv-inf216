@@ -225,15 +225,12 @@ Na segunda parte, você irá implementar o componente `FSMComponent` para contro
 
     3. **Implemente a função `Update` para atualizar o estado atual**
 
-        Para atualizar o estado atual, primeiro você precisa verificar se a máquina está em execução `mIsRunning`.
-        Se não estiver, interrompa a função. Caso contrário, incremente o contador de tempo `mStateTime` com
-        o `deltaTime` e execute as funcões `Update(deltaTime)` e `HandleStateTransition(mStateTime)` para o estado atual,
+        Para atualizar o estado atual, primeiro você precisa verificar se a máquina está em execução `mIsRunning`. Se não estiver, interrompa a função. Caso contrário, incremente o contador de tempo `mStateTime` com o `deltaTime` e execute as funcões `Update(deltaTime)` e `HandleStateTransition(mStateTime)` para o estado atual,
         nessa ordem. 
 
     4. **Implemente a função `AddState` para adicionar um estado atual**
 
-        Para adicionar um estado na máquina de estados, basta inserir o estado `state` passado como parâmetro no 
-        mapa de estados `mStates` com a chave `stateName`.
+        Para adicionar um estado na máquina de estados, basta inserir o estado `state` passado como parâmetro no mapa de estados `mStates` com a chave `stateName`.
 
 ### **Parte 3: Estado Base**
 
@@ -243,21 +240,16 @@ Na teceira parte, você irá implementar o estado `GhostState` para executar a b
 
     1. **Implemente a função `Update` para o estado base**
 
-        Primeiro, verifique se o próximo vértice do fantasma `mGhost->GetNextNode()` não é nulo. Se for, interrompa a função. Caso contrário, utilize a função `Intersect` do componente `AABBColliderComponent` do fantasma para verificar se ele colidiu com esse vértice. Se houve colisão, atualize a posição do fantasma com a posição do vértice e zere a velocidade do fantasma. Em seguida, utilize a função `FindNextNode` para decidir o novo próximo vértice do fantasma. Nesse momento, você só irá chamar essa função. Ela será implementada de maneira diferente para cada estado nas próximas partes desse trabalho. Se a função `FindNextNode` retornar um vértice não nulo, atualize o vértice anterior do fantasma `mGhost->SetPreviousNode()` para o vértice com o qual ele acabou de colidir e atualize o próximo vértice `mGhost->SetNextNode()` para aquele retornado por `FindNextNode`. Após essas atualizações, chame a função
-        `UpdateDirection()`, que será implementada em seqguida, para atualizar a direção do fantasma considerando os
-        vértices atualizados.
+        Primeiro, verifique se o próximo vértice do fantasma `mGhost->GetNextNode()` não é nulo. Se for, interrompa a função. Caso contrário, utilize a função `Intersect` do componente `AABBColliderComponent` do fantasma para verificar se ele colidiu com esse vértice. Se houve colisão, atualize a posição do fantasma com a posição do vértice e zere a velocidade do fantasma. Em seguida, utilize a função `FindNextNode` para decidir o novo próximo vértice do fantasma. Nesse momento, você só irá chamar essa função. Ela será implementada de maneira diferente para cada estado nas próximas partes do trabalho. Se a função `FindNextNode` retornar um vértice não nulo, atualize o vértice anterior do fantasma `mGhost->SetPreviousNode()` para o vértice com o qual ele acabou de colidir e atualize o próximo vértice `mGhost->SetNextNode()` para aquele retornado por `FindNextNode`. Após essas atualizações, chame a função `UpdateDirection()`, que será implementada em seguida, para atualizar a direção do fantasma considerando os vértices atualizados. Por fim, ao final da função `Update`, atualize a velocidade do fantasma (`SetVelocity()`) para que ele se mova para sua nova direção `mGhost->GetDirection()` com velocidade máxima `mGhost->GetForwardSpeed()`.
 
     2. **Implemente a função `UpdateDirection` para atualizar a direção do fantasma**
 
-        Para atualizar a direção do fantasmas basta subtrair o próximo vértice `mGhost->GetNextNode()` pelo vértice 
-        anterior `mGhost->GetPreviousNode()` e normalizar o resultado. Assumindo que o resultado foi armazenado em uma
-        vetor (`Vector2`) chamado `newDirection`, verifique se o próximo vértice e o vértice anterior são do tipo `PathNode::Type::Tunnel` e se forem, inverta a direção  de `newDirection`. Por fim, atualize a direção do fantasma com `mGhost->SetDirection(newDirection);`
+        Para atualizar a direção do fantasmas basta subtrair o próximo vértice `mGhost->GetNextNode()` pelo vértice anterior `mGhost->GetPreviousNode()` e normalizar o resultado. Assumindo que o resultado foi armazenado em uma vetor (`Vector2`) chamado `newDirection`, verifique se o próximo vértice e o vértice anterior são do tipo `PathNode::Type::Tunnel` e se forem, inverta a direção  de `newDirection`. Por fim, atualize a direção do fantasma com `mGhost->SetDirection(newDirection);`
 
     3. **Implemente a função `FindNearestNode` para encontrar o vértice mais próximo de uma determina posição**
 
         Essa função recebe como parâmetro um vetor de vértices `nodes`, uma posição `targetPosition` e dois conjuntos, 
-        `ignoreTypes` e `ignoreNodes`. Procure no vetor `nodes` pelo vértice mais próximo de `targetPosition`, ignorando
-        os vértices de qualquer tipo presente em `ignoreTypes` e qualter vértice presente em `ignoreNodes`.
+        `ignoreTypes` e `ignoreNodes`. Procure no vetor `nodes` pelo vértice mais próximo de `targetPosition`, ignorando os vértices de qualquer tipo presente em `ignoreTypes` e qualter vértice presente em `ignoreNodes`.
 
 ### **Parte 4: Estado de Dispersão**
 
@@ -273,15 +265,14 @@ Na quarta parte, você irá implementar o estado `ScatterState` para dispersar o
 
         Lembre-se que a função `FindNextNode` é chamada quando o fantasma colide com o próximo vértice `mNextNode` atual. Utilize a função `FindNearestNode` implementada anteriormente para buscar pelo vértice vizinho mais próximo do vértice alvo `mGhost->GetTargetNode()`. Passe como parâmetro para essa função o vetor de vizinhos de `mNextNode` e a posição do vértice alvo. Passe também um mapa `set<PathNode *>ignoreNode` contendo o vértice anterior do fantasma e outro mapa `set<PathNode::Type>ignoreType` contendo os tipos `Ghost` e `Tunnel`. Para acessar os visiznhos de `mNextNode` você pode usar a função `mGhost->GetNextNode()->GetAdjacents()`.
 
-        Note que a chamada da função `FindNearestNode` pode retornar vazio caso o fantasma esteja dentro da casa de fantasmas.
-        Por isso, você terá que fazer uma segunda tentativa, dessa vez permitindo vértices do tipo `Tunnel` (continue ignorando
-        o vértice anterior). Caso essa segunda tentativa também não funcione, faça uma terceira tentativa permitindo todos os
-        tipos de vértices, inclusive o vértice anterior. Após essa terceira tentativa, retorne o vértice `nextNode` encontrado.
+        Note que a chamada da função `FindNearestNode` pode retornar vazio caso o fantasma esteja dentro da casa de fantasmas. Por isso, você terá que fazer uma segunda tentativa, dessa vez permitindo vértices do tipo `Tunnel` (continue ignorando o vértice anterior). Caso essa segunda tentativa também não funcione, faça uma terceira tentativa permitindo todos os tipos de vértices, inclusive o vértice anterior. Após essa terceira tentativa, retorne o vértice `nextNode` encontrado.
 
     3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
 
         O estado de disperção sempre dura 5 segundos. Portanto, verifique se o contador de tempo do estado `stateTime`
         é maior que `5.0f`, se for, altere o estado do fantasma (`mFSM->SetState`) para `"chase"`.
+
+Ao final da Parte 4, qunado você começar o jogo e mover o Pac-Man, você deveria ver o fantasma vermelho se movendo para seu vértice de dispersão no canto esquerdo superior do labirinto. 
 
 ### **Parte 5: Estado de Perseguição**
 
@@ -303,8 +294,7 @@ Na quinta parte, você irá implementar o estado `ChaseState` para que os fantas
 
         - **Blinky (vermelho)**
             
-            Persegue o vértice anterior `mPrevNode` do Pac-Man, ou seja, basta retornar um ponteiro para o `mPrevNode` do 
-            Pac-man. Você pode usar a função `GetPrevNode` do Pac-Man para acessar esse vértice. Lembre-se que o fantasma é um `Actor` e portanto ele tem acesso ao objeto `mGame` via a função `GetGame`, que por sua vez acesso ao Pac-man via a função `GetPlayer`. 
+            Persegue o vértice anterior `mPrevNode` do Pac-Man, ou seja, basta retornar um ponteiro para o `mPrevNode` do Pac-man. Você pode usar a função `GetPrevNode` do Pac-Man para acessar esse vértice. Lembre-se que o fantasma é um `Actor` e portanto ele tem acesso ao objeto `mGame` via a função `GetGame`, que por sua vez acesso ao Pac-man via a função `GetPlayer`. 
 
         - **Pinky (rosa)**
 
@@ -338,8 +328,7 @@ Na sexta parte, você irá implementar o estado `FrightenedState` para que os fa
 
     2. **Implemente a função `FindNextNode` para escolher um vértice vizinho**
 
-        Difentemente dos outros estados, quando estão assustados, os fantasmas não buscam o vértice adjacente mais próximo
-        do vértice alvo, mas um vértice adjacente aleatório. Primeiro tente escolher um vizinho aleatório que não seja o vértice anterior do tipo `Default` (ignore os outros tipos). Se nenhum nó satisfizer, tente escolher um vizinho aleatório que não seja o vértice anterior nem seja do tipo `Tunnel`. Se nenhum deles satisfizer, então permita a escolha de qualquer vizinho aleatório.
+        Difentemente dos outros estados, quando estão assustados, os fantasmas não buscam o vértice adjacente mais próximo do vértice alvo, mas um vértice adjacente aleatório. Primeiro, tente escolher um vizinho aleatório do tipo `Default` (ignore os outros tipos) que não seja o vértice anterior. Se nenhum vértice satisfizer essa condição, tente escolher um vizinho aleatório que não seja o vértice anterior nem seja do tipo `Tunnel`. Se nenhum deles satisfizer essa segunda condição, então permita a escolha de qualquer vizinho aleatório.
 
     3. **Implemente a função `HandleStateTransition` para fazer a transição de estados quando necessário**
 
