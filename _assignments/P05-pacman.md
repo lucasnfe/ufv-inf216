@@ -9,7 +9,7 @@ hide_from_announcments: false
 # solutions: /static_files/assignments/asg_solutions.pdf
 due_event: 
     type: due
-    date: 2023-11-07T07:30
+    date: 2023-11-10T07:30
     description: 'Entrega P5: Pacman'
 ---
 
