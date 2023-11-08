@@ -6,13 +6,11 @@ title: IA - Comportamentos de Navegação
 tldr: "Movimentando NPCs de maneira orgânica."
 # thumbnail: /static_files/presentations/lec.jpg
 links: 
-    - url: /static_files/presentations/lec.zip
-      name: notas
-    # - url: /static_files/presentations/code.zip
-    #   name: código
-    - url: https://google.com
+    - url: /static_files/slides/A10-navegacao.pdf
       name: slides
-hide_from_announcments: true
+    - url: /demos/a10-comportamentos-navegacao
+      name: demos
+hide_from_announcments: false
 ---
 **Leituras Sugeridas:**
 - Artificial Intelligence for Games, Cap. 3, Pags. 39-95
