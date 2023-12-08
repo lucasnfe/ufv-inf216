@@ -16,7 +16,7 @@ due_event:
 
 ## Introdução
 
-Na indústria de videogames, playtesting refere-se especificamente ao processo de expor um jogo em desenvolvimento (ou algumas partes específicas dele) ao público-alvo, para identificar possíveis falhas de design e coletar feedback. Nessa etapa do projeto final, você realizará um playtest com colegas da disciplina para identificar falhas e bugs antes da submissão final (em uma semana). O seu jogo será avaliado por pelo menos um colega, que jogará o seu jogo e responderá a um questionário via Google Forms sobre aspectos de design e implementação.
+Na indústria de videogames, playtesting refere-se especificamente ao processo de expor um jogo em desenvolvimento (ou algumas partes específicas dele) ao público-alvo, para identificar possíveis falhas de design e coletar feedback. Nessa etapa do projeto final, você realizará um playtest com colegas da disciplina para identificar falhas e bugs antes da submissão final (em uma semana). O seu jogo será avaliado por pelo menos um colega (escolhido aleatoriamente), que jogará o seu jogo e responderá a um questionário via Google Forms sobre aspectos de design e implementação.
 
 ## Objetivo
 
