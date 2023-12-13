@@ -16,7 +16,7 @@ due_event:
 
 ## Introdução
 
-Essa é a última etapa do Projeto Final de INF216. Nela, você irá apresentar o seu jogo em sala de aula e submeter a versão final do seu código. 
+Essa é a última etapa do Projeto Final de INF216. Nela, você irá apresentar o seu jogo em sala de aula e submeter a versão final do seu código.
 
 ## Objetivo
 
@@ -37,7 +37,13 @@ A sua apresentação deve ser feita usando o Google Slides e ter 8 minutos de du
 
 2. Código-fonte
 
-A submissão da versão final do código-fonte será feita da mesma forma que na etapa de playtest: criando uma [nova release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) no seu projeto do GitHub, para que essa versão final seja facilmente acessível para avaliação. Além disso, o seu arquivo README.md deve ser atualizado para conter as seguintes seções:
+A versão final do seu jogo deve conter no mínimo:
+
+- Um menu principal com o nome do jogo (fique à vontade para adicionar o nome dos autores também);
+- Uma cena com as mecânicas principais implementadas;
+- Efeitos sonoros e música de fundo durante o jogo.
+
+O seu código-fonte deverá estar hospeado no seu projeto do GitHub, para que a versão final seja facilmente acessível para avaliação. O arquivo README.md de seu projeto deve ser atualizado para conter as seguintes seções:
 
 - Código, nome, ano e semestre da disciplina;
 - Título do jogo e nome completo dos autores;
@@ -52,4 +58,4 @@ O melhor jogo da disciplina será premiado com uma cartão-presente no valor de 
 
 ## Submissão
 
-Envie o link da sua apresentação no Google Slides e o link do seu repositório na tarefa `PF: Document de Design` do PVANet. **Apenas um membro do grupo precisa fazer a submissão.**. Todas as apresentações serão feitas a partir do mesmo computador. Portanto, o código do seu jogo será compilado para esse computador usando a versão submetida. Note que o deadline da tarefa é 2 horas antes das apresentações. Favor respeitar esse tempo para não gerar atrasos durante as apresentações!
+Crie uma [nova release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) no seu projeto do GitHub para a versão final e envie so link da sua apresentação no Google Slides e do seu repositório na tarefa `PF: Document de Design` do PVANet. **Apenas um membro do grupo precisa fazer a submissão.**. Todas as apresentações serão feitas a partir do mesmo computador. Portanto, o código do seu jogo será compilado para esse computador usando a versão submetida. Note que o deadline da tarefa é 2 horas antes das apresentações. Favor respeitar esse tempo para não gerar atrasos durante as apresentações!
