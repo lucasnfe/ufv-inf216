@@ -91,8 +91,7 @@ Como os projetos podem ter escopos muito distintos, o seu GDD não precisa neces
 
 ## Submissão
 
-Para entregar a sua apresentação, envie o seu GDD em formato pdf na tarefa `PF: Document de Design` do PVANet. **Apenas um membro
-do grupo precisa fazer a submissão**. 
+Envie o seu GDD em formato pdf na tarefa `PF: Document de Design` do PVANet. **Apenas um membro do grupo precisa fazer a submissão**. 
 
 ## Referências
 
