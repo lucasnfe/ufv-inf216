@@ -26,14 +26,14 @@ O objetivo dessa atividade é compartilhar com a turma o jogo que você desenvol
 
 1. Apresentação
 
-A sua apresentação deve ser feita usando o Google Slides e ter 8 minutos de duração, contendo, no mínimo, a seguinte estrutura:
+A sua apresentação deve ser feita usando o Google Slides e ter 5-8 minutos de duração, contendo, no mínimo, a seguinte estrutura:
 
 - Capa com nome do jogo e nomes e matrículas dos membros da equipe;
 - Introdução com sua intenção artística e audiência do seu jogo (~1 minuto);
 - Objetivo e regras do jogo (~1 minuto);
 - Controles e mecânicas (~1 minuto);
-- Principais desafios (~2 minuto);
-- Demostração (~3 minutos).
+- Principais desafios do projeto (~1-2 minutos);
+- Demonstração do jogo (~1-3 minutos).
 
 2. Código-fonte
 
