@@ -41,6 +41,7 @@ A versão final do seu jogo deve conter no mínimo:
 
 - Um menu principal com o nome do jogo (fique à vontade para adicionar o nome dos autores também);
 - Uma cena com as mecânicas principais implementadas;
+- Condições de vitória e derrota claramente apresentadas para o jogador;
 - Efeitos sonoros e música de fundo durante o jogo.
 
 O seu código-fonte deverá estar hospeado no seu projeto do GitHub, para que a versão final seja facilmente acessível para avaliação. O arquivo README.md de seu projeto deve ser atualizado para conter as seguintes seções:
