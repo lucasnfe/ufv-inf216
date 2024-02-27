@@ -23,6 +23,10 @@ items:
   name: Avaliação
   icon_class: fas 
 
+- url: /premiacao/
+  name: Premiação
+  icon_class: fas 
+
 - url: /materiais/
   name: Materiais
   icon_class: fas 
